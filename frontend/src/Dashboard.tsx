@@ -312,7 +312,7 @@ export default function Dashboard() {
   if (!publicKey) {
     return (
       <div className="min-h-screen bg-app-bg flex flex-col">
-        <header className="bg-white border-b border-border-gray">
+        <header className="bg-surface border-b border-border-gray">
           <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <button onClick={async () => { await signOut(); window.location.href = "/"; }} className="flex items-center gap-2.5 font-display text-[22px] font-bold tracking-[-0.5px] text-near-black cursor-pointer bg-transparent border-none text-left">
               <div className="w-8 h-8 bg-kraken-purple rounded-lg flex items-center justify-center text-white text-base shrink-0">
@@ -404,7 +404,7 @@ export default function Dashboard() {
                 {wallets.slice(0, 6).map((w) => (
                   <div
                     key={w.id}
-                    className="flex items-center gap-2 px-3.5 py-2 bg-white border border-border-gray rounded-[10px] text-sm shadow-micro"
+                    className="flex items-center gap-2 px-3.5 py-2 bg-surface border border-border-gray rounded-[10px] text-sm shadow-micro"
                   >
                     <img src={w.icon} alt={w.name} className="w-5 h-5" />
                     <span className="text-near-black font-medium">{w.name}</span>
@@ -416,7 +416,7 @@ export default function Dashboard() {
           </div>
         </main>
 
-        <footer className="bg-white border-t border-border-gray">
+        <footer className="bg-surface border-t border-border-gray">
           <div className="max-w-6xl mx-auto px-6 h-12 flex items-center justify-center text-xs text-silver-blue">
             <a href="https://stellar.org" target="_blank" rel="noopener noreferrer" className="text-kraken-purple no-underline hover:underline font-medium">Stellar Network</a>
             <span className="mx-2">·</span>
@@ -429,7 +429,7 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-app-bg flex flex-col">
-      <header className="bg-white border-b border-border-gray sticky top-0 z-20">
+      <header className="bg-surface border-b border-border-gray sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5 font-display text-[22px] font-bold tracking-[-0.5px] text-near-black">
             <div className="w-8 h-8 bg-kraken-purple rounded-lg flex items-center justify-center text-white text-base shrink-0">
@@ -469,7 +469,7 @@ export default function Dashboard() {
 
       <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-6">
-          <div className="md:col-span-1 bg-white border border-border-gray rounded-[12px] p-5 shadow-card">
+          <div className="md:col-span-1 bg-surface border border-border-gray rounded-[12px] p-5 shadow-card">
             <div className="flex items-center gap-2 mb-4">
               <UsersIcon className="w-4 h-4 text-cool-gray" />
               <span className="font-ui text-[11px] font-bold uppercase tracking-[0.06em] text-cool-gray">Wallet</span>
@@ -508,7 +508,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="md:col-span-3 bg-white border border-border-gray rounded-[12px] p-5 shadow-card">
+          <div className="md:col-span-3 bg-surface border border-border-gray rounded-[12px] p-5 shadow-card">
             <div className="flex items-center gap-2 mb-3">
               <BarChartIcon className="w-4 h-4 text-cool-gray" />
               <span className="font-ui text-[11px] font-bold uppercase tracking-[0.06em] text-cool-gray">Contract</span>
@@ -582,7 +582,7 @@ export default function Dashboard() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           <div className="lg:col-span-2">
-            <div className="bg-white border border-border-gray rounded-[12px] p-6 shadow-card">
+            <div className="bg-surface border border-border-gray rounded-[12px] p-6 shadow-card">
               <div className="flex items-start justify-between mb-5">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
@@ -627,7 +627,7 @@ export default function Dashboard() {
                         className={`w-full text-left p-4 rounded-[10px] border transition-all duration-150 cursor-pointer ${
                           alreadyVoted
                             ? "bg-gray-50 border-border-gray cursor-default"
-                            : "bg-white border-border-gray hover:border-kraken-purple hover:bg-kraken-purple-subtle hover:shadow-sm"
+                            : "bg-surface border-border-gray hover:border-kraken-purple hover:bg-kraken-purple-subtle hover:shadow-sm"
                         }`}
                         onClick={() => handleVote(index)}
                         disabled={alreadyVoted || isVoting || !pollActive}
@@ -676,7 +676,7 @@ export default function Dashboard() {
           </div>
 
           <div>
-            <div className="bg-white border border-border-gray rounded-[12px] p-6 shadow-card h-full">
+            <div className="bg-surface border border-border-gray rounded-[12px] p-6 shadow-card h-full">
               <div className="flex items-center gap-2 mb-4">
                 <svg className="w-4 h-4 text-cool-gray" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
@@ -722,7 +722,7 @@ export default function Dashboard() {
 
       {showCreatePoll && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
-          <div className="bg-white rounded-[16px] p-6 w-full max-w-md shadow-xl">
+          <div className="bg-surface rounded-[16px] p-6 w-full max-w-md shadow-xl">
             <div className="flex items-center justify-between mb-5">
               <h3 className="font-display text-xl font-bold tracking-[-0.3px] text-near-black">
                 Create Poll
@@ -738,7 +738,7 @@ export default function Dashboard() {
                   Question
                 </label>
                 <input
-                  className="px-4 py-3 border border-border-gray rounded-[10px] bg-white text-near-black text-sm font-ui outline-none focus:border-kraken-purple focus:ring-1 focus:ring-kraken-purple/20 transition-all"
+                  className="px-4 py-3 border border-border-gray rounded-[10px] bg-surface text-near-black text-sm font-ui outline-none focus:border-kraken-purple focus:ring-1 focus:ring-kraken-purple/20 transition-all"
                   type="text"
                   placeholder="What is your favorite?"
                   value={newQuestion}
@@ -762,7 +762,7 @@ export default function Dashboard() {
                     )}
                   </div>
                   <input
-                    className="px-4 py-3 border border-border-gray rounded-[10px] bg-white text-near-black text-sm font-ui outline-none focus:border-kraken-purple focus:ring-1 focus:ring-kraken-purple/20 transition-all"
+                    className="px-4 py-3 border border-border-gray rounded-[10px] bg-surface text-near-black text-sm font-ui outline-none focus:border-kraken-purple focus:ring-1 focus:ring-kraken-purple/20 transition-all"
                     type="text"
                     placeholder={`Option ${i + 1}`}
                     value={opt}
@@ -787,7 +787,7 @@ export default function Dashboard() {
                 </label>
                 <div className="flex gap-2">
                   <input
-                    className="px-4 py-3 border border-border-gray rounded-[10px] bg-white text-near-black text-sm font-ui outline-none focus:border-kraken-purple focus:ring-1 focus:ring-kraken-purple/20 transition-all w-24"
+                    className="px-4 py-3 border border-border-gray rounded-[10px] bg-surface text-near-black text-sm font-ui outline-none focus:border-kraken-purple focus:ring-1 focus:ring-kraken-purple/20 transition-all w-24"
                     type="number"
                     min={1}
                     max={365}
@@ -795,7 +795,7 @@ export default function Dashboard() {
                     onChange={(e) => setNewDeadline(Math.max(1, parseInt(e.target.value) || 1))}
                   />
                   <select
-                    className="px-4 py-3 border border-border-gray rounded-[10px] bg-white text-near-black text-sm font-ui outline-none focus:border-kraken-purple focus:ring-1 focus:ring-kraken-purple/20 transition-all"
+                    className="px-4 py-3 border border-border-gray rounded-[10px] bg-surface text-near-black text-sm font-ui outline-none focus:border-kraken-purple focus:ring-1 focus:ring-kraken-purple/20 transition-all"
                     value={deadlineUnit}
                     onChange={(e) => setDeadlineUnit(e.target.value as "days" | "hours")}
                   >
@@ -822,7 +822,7 @@ export default function Dashboard() {
         </div>
       )}
 
-      <footer className="bg-white border-t border-border-gray">
+      <footer className="bg-surface border-t border-border-gray">
         <div className="max-w-6xl mx-auto px-6 h-12 flex items-center justify-center text-xs text-silver-blue">
           <a href="https://stellar.org" target="_blank" rel="noopener noreferrer" className="text-kraken-purple no-underline hover:underline font-medium">Stellar Network</a>
           <span className="mx-2">·</span>

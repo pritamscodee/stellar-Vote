@@ -53,6 +53,22 @@
   background-color: #1c1c2e;
 }
 
+.dark .bg-gray-100 {
+  background-color: #1c1c2e;
+}
+
+.dark .bg-gray-300 {
+  background-color: #3a3a4e;
+}
+
+.dark .hover\:bg-gray-50:hover {
+  background-color: #1c1c2e;
+}
+
+.dark .hover\:bg-gray-100:hover {
+  background-color: #1c1c2e;
+}
+
 .dark .bg-blue-50 {
   background-color: rgba(59, 130, 246, 0.1);
   border-color: rgba(59, 130, 246, 0.2);

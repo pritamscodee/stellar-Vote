@@ -22,8 +22,8 @@ const features = [
 export default function LandingPage() {
   const { theme, toggle } = useTheme();
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      <header className="border-b border-border-gray bg-white/80 backdrop-blur-sm sticky top-0 z-20">
+    <div className="min-h-screen bg-surface flex flex-col">
+      <header className="border-b border-border-gray bg-surface/80 backdrop-blur-sm sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2.5 font-display text-[22px] font-bold tracking-[-0.5px] text-near-black no-underline">
             <div className="w-8 h-8 bg-kraken-purple rounded-lg flex items-center justify-center text-white text-base shrink-0">
@@ -50,7 +50,7 @@ export default function LandingPage() {
               )}
             </button>
             <SignInButton mode="modal">
-              <button className="inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-white text-kraken-purple-dark border border-kraken-purple-dark hover:bg-kraken-purple-subtle">
+              <button className="inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-kraken-purple-dark border border-kraken-purple-dark hover:bg-kraken-purple-subtle">
                 Sign In
               </button>
             </SignInButton>
@@ -98,7 +98,7 @@ export default function LandingPage() {
                   </button>
                 </SignUpButton>
                 <SignInButton mode="modal">
-                  <button className="inline-flex items-center justify-center px-7 py-[14px] rounded-[12px] font-ui text-base font-medium cursor-pointer transition-all duration-150 bg-white text-near-black border border-border-gray hover:bg-gray-50 shadow-card">
+                  <button className="inline-flex items-center justify-center px-7 py-[14px] rounded-[12px] font-ui text-base font-medium cursor-pointer transition-all duration-150 bg-surface text-near-black border border-border-gray hover:bg-gray-50 shadow-card">
                     Sign In
                   </button>
                 </SignInButton>
@@ -122,7 +122,7 @@ export default function LandingPage() {
               {features.map((f, i) => (
                 <div
                   key={f.title}
-                  className="group bg-white border border-border-gray rounded-[16px] overflow-hidden shadow-card hover:shadow-lg transition-all duration-300"
+                  className="group bg-surface border border-border-gray rounded-[16px] overflow-hidden shadow-card hover:shadow-lg transition-all duration-300"
                 >
                   <div className="h-48 overflow-hidden">
                     <img
@@ -147,7 +147,7 @@ export default function LandingPage() {
 
         <section className="bg-app-bg border-t border-border-gray py-20">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="bg-white border border-border-gray rounded-[16px] p-8 md:p-12 shadow-card flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="bg-surface border border-border-gray rounded-[16px] p-8 md:p-12 shadow-card flex flex-col md:flex-row items-center gap-8 md:gap-12">
               <div className="w-full md:w-1/2">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[8px] text-xs font-medium bg-kraken-purple/10 text-kraken-purple mb-4">
                   Real-time Events
@@ -182,7 +182,7 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="border-t border-border-gray bg-white">
+      <footer className="border-t border-border-gray bg-surface">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between text-xs text-silver-blue">
           <span className="font-medium">StellarPay · Soroban dApp</span>
           <div className="flex gap-5">
