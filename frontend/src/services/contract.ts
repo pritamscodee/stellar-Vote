@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Horizon,
   TransactionBuilder,
@@ -12,6 +13,7 @@ import {
 } from "@stellar/stellar-sdk";
 import { signTransaction } from "./wallets";
 import type { PollInfo, PollResults } from "../types";
+
 
 const RPC_URL = "https://soroban-testnet.stellar.org";
 const HORIZON_URL = "https://horizon-testnet.stellar.org";

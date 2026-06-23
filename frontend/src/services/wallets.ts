@@ -1,21 +1,15 @@
+
 import { StellarWalletsKit } from "@creit.tech/stellar-wallets-kit/sdk";
 import { defaultModules } from "@creit.tech/stellar-wallets-kit/modules/utils";
-import { KitEventType } from "@creit.tech/stellar-wallets-kit/types";
+import { KitEventType, Networks } from "@creit.tech/stellar-wallets-kit/types";
 
 let initialized = false;
 
-const NetworksMap = {
-  TESTNET: "TESTNET",
-  PUBLIC: "PUBLIC",
-} as const;
-
-export type NetworkType = (typeof NetworksMap)[keyof typeof NetworksMap];
-
-export function initKit(network: string = NetworksMap.TESTNET) {
+export function initKit(network: Networks = Networks.TESTNET) {
   if (initialized) return;
   StellarWalletsKit.init({
     modules: defaultModules(),
-    network: network as any,
+    network,
   });
   initialized = true;
 }
@@ -35,14 +29,15 @@ export async function getAddress(): Promise<string> {
       throw { code: -1, message: "No wallet connected" };
     }
     return result.address;
-  } catch (e: any) {
-    if (e?.code === -1) {
+  } catch (e) {
+    const err = e as { code?: number; message?: string };
+    if (err.code === -1) {
       throw new WalletError("WALLET_NOT_FOUND", "No wallet connected. Please connect a wallet first.");
     }
-    if (e?.code === -3) {
+    if (err.code === -3) {
       throw new WalletError("WALLET_NOT_FOUND", "No wallet selected. Please select a wallet first.");
     }
-    throw new WalletError("WALLET_REJECTED", e?.message || "Failed to get address");
+    throw new WalletError("WALLET_REJECTED", err.message || "Failed to get address");
   }
 }
 
@@ -53,8 +48,9 @@ export async function signTransaction(xdr: string, opts?: { networkPassphrase?: 
       address: opts?.address,
     });
     return result.signedTxXdr;
-  } catch (e: any) {
-    throw new WalletError("WALLET_REJECTED", e?.message || "Transaction signing was rejected");
+  } catch (e) {
+    const err = e as { message?: string };
+    throw new WalletError("WALLET_REJECTED", err.message || "Transaction signing was rejected");
   }
 }
 

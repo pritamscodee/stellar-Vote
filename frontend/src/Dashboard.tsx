@@ -11,6 +11,7 @@ import {
   WalletError,
   getWalletErrorLabel,
 } from "./services/wallets";
+import { Networks } from "@creit.tech/stellar-wallets-kit/types";
 import {
   createPoll,
   castVote,
@@ -32,10 +33,14 @@ import type { WalletInfo, PollInfo, Feedback, TxStatus, SseStatus } from "./type
 
 const CONTRACT_ID = import.meta.env.VITE_CONTRACT_ID || "CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID";
 
+function unixNow(): number {
+  return Math.floor(Date.now() / 1000);
+}
+
 const DEMO_POLL: PollInfo = {
   question: "What is the best blockchain?",
   options: ["Stellar", "Ethereum", "Solana", "Bitcoin"],
-  deadline: Math.floor(Date.now() / 1000) + 86400 * 7,
+  deadline: unixNow() + 86400 * 7,
   owner: "",
   totalVotes: 0,
 };
@@ -108,6 +113,12 @@ export default function Dashboard() {
     setPollLoading(false);
   }, [poll.options.length]);
 
+  const checkAlreadyVoted = useCallback(async () => {
+    if (!publicKey) return;
+    const voted = await hasVoted(CONTRACT_ID, publicKey);
+    setAlreadyVoted(voted);
+  }, [publicKey]);
+
   const loadBalance = useCallback(async (key: string) => {
     const result = await fetchBalance(key);
     if (!result.isError) {
@@ -116,10 +127,10 @@ export default function Dashboard() {
   }, []);
 
   useEffect(() => {
-    initKit("TESTNET");
-    Promise.resolve(getSupportedWallets()).then((results: any[]) => {
+    initKit(Networks.TESTNET);
+    getSupportedWallets().then((results) => {
       setWallets(
-        results.map((w: any) => ({
+        results.map((w) => ({
           id: w.id,
           name: w.name,
           icon: w.icon,
@@ -176,20 +187,17 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (!publicKey) return;
-    checkAlreadyVoted();
-    refreshResults();
-    loadBalance(publicKey);
+    const id = setTimeout(() => {
+      checkAlreadyVoted();
+      refreshResults();
+      loadBalance(publicKey);
+    }, 0);
     refreshInterval.current = setInterval(refreshResults, 10000);
     return () => {
+      clearTimeout(id);
       if (refreshInterval.current) clearInterval(refreshInterval.current);
     };
-  }, [publicKey, refreshResults, loadBalance]);
-
-  const checkAlreadyVoted = async () => {
-    if (!publicKey) return;
-    const voted = await hasVoted(CONTRACT_ID, publicKey);
-    setAlreadyVoted(voted);
-  };
+  }, [publicKey, refreshResults, loadBalance, checkAlreadyVoted]);
 
   const handleConnect = async () => {
     if (actionLock.current) return;
@@ -201,11 +209,11 @@ export default function Dashboard() {
       const address = await getAddress();
       if (!address) throw new WalletError("WALLET_NOT_FOUND", "No address returned");
       setPublicKey(address);
-    } catch (e: any) {
+    } catch (e) {
       if (e instanceof WalletError) {
         setFeedback({ type: "error", message: getWalletErrorLabel(e.code) });
       } else {
-        setFeedback({ type: "error", message: e?.message || "Failed to connect wallet" });
+        setFeedback({ type: "error", message: e instanceof Error ? e.message : "Failed to connect wallet" });
       }
     } finally {
       setIsConnecting(false);
@@ -246,7 +254,7 @@ export default function Dashboard() {
       }
       setAlreadyVoted(true);
 
-      publishVoteEvent(CONTRACT_ID, publicKey, optionIndex, Math.floor(Date.now() / 1000), result.txHash);
+      publishVoteEvent(CONTRACT_ID, publicKey, optionIndex, unixNow(), result.txHash);
 
       setPollResults((prev) => {
         const copy = [...prev];
@@ -271,7 +279,7 @@ export default function Dashboard() {
     setTxStatus({ status: "pending" });
 
     const multiplier = deadlineUnit === "days" ? 86400 : 3600;
-    const deadline = Math.floor(Date.now() / 1000) + multiplier * newDeadline;
+    const deadline = unixNow() + multiplier * newDeadline;
     const filteredOptions = newOptions.filter((o) => o.trim());
 
     const result = await createPoll(publicKey, newQuestion, filteredOptions, deadline, CONTRACT_ID);
@@ -309,7 +317,12 @@ export default function Dashboard() {
   const updateOption = (index: number, value: string) =>
     setNewOptions((prev) => prev.map((o, i) => (i === index ? value : o)));
 
-  const pollActive = poll.deadline > Math.floor(Date.now() / 1000);
+  const [nowMs, setNowMs] = useState(() => Date.now());
+  useEffect(() => {
+    const id = setInterval(() => setNowMs(Date.now()), 10000);
+    return () => clearInterval(id);
+  }, []);
+  const pollActive = poll.deadline * 1000 > nowMs;
   const totalVotes = pollResults.reduce((a, b) => a + b, 0);
 
   const sseColor = sseStatus === "connected" ? "bg-green" : sseStatus === "reconnecting" ? "bg-yellow-400" : "bg-error";

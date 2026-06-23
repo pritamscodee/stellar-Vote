@@ -1,8 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { publishVoteEvent, publishPollCreatedEvent } from '../services/backend'
 
-const ORIGINAL_URL = import.meta.env.VITE_BACKEND_URL
-
 describe('Backend Service', () => {
   beforeEach(() => {
     vi.stubEnv('VITE_BACKEND_URL', 'http://localhost:3001')
