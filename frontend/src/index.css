@@ -34,10 +34,22 @@ body {
   color: var(--color-near-black);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+::selection {
+  background: rgba(113, 50, 245, 0.15);
+  color: var(--color-near-black);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #b0b2be;
+  font-weight: 400;
 }
