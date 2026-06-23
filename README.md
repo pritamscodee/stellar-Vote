@@ -1,162 +1,266 @@
-# StellarPay — Stellar dApp
+<div align="center">
 
-## Level 1 — Basic Stellar dApp
+# ⚡ StellarPay
 
-Multi-wallet Stellar application with Clerk authentication.
-
-### Features (Level 1)
-
-- **Clerk Authentication**: Sign up/in with email, Google, GitHub, etc.
-- **Multi-Wallet Support**: Connect via Freighter, Albedo, Lobstr, xBull, Rabet, or Hana using StellarWalletsKit
-- **Transaction Status Tracking**: Pending → Success/Fail with explorer links
-- **Error Handling**: 3 error types — wallet not found, connection rejected, insufficient balance
-
-### Screenshot (Level 1)
-
-![dapp-success2](frontend/screenshots/dapp-success2.jpg)
+### Multi-Wallet Stellar dApp × Soroban Smart Contract × Real-Time SSE Events
 
 ---
 
-## Level 2 — Soroban Contract + Real-Time Events
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=fff)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=fff)](https://tailwindcss.com)
+[![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=fff)](https://www.rust-lang.org)
+[![Stellar](https://img.shields.io/badge/Stellar-7B00FF?style=for-the-badge&logo=stellar&logoColor=fff)](https://stellar.org)
+[![Clerk](https://img.shields.io/badge/Clerk-6C47FF?style=for-the-badge&logo=clerk&logoColor=fff)](https://clerk.com)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=fff)](https://vercel.com)
+[![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=fff)](https://render.com)
 
-Extends Level 1 with a deployed Soroban smart contract and real-time event integration.
+[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-7B00FF?style=for-the-badge&logo=vercel&logoColor=fff)](https://frontend-one-rose-14.vercel.app)
+[![Contract on Stellar Expert](https://img.shields.io/badge/Stellar_Expert-000000?style=for-the-badge&logo=stellar&logoColor=fff)](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID)
 
-### Screenshots (Level 2)
+---
 
-![level2](frontend/screenshots/leev2.jpg)
-![pay2level2](frontend/screenshots/pay2level2.jpg)
+</div>
 
-### Features (Level 2)
+## 🌐 Overview
 
-- **Multi-Wallet Support**: Connect via Freighter, Albedo, Lobstr, xBull, Rabet, or Hana using StellarWalletsKit
-- **Soroban Smart Contract**: Live Poll voting contract deployed on Stellar testnet
-- **Real-Time Events**: SSE-powered live activity feed showing votes as they happen
-- **Transaction Status Tracking**: Pending → Success/Fail with explorer links
-- **Error Handling**: 3 error types — wallet not found, connection rejected, insufficient balance
-- **Clerk Authentication**: Sign up/in with email, Google, GitHub, etc.
+**StellarPay** is a full-stack Web3 dApp on the **Stellar network** featuring:
+
+- **Soroban Smart Contract** — Decentralized poll creation & voting on Stellar testnet
+- **Multi-Wallet Support** — Connect via Freighter, Albedo, Lobstr, xBull, Rabet, or Hana
+- **Real-Time SSE Events** — Live activity feed powered by a Rust/Axum event server
+- **Clerk Authentication** — Secure sign-up/sign-in with email, Google, GitHub, and more
+- **Dark Mode UI** — Sleek, responsive interface built with Tailwind CSS v4
+
+---
+
+## ✨ Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🔐 Authentication
+- Clerk-powered sign-up/sign-in
+- Email, Google, GitHub providers
+- Protected dashboard routes
+
+### 👛 Multi-Wallet
+- Freighter, Albedo, Lobstr, xBull, Rabet, Hana
+- StellarWalletsKit integration
+- One-click connect & switch
+
+### 📊 Live Polling
+- Create polls with custom options
+- Set deadline (hours/days)
+- Real-time vote updates via SSE
+
+</td>
+<td width="50%">
+
+### ⚡ Real-Time Events
+- Server-Sent Events (SSE) stream
+- Live vote notifications
+- Instant poll creation alerts
+
+### 🔗 On-Chain Verified
+- All transactions on Stellar testnet
+- Stellar Expert explorer links
+- Full tx hash audit trail
+
+### 🎨 Modern UI
+- Dark/light theme toggle
+- Responsive mobile-first design
+- Tailwind CSS v4 + glassmorphism
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🖼️ Screenshots
+
+<div align="center">
+  <img src="frontend/screenshots/landing-page.jpg" alt="Landing Page" width="45%" />
+  <img src="frontend/screenshots/wallet-connected.jpg" alt="Wallet Connected" width="45%" />
+</div>
+
+<div align="center">
+  <img src="frontend/screenshots/dapp-success2.jpg" alt="Dashboard" width="45%" />
+  <img src="frontend/screenshots/balance-displayed.jpg" alt="Balance Displayed" width="45%" />
+</div>
+
+<div align="center">
+  <img src="frontend/screenshots/leev2.jpg" alt="Level 2" width="45%" />
+  <img src="frontend/screenshots/pay2level2.jpg" alt="Level 2 Payments" width="45%" />
+</div>
+
+<div align="center">
+  <img src="frontend/screenshots/transaction-success.jpg" alt="Transaction Success" width="45%" />
+  <img src="frontend/screenshots/transaction-result.jpg" alt="Transaction Result" width="45%" />
+</div>
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- A Stellar wallet (Freighter, Albedo, Lobstr, etc.)
-- A Clerk account at [clerk.com](https://clerk.com)
-- Rust toolchain (for building the contract)
-- Node.js 18+
+| Tool | Version |
+|------|---------|
+| Node.js | 18+ |
+| Rust | latest stable |
+| Stellar Wallet | Freighter / Albedo / Lobstr |
+| Clerk Account | [clerk.com](https://clerk.com) |
 
-### Setup
+### Frontend
 
 ```bash
+# Install dependencies
 cd frontend
 npm install
+
+# Set up environment
+cp .env.example .env
+# Edit .env with your Clerk key & backend URL
+
+# Start dev server
 npm run dev
 ```
 
-**Netlify:** `netlify.toml` is in `frontend/` — set **Base directory** to `frontend` in Netlify dashboard.
-
-## Smart Contract
-
-The poll contract is in `contracts/poll/`. Build and deploy:
+### Smart Contract
 
 ```bash
 cd contracts/poll
 cargo build --target wasm32-unknown-unknown --release
 ```
 
-### Deployed Contract (Testnet)
-
-**Contract ID**: `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID`
-
-View on Stellar Expert: [CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID)
-
-## Rust Backend
-
-The SSE event server is in `backend/`:
+### Backend (SSE Server)
 
 ```bash
 cd backend
 cargo run
+# Runs on http://localhost:3001
 ```
 
-Runs on `http://localhost:3001`. Provides:
-- `GET /health` — Health check
-- `GET /api/events` — SSE stream for real-time events
-- `GET /api/publish` — Publish events (used by frontend)
+---
+
+## 🧱 Architecture
+
+```
+stellar-payment-dapp/
+├── frontend/                    # React + Vite SPA
+│   ├── src/
+│   │   ├── main.tsx            # Entry point
+│   │   ├── App.tsx             # Auth router
+│   │   ├── Dashboard.tsx       # Main dashboard
+│   │   ├── LandingPage.tsx     # Marketing page
+│   │   ├── types.ts            # Shared types
+│   │   ├── index.css           # Tailwind + theme
+│   │   └── services/
+│   │       ├── wallets.ts      # Multi-wallet kit
+│   │       ├── contract.ts     # Soroban interactions
+│   │       └── backend.ts      # SSE client
+│   ├── screenshots/            # App screenshots
+│   └── netlify.toml            # Netlify config
+├── contracts/
+│   └── poll/                   # Soroban poll contract
+│       └── src/lib.rs
+├── backend/                    # Rust Axum SSE server
+│   └── src/main.rs
+└── README.md
+```
+
+---
+
+## 🔗 Deployed Contracts
+
+| Contract | ID | Explorer |
+|----------|----|----------|
+| **Poll Contract** | `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID` | [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
+
+---
+
+## 📡 API — Rust Backend
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/health` | GET | Health check |
+| `/api/events` | GET | SSE stream for live events |
+| `/api/publish` | GET | Publish vote/poll events |
 
 ### Deploy to Render
 
-1. Push the repo to GitHub
-2. In [Render Dashboard](https://dashboard.render.com), create a **New Web Service**
-3. Connect your GitHub repo
-4. Set:
-   - **Root Directory**: `backend`
-   - **Build Command**: `cargo build --release`
-   - **Start Command**: `./target/release/stellerpay-backend`
-5. Add env var: `PORT = 10000`
-6. Deploy
-
-After deployment, copy the Render URL (e.g. `https://stellerpay-backend.onrender.com`)
-and set it as `VITE_BACKEND_URL` in your Netlify environment variables, then redeploy.
-
-## Project Structure
-
-```
-src/
-├── main.tsx                    # Entry point with ClerkProvider
-├── App.tsx                     # Auth router
-├── Dashboard.tsx               # Main dashboard (redesigned)
-├── LandingPage.tsx             # Landing page
-├── types.ts                    # Shared type definitions
-├── index.css                   # Tailwind + theme tokens
-├── services/
-│   ├── wallets.ts              # StellarWalletsKit multi-wallet integration
-│   ├── contract.ts             # Soroban contract interaction
-│   └── backend.ts              # SSE event streaming client
-contracts/
-└── poll/                       # Soroban poll contract (Rust)
-    ├── Cargo.toml
-    └── src/
-        └── lib.rs
-backend/                        # Rust Axum SSE server
-├── Cargo.toml
-└── src/
-    └── main.rs
+```bash
+# 1. Push to GitHub
+# 2. Render Dashboard → New Web Service
+# 3. Set:
+#    Root Directory: backend
+#    Build: cargo build --release
+#    Start: ./target/release/stellerpay-backend
+#    Env: PORT = 10000
+# 4. Set VITE_BACKEND_URL in frontend env vars
 ```
 
-## Error Handling
+---
 
-Three error types handled:
-1. **Wallet Not Found** — No wallet extension detected or not connected
-2. **Connection Rejected** — User declined the wallet connection request
-3. **Insufficient Balance** — Not enough XLM for transaction fees
+## 📜 On-Chain Transactions
 
-## Deliverables
-
-- **Live Demo**: https://stellerpay.netlify.app
-- **Contract Address**: `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID`
-- **Init TX Hash**: `1cc3507973ab0f7a5b2aa1e8f0bc772f1efa9a3697eb600d170f927129fd7a70`
-- **Deployer Account**: `GCZVEJZJNMPHXP3GKCHI33YUSN7BJTU3OWNDLSDEUQOO4UGRIQWHBEHK`
-- **Screenshots**: See `frontend/screenshots/` folder
-
-## On-Chain Transactions
-
-All contract interactions are verifiable on Stellar Expert:
+All interactions are verifiable on Stellar Expert:
 
 | # | Type | Tx Hash | Explorer | Date |
 |---|------|---------|----------|------|
-| 1 | **Contract Deploy** | `d36f72ac…` | [View ↗](https://stellar.expert/explorer/testnet/tx/d36f72acf0b6a347c2ad68fc5d95f0b3196b95faf4ff2ff84f47ebaeee6ba2a8) | 2026-06-23 09:15 UTC |
-| 2 | **Init Poll** | `1cc35079…` | [View ↗](https://stellar.expert/explorer/testnet/tx/1cc3507973ab0f7a5b2aa1e8f0bc772f1efa9a3697eb600d170f927129fd7a70) | 2026-06-23 09:17 UTC |
-| 3 | **Cast Vote** | `60b5477f…` | [View ↗](https://stellar.expert/explorer/testnet/tx/60b5477f6a1e167b79bdd90bdcaa5512607a150e33387fd07f2be1c0579f174b) | 2026-06-23 10:33 UTC |
+| 1 | **Contract Deploy** | `d36f72ac…` | [View ↗](https://stellar.expert/explorer/testnet/tx/d36f72acf0b6a347c2ad68fc5d95f0b3196b95faf4ff2ff84f47ebaeee6ba2a8) | 2026-06-23 |
+| 2 | **Init Poll** | `1cc35079…` | [View ↗](https://stellar.expert/explorer/testnet/tx/1cc3507973ab0f7a5b2aa1e8f0bc772f1efa9a3697eb600d170f927129fd7a70) | 2026-06-23 |
+| 3 | **Cast Vote** | `60b5477f…` | [View ↗](https://stellar.expert/explorer/testnet/tx/60b5477f6a1e167b79bdd90bdcaa5512607a150e33387fd07f2be1c0579f174b) | 2026-06-23 |
 
-**Details:**
-1. **Contract Deploy** — Created contract `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID` from WASM
-2. **Init Poll** — Initialized poll with question *"What is the best blockchain?"* and 4 options (Stellar, Ethereum, Solana, Bitcoin)
-3. **Cast Vote** — Voted for option 0 (Stellar) on the deployed poll contract
+---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- React + TypeScript + Vite
-- Tailwind CSS v4
-- Clerk (authentication)
-- StellarWalletsKit (multi-wallet)
-- @stellar/stellar-sdk v16 (Soroban)
-- Rust + Axum (backend)
-- Soroban SDK (smart contract)
+<div align="center">
+
+| Layer | Technology |
+|-------|-----------|
+| **Frontend** | React 19, TypeScript, Vite 8, Tailwind CSS v4 |
+| **Authentication** | Clerk |
+| **Blockchain** | Stellar, Soroban SDK, @stellar/stellar-sdk v16 |
+| **Wallet** | StellarWalletsKit (Freighter, Albedo, Lobstr, xBull, Rabet, Hana) |
+| **Backend** | Rust, Axum, tokio, SSE |
+| **Contract** | Soroban SDK (Rust), WASM |
+| **Hosting** | Vercel (frontend), Render (backend) |
+
+</div>
+
+---
+
+## ⚠️ Error Handling
+
+| Error Type | Description |
+|------------|-------------|
+| 🚫 **Wallet Not Found** | No wallet extension detected or not connected |
+| ❌ **Connection Rejected** | User declined the wallet connection request |
+| 💸 **Insufficient Balance** | Not enough XLM for transaction fees/fundraises |
+
+---
+
+## 📬 Deliverables
+
+- **Live Demo**: [https://frontend-one-rose-14.vercel.app](https://frontend-one-rose-14.vercel.app)
+- **Contract ID**: `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID`
+- **Init Tx Hash**: `1cc3507973ab0f7a5b2aa1e8f0bc772f1efa9a3697eb600d170f927129fd7a70`
+- **Deployer Account**: `GCZVEJZJNMPHXP3GKCHI33YUSN7BJTU3OWNDLSDEUQOO4UGRIQWHBEHK`
+- **Screenshots**: `frontend/screenshots/` folder
+
+---
+
+<div align="center">
+
+**Built with ❤️ on Stellar** · [Report Issue](https://github.com/pritamscodee/stellar-payment-dapp/issues)
+
+[![Stellar](https://img.shields.io/badge/Powered_by_Stellar-7B00FF?style=flat-square&logo=stellar&logoColor=fff)](https://stellar.org)
+![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+
+</div>

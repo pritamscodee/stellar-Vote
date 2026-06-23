@@ -86,7 +86,10 @@ export default function Dashboard() {
   const [newOptions, setNewOptions] = useState(["", ""]);
   const [newDeadline, setNewDeadline] = useState(3);
   const [deadlineUnit, setDeadlineUnit] = useState<"days" | "hours">("days");
-  const [liveEvents, setLiveEvents] = useState<Array<{ voter: string; option: number; time: Date }>>([]);
+  const [liveEvents, setLiveEvents] = useState<Array<
+    | { type: "vote"; voter: string; option: number; time: Date }
+    | { type: "poll_created"; question: string; creator: string; time: Date }
+  >>([]);
   const [sseStatus, setSseStatus] = useState<SseStatus>("disconnected");
 
   const refreshInterval = useRef<ReturnType<typeof setInterval>>(undefined);
@@ -147,9 +150,8 @@ export default function Dashboard() {
       (event) => {
         if (event.type === "Vote") {
           const { voter, optionIndex } = event.data;
-          setLiveEvents((prev) =>
-            [{ voter, option: optionIndex, time: new Date() }, ...prev].slice(0, 20)
-          );
+          const newEvent = { type: "vote" as const, voter, option: optionIndex, time: new Date() };
+          setLiveEvents((prev) => [newEvent, ...prev].slice(0, 20));
           setPollResults((prev) => {
             const copy = [...prev];
             if (copy[optionIndex] !== undefined) copy[optionIndex]++;
@@ -157,6 +159,9 @@ export default function Dashboard() {
           });
           setPoll((prev) => ({ ...prev, totalVotes: prev.totalVotes + 1 }));
         } else if (event.type === "PollCreated") {
+          const { question, creator } = event.data;
+          const newEvent = { type: "poll_created" as const, question, creator, time: new Date() };
+          setLiveEvents((prev) => [newEvent, ...prev].slice(0, 20));
           setFeedback({
             type: "success",
             message: "New poll created! Refreshing data...",
@@ -698,20 +703,38 @@ export default function Dashboard() {
                   {liveEvents.map((ev, i) => (
                     <div key={i} className="flex items-start gap-2.5 p-2.5 rounded-[10px] bg-gray-50 text-xs">
                       <span className="w-5 h-5 rounded-full bg-kraken-purple/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <svg className="w-2.5 h-2.5 text-kraken-purple" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                          <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
-                        </svg>
+                        {ev.type === "vote" ? (
+                          <svg className="w-2.5 h-2.5 text-kraken-purple" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                            <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                          </svg>
+                        ) : (
+                          <svg className="w-2.5 h-2.5 text-kraken-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                          </svg>
+                        )}
                       </span>
-                      <div className="leading-snug">
-                        <span className="font-mono font-semibold text-near-black">
-                          {truncateKey(ev.voter)}
-                        </span>
-                        <span className="text-silver-blue"> voted for </span>
-                        <span className="font-semibold text-near-black">
-                          {poll.options[ev.option] || `Option ${ev.option}`}
-                        </span>
-                      </div>
+                      {ev.type === "vote" ? (
+                        <div className="leading-snug">
+                          <span className="font-mono font-semibold text-near-black">
+                            {truncateKey(ev.voter)}
+                          </span>
+                          <span className="text-silver-blue"> voted for </span>
+                          <span className="font-semibold text-near-black">
+                            {poll.options[ev.option] || `Option ${ev.option}`}
+                          </span>
+                        </div>
+                      ) : (
+                        <div className="leading-snug">
+                          <span className="font-mono font-semibold text-near-black">
+                            {truncateKey(ev.creator)}
+                          </span>
+                          <span className="text-silver-blue"> created a poll </span>
+                          <span className="font-semibold text-near-black">
+                            {ev.question.length > 40 ? ev.question.slice(0, 40) + "..." : ev.question}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
