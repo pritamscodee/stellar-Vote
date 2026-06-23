@@ -1,21 +1,22 @@
-# StellarPay - Stellar Payment dApp
+# StellarPay - Stellar dApp (Level 2)
 
-A Stellar testnet payment dApp built with React, TypeScript, and Vite. Features Clerk authentication, Freighter wallet integration, and a Kraken-inspired design system.
+Multi-wallet Stellar dApp with a deployed Soroban smart contract and real-time event integration.
 
 ## Features
 
-- **Authentication**: Sign up/in with Clerk (email, Google, GitHub, etc.)
-- **Wallet Connection**: Connect/disconnect Freighter wallet on Stellar Testnet
-- **Balance Display**: Fetch and display XLM balance with auto-refresh every 15s
-- **Send XLM**: Transfer XLM to any Stellar address with amount input
-- **Transaction Feedback**: Success/failure state with transaction hash and explorer link
-- **Kraken-inspired UI**: Clean, professional design with purple brand identity
+- **Multi-Wallet Support**: Connect via Freighter, Albedo, Lobstr, xBull, Rabet, or Hana using StellarWalletsKit
+- **Soroban Smart Contract**: Live Poll voting contract deployed on Stellar testnet
+- **Real-Time Events**: SSE-powered live activity feed showing votes as they happen
+- **Transaction Status Tracking**: Pending → Success/Fail with explorer links
+- **Error Handling**: 3 error types — wallet not found, connection rejected, insufficient balance
+- **Clerk Authentication**: Sign up/in with email, Google, GitHub, etc.
 
 ## Prerequisites
 
-- [Freighter wallet](https://freighter.app) browser extension
-- A Clerk account (sign up at [clerk.com](https://clerk.com))
-- [Fund your testnet account](https://stellar.org/learn/fund-your-testnet-account) using the Friendbot
+- A Stellar wallet (Freighter, Albedo, Lobstr, etc.)
+- A Clerk account at [clerk.com](https://clerk.com)
+- Rust toolchain (for building the contract)
+- Node.js 18+
 
 ## Setup
 
@@ -25,64 +26,82 @@ npm install
 
 # Start development server
 npm run dev
-
-# Build for production
-npm run build
 ```
 
-## Usage
+## Smart Contract
 
-1. Open the app — you'll see the landing page
-2. Click **Get Started** or **Sign In** to authenticate via Clerk
-3. After signing in, you'll reach the dashboard
-4. Install the Freighter browser extension and create a wallet (if not already done)
-5. Switch Freighter to **Testnet** (Settings → Network → Testnet)
-6. Fund your account using the [Stellar Testnet Friendbot](https://stellar.org/learn/fund-your-testnet-account)
-7. Click **Connect Freighter** and approve in the extension
-8. Enter a destination address (starting with `G`) and amount in XLM
-9. Click **Send XLM** and confirm the transaction in Freighter
-10. View the transaction result with a link to Stellar Expert explorer
+The poll contract is in `contracts/poll/`. Build and deploy:
 
-## Screenshots
+```bash
+cd contracts/poll
+cargo build --target wasm32-unknown-unknown --release
+```
 
-| Screen | Preview |
-|--------|---------|
-| **Landing Page** — Sign-in/sign-up with blockchain visuals | ![Landing Page](screenshots/landing-page.jpg) |
-| **Balance Displayed** — XLM balance with auto-refresh | ![Balance](screenshots/balance-displayed.jpg) |
-| **Wallet Connected** — Address, network badge, disconnect | ![Wallet Connected](screenshots/wallet-connected.jpg) |
-| **Transaction Success** — Successful send with hash and explorer link | ![Transaction Success](screenshots/transaction-success.jpg) |
-| **Transaction Result** — Feedback shown to the user | ![Transaction Result](screenshots/transaction-result.jpg) |
+### Deployed Contract (Testnet)
 
-## Tech Stack
+**Contract ID**: `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID`
 
-- [React](https://react.dev) + [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vite.dev)
-- [Tailwind CSS v4](https://tailwindcss.com)
-- [Clerk](https://clerk.com) — Authentication
-- [@stellar/stellar-sdk](https://github.com/stellar/js-stellar-sdk)
-- [@stellar/freighter-api](https://github.com/stellar/freighter)
-- [Stellar Testnet](https://stellar.org)
+View on Stellar Expert: [CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID)
+
+## Rust Backend
+
+The SSE event server is in `backend/`:
+
+```bash
+cd backend
+cargo run
+```
+
+Runs on `http://localhost:3001`. Provides:
+- `GET /health` — Health check
+- `GET /api/events` — SSE stream for real-time events
+- `GET /api/publish` — Publish events (used by frontend)
 
 ## Project Structure
 
 ```
 src/
-├── main.tsx          # Entry point with ClerkProvider
-├── App.tsx           # Auth router (SignedOut → Landing, SignedIn → Dashboard)
-├── LandingPage.tsx   # Landing page with sign-in/sign-up
-├── Dashboard.tsx     # Payment dApp with wallet + send XLM
-├── stellar.ts        # Stellar SDK logic (connect, balance, send)
-└── index.css         # Tailwind + custom theme tokens
+├── main.tsx                    # Entry point with ClerkProvider
+├── App.tsx                     # Auth router
+├── Dashboard.tsx               # Main dashboard (redesigned)
+├── LandingPage.tsx             # Landing page
+├── types.ts                    # Shared type definitions
+├── index.css                   # Tailwind + theme tokens
+├── services/
+│   ├── wallets.ts              # StellarWalletsKit multi-wallet integration
+│   ├── contract.ts             # Soroban contract interaction
+│   └── backend.ts              # SSE event streaming client
+contracts/
+└── poll/                       # Soroban poll contract (Rust)
+    ├── Cargo.toml
+    └── src/
+        └── lib.rs
+backend/                        # Rust Axum SSE server
+├── Cargo.toml
+└── src/
+    └── main.rs
 ```
 
-## Design
+## Error Handling
 
-This project follows a Kraken-inspired design system:
+Three error types handled:
+1. **Wallet Not Found** — No wallet extension detected or not connected
+2. **Connection Rejected** — User declined the wallet connection request
+3. **Insufficient Balance** — Not enough XLM for transaction fees
 
-- **Primary**: Kraken Purple (#7132f5)
-- **Text**: Near Black (#101114)
-- **Surfaces**: White with subtle shadows
-- **Typography**: Kraken-Brand for headings, Kraken-Product for UI
-- **Radius**: 12px buttons, 10px inputs, 12px cards
+## Deliverables
 
-See `DESIGN.md` for the full design specification.
+- **Live Demo**: https://stellerpay.netlify.app
+- **Contract Address**: `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID`
+- **Init TX Hash**: `1cc3507973ab0f7a5b2aa1e8f0bc772f1efa9a3697eb600d170f927129fd7a70`
+- **Screenshot**: See `screenshots/` folder
+
+## Tech Stack
+
+- React + TypeScript + Vite
+- Tailwind CSS v4
+- Clerk (authentication)
+- StellarWalletsKit (multi-wallet)
+- @stellar/stellar-sdk v16 (Soroban)
+- Rust + Axum (backend)
+- Soroban SDK (smart contract)
