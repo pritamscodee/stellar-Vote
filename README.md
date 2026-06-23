@@ -11,22 +11,16 @@ Multi-wallet Stellar application with Clerk authentication.
 - **Transaction Status Tracking**: Pending → Success/Fail with explorer links
 - **Error Handling**: 3 error types — wallet not found, connection rejected, insufficient balance
 
-### Screenshots
-
-**Level 1:**
-
-![dapp-success2](frontend/screenshots/dapp-success2.jpg)
-
-**Level 2 — Multi-Wallet + Soroban + Real-Time Events:**
-
-![level2](frontend/screenshots/leev2.jpg)
-![pay2level2](frontend/screenshots/pay2level2.jpg)
-
 ---
 
 ## Level 2 — Soroban Contract + Real-Time Events
 
 Extends Level 1 with a deployed Soroban smart contract and real-time event integration.
+
+### Screenshots (Level 2)
+
+![level2](frontend/screenshots/leev2.jpg)
+![pay2level2](frontend/screenshots/pay2level2.jpg)
 
 ### Features (Level 2)
 
