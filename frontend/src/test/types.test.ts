@@ -65,8 +65,11 @@ describe('Types', () => {
       },
     }
 
+    const pingEvent: BackendEvent = { type: 'Ping' }
+
     expect(voteEvent.type).toBe('Vote')
     expect(createdEvent.type).toBe('PollCreated')
+    expect(pingEvent.type).toBe('Ping')
     if (voteEvent.type === 'Vote') {
       expect(voteEvent.data.optionIndex).toBe(0)
     }

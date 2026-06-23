@@ -27,7 +27,9 @@ import {
   subscribeToEvents,
   publishVoteEvent,
   publishPollCreatedEvent,
+  checkBackendHealth,
 } from "./services/backend";
+import { STELLAR_NETWORK } from "./services/contract";
 import { useTheme } from "./ThemeProvider";
 import type { WalletInfo, PollInfo, Feedback, TxStatus, SseStatus } from "./types";
 
@@ -96,6 +98,15 @@ export default function Dashboard() {
     | { type: "poll_created"; question: string; creator: string; time: Date }
   >>([]);
   const [sseStatus, setSseStatus] = useState<SseStatus>("disconnected");
+  const [backendOnline, setBackendOnline] = useState(false);
+
+  useEffect(() => {
+    checkBackendHealth().then((result) => setBackendOnline(!!result));
+    const id = setInterval(() => {
+      checkBackendHealth().then((result) => setBackendOnline(!!result));
+    }, 30000);
+    return () => clearInterval(id);
+  }, []);
 
   const refreshInterval = useRef<ReturnType<typeof setInterval>>(undefined);
   const actionLock = useRef(false);
@@ -439,7 +450,7 @@ export default function Dashboard() {
           <div className="max-w-6xl mx-auto px-6 h-12 flex items-center justify-center text-xs text-silver-blue">
             <a href="https://stellar.org" target="_blank" rel="noopener noreferrer" className="text-kraken-purple no-underline hover:underline font-medium">Stellar Network</a>
             <span className="mx-2">·</span>
-            Testnet · Soroban Contract
+          {STELLAR_NETWORK === "PUBLIC" ? "Mainnet" : "Testnet"} · Soroban Contract
           </div>
         </footer>
       </div>
@@ -511,8 +522,9 @@ export default function Dashboard() {
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-xs text-silver-blue">Network</span>
-                <span className="inline-flex items-center px-2 py-0.5 rounded-[6px] text-[11px] font-semibold bg-green/10 text-green-dark">
-                  Testnet
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[6px] text-[11px] font-semibold bg-green/10 text-green-dark">
+                  <span className={`w-1.5 h-1.5 rounded-full ${backendOnline ? "bg-green" : "bg-error"}`} />
+                  {STELLAR_NETWORK === "PUBLIC" ? "Mainnet" : "Testnet"}
                 </span>
               </div>
               <div className="flex items-center gap-2 pt-2.5 border-t border-border-gray mt-1">
@@ -863,9 +875,14 @@ export default function Dashboard() {
         <div className="max-w-6xl mx-auto px-6 h-12 flex items-center justify-center text-xs text-silver-blue">
           <a href="https://stellar.org" target="_blank" rel="noopener noreferrer" className="text-kraken-purple no-underline hover:underline font-medium">Stellar Network</a>
           <span className="mx-2">·</span>
-          Testnet · Soroban Contract
+          {STELLAR_NETWORK === "PUBLIC" ? "Mainnet" : "Testnet"} · Soroban Contract
           <span className="mx-2">·</span>
           <a href={buildExplorerUrl("account", publicKey)} target="_blank" rel="noopener noreferrer" className="text-kraken-purple no-underline hover:underline font-medium">My Account</a>
+          <span className="mx-2">·</span>
+          <span className={`inline-flex items-center gap-1 ${backendOnline ? "text-green-dark" : "text-error"}`}>
+            <span className={`w-1.5 h-1.5 rounded-full ${backendOnline ? "bg-green" : "bg-error"}`} />
+            Backend {backendOnline ? "Online" : "Offline"}
+          </span>
         </div>
       </footer>
     </div>

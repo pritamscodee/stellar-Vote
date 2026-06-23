@@ -18,7 +18,7 @@
 [![Clerk](https://img.shields.io/badge/Clerk-6C47FF?style=for-the-badge&logo=clerk&logoColor=fff)](https://clerk.com)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=fff)](https://vercel.com)
 [![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=fff)](https://render.com)
-[![Tests](https://img.shields.io/badge/Tests-14_Frontend_%7C_4_Contract-0?style=for-the-badge&logo=vitest&logoColor=fff)]()
+[![Tests](https://img.shields.io/badge/Tests-14_Frontend_%7C_7_Contract-0?style=for-the-badge&logo=vitest&logoColor=fff)]()
 
 [![Live Demo](https://img.shields.io/badge/LIVE_DEMO-7B00FF?style=for-the-badge&logo=vercel&logoColor=fff)](https://frontend-one-rose-14.vercel.app)
 [![Contract on Stellar Expert](https://img.shields.io/badge/Stellar_Expert-000000?style=for-the-badge&logo=stellar&logoColor=fff)](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID)
@@ -109,6 +109,26 @@
 <div align="center">
   <img src="frontend/screenshots/transaction-success.jpg" alt="Transaction Success" width="45%" />
   <img src="frontend/screenshots/transaction-result.jpg" alt="Transaction Result" width="45%" />
+</div>
+
+<div align="center">
+  <img src="frontend/screenshots/ci-pipeline.jpg" alt="CI/CD Pipeline" width="90%" />
+</div>
+
+<div align="center">
+  <img src="frontend/screenshots/mobile-responsive.jpeg" alt="Mobile Responsive UI" width="30%" />
+  <img src="frontend/screenshots/mobile-responsive-2.jpeg" alt="Mobile Responsive UI 2" width="30%" />
+</div>
+
+---
+
+## 📱 Mobile Responsive Design
+
+The dashboard and landing page are fully responsive across all device sizes:
+
+<div align="center">
+  <img src="frontend/screenshots/mobile-responsive.jpeg" alt="Mobile Dashboard" width="30%" />
+  <img src="frontend/screenshots/mobile-responsive-2.jpeg" alt="Mobile Landing" width="30%" />
 </div>
 
 ---
@@ -217,6 +237,10 @@ The project uses **GitHub Actions** for continuous integration. On every push to
 
 [![CI](https://github.com/pritamscodee/stellar-Pay/actions/workflows/ci.yml/badge.svg)](https://github.com/pritamscodee/stellar-Pay/actions/workflows/ci.yml)
 
+<div align="center">
+  <img src="frontend/screenshots/ci-pipeline.jpg" alt="CI/CD Pipeline" width="90%" />
+</div>
+
 ### Run Tests Locally
 
 ```bash
@@ -229,11 +253,12 @@ cd contracts/poll && cargo test
 
 | Test Suite | Tests | Status |
 |-----------|-------|--------|
-| Frontend types | 5 | ✅ |
-| Frontend backend service | 6 | ✅ |
-| Frontend helpers | 3 | ✅ |
+| Frontend types | 4 | ✅ |
+| Frontend backend service | 3 | ✅ |
+| Frontend helpers | 7 | ✅ |
 | Poll contract | 4 | ✅ |
-| **Total** | **18** | ✅ |
+| Reward contract | 3 | ✅ |
+| **Total** | **21** | ✅ |
 
 ---
 
@@ -359,7 +384,7 @@ All interactions are verifiable on Stellar Expert:
 - **Contract ID**: `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID`
 - **Init Tx Hash**: `1cc3507973ab0f7a5b2aa1e8f0bc772f1efa9a3697eb600d170f927129fd7a70`
 - **Deployer Account**: `GCZVEJZJNMPHXP3GKCHI33YUSN7BJTU3OWNDLSDEUQOO4UGRIQWHBEHK`
-- **Test Results**: [CI Pipeline](https://github.com/pritamscodee/stellar-Pay/actions) — 18 total tests (14 frontend + 4 contract)
+- **Test Results**: [CI Pipeline](https://github.com/pritamscodee/stellar-Pay/actions) — 21 total tests (14 frontend + 4 poll contract + 3 reward contract)
 - **GitHub Repo**: [pritamscodee/stellar-Pay](https://github.com/pritamscodee/stellar-Pay)
 - **Screenshots**: `frontend/screenshots/` folder
 - **Demo Video**: (coming soon)

@@ -1,6 +1,6 @@
-import type { BackendEvent, SseStatus } from "../types";
+import type { BackendEvent, BackendHealth, SseStatus } from "../types";
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
+export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
 
 export function subscribeToEvents(
   onEvent: (event: BackendEvent) => void,
@@ -24,6 +24,8 @@ export function subscribeToEvents(
           onEvent({ type: "Vote", data: data.data });
         } else if (data.type === "PollCreated") {
           onEvent({ type: "PollCreated", data: data.data });
+        } else if (data.type === "Ping") {
+          onEvent({ type: "Ping" });
         }
       } catch {
         // ignore parse errors
@@ -52,6 +54,16 @@ export function subscribeToEvents(
     eventSource?.close();
     onStatusChange?.("disconnected");
   };
+}
+
+export async function checkBackendHealth(): Promise<BackendHealth | null> {
+  try {
+    const res = await fetch(`${BACKEND_URL}/health`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
 }
 
 export async function publishVoteEvent(

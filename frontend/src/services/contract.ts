@@ -15,8 +15,11 @@ import { signTransaction } from "./wallets";
 import type { PollInfo, PollResults } from "../types";
 
 
-const RPC_URL = "https://soroban-testnet.stellar.org";
-const HORIZON_URL = "https://horizon-testnet.stellar.org";
+export const STELLAR_NETWORK = import.meta.env.VITE_STELLAR_NETWORK || "TESTNET";
+const networkPassphrase: string = STELLAR_NETWORK === "PUBLIC" ? Networks.PUBLIC : Networks.TESTNET;
+
+const RPC_URL = `https://soroban-${STELLAR_NETWORK === "PUBLIC" ? "mainnet" : "testnet"}.stellar.org`;
+const HORIZON_URL = `https://horizon-${STELLAR_NETWORK === "PUBLIC" ? "mainnet" : "testnet"}.stellar.org`;
 
 const server = new Horizon.Server(HORIZON_URL);
 const sorobanServer = new rpc.Server(RPC_URL);
@@ -35,7 +38,7 @@ async function simulateReadCall(
   const account = await server.loadAccount(DUMMY_KEY);
   const tx = new TransactionBuilder(account, {
     fee: BASE_FEE,
-    networkPassphrase: Networks.TESTNET,
+    networkPassphrase: networkPassphrase,
   })
     .addOperation(
       Operation.invokeContractFunction({
@@ -67,11 +70,11 @@ async function simulateAndSend(
   const simResult = simulated as any;
   const txBuilt = rpc.assembleTransaction(tx, simResult).build();
   const signedXdr = await signTransaction(txBuilt.toXDR(), {
-    networkPassphrase: Networks.TESTNET,
+    networkPassphrase: networkPassphrase,
     address: signer,
   });
 
-  const signedTx = TransactionBuilder.fromXDR(signedXdr, Networks.TESTNET) as any;
+  const signedTx = TransactionBuilder.fromXDR(signedXdr, networkPassphrase) as any;
   const response = await sorobanServer.sendTransaction(signedTx);
 
   if (response.status === "PENDING" || response.status === "DUPLICATE") {
@@ -124,7 +127,7 @@ export async function createPoll(
 
     const tx = new TransactionBuilder(account, {
       fee: BASE_FEE,
-      networkPassphrase: Networks.TESTNET,
+      networkPassphrase: networkPassphrase,
     })
       .addOperation(
         Operation.invokeContractFunction({
@@ -161,7 +164,7 @@ export async function castVote(
 
     const tx = new TransactionBuilder(account, {
       fee: BASE_FEE,
-      networkPassphrase: Networks.TESTNET,
+      networkPassphrase: networkPassphrase,
     })
       .addOperation(
         Operation.invokeContractFunction({

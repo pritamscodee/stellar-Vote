@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { SignInButton, SignUpButton } from "@clerk/clerk-react";
+import { SignInButton, SignUpButton, SignedIn, SignedOut } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
 import { useTheme } from "./ThemeProvider";
 
 const features = [
@@ -22,6 +23,7 @@ const features = [
 
 export default function LandingPage() {
   const { theme, toggle } = useTheme();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   return (
     <div className="min-h-screen bg-surface flex flex-col">
@@ -52,16 +54,26 @@ export default function LandingPage() {
               )}
             </button>
             <div className="hidden md:flex items-center gap-2">
-              <SignInButton mode="modal">
-                <button className="inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-kraken-purple-dark border border-kraken-purple-dark hover:bg-kraken-purple-subtle">
-                  Sign In
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <button className="inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-kraken-purple-dark border border-kraken-purple-dark hover:bg-kraken-purple-subtle">
+                    Sign In
+                  </button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <button className="inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-kraken-purple text-white hover:bg-kraken-purple-deep shadow-sm">
+                    Get Started
+                  </button>
+                </SignUpButton>
+              </SignedOut>
+              <SignedIn>
+                <button
+                  onClick={() => navigate("/dashboard")}
+                  className="inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-kraken-purple text-white hover:bg-kraken-purple-deep shadow-sm"
+                >
+                  Dashboard
                 </button>
-              </SignInButton>
-              <SignUpButton mode="modal">
-                <button className="inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-kraken-purple text-white hover:bg-kraken-purple-deep shadow-sm">
-                  Get Started
-                </button>
-              </SignUpButton>
+              </SignedIn>
             </div>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -80,16 +92,26 @@ export default function LandingPage() {
         </div>
         {mobileOpen && (
           <div className="md:hidden border-t border-border-gray bg-surface px-6 py-4 flex flex-col gap-3">
-            <SignInButton mode="modal">
-              <button className="w-full inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-kraken-purple-dark border border-kraken-purple-dark hover:bg-kraken-purple-subtle">
-                Sign In
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button className="w-full inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-kraken-purple-dark border border-kraken-purple-dark hover:bg-kraken-purple-subtle">
+                  Sign In
+                </button>
+              </SignInButton>
+              <SignUpButton mode="modal">
+                <button className="w-full inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-kraken-purple text-white hover:bg-kraken-purple-deep shadow-sm">
+                  Get Started
+                </button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <button
+                onClick={() => navigate("/dashboard")}
+                className="w-full inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-kraken-purple text-white hover:bg-kraken-purple-deep shadow-sm"
+              >
+                Dashboard
               </button>
-            </SignInButton>
-            <SignUpButton mode="modal">
-              <button className="w-full inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-kraken-purple text-white hover:bg-kraken-purple-deep shadow-sm">
-                Get Started
-              </button>
-            </SignUpButton>
+            </SignedIn>
           </div>
         )}
       </header>
@@ -120,19 +142,32 @@ export default function LandingPage() {
                 Create polls, cast votes, and track results in real-time — powered by Soroban smart contracts and the Stellar network.
               </p>
               <div className="flex items-center gap-3">
-                <SignUpButton mode="modal">
-                  <button className="inline-flex items-center justify-center gap-2 px-7 py-[14px] rounded-[12px] font-ui text-base font-medium cursor-pointer transition-all duration-150 bg-kraken-purple text-white hover:bg-kraken-purple-deep shadow-sm">
-                    Launch App
+                <SignedOut>
+                  <SignUpButton mode="modal">
+                    <button className="inline-flex items-center justify-center gap-2 px-7 py-[14px] rounded-[12px] font-ui text-base font-medium cursor-pointer transition-all duration-150 bg-kraken-purple text-white hover:bg-kraken-purple-deep shadow-sm">
+                      Launch App
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </button>
+                  </SignUpButton>
+                  <SignInButton mode="modal">
+                    <button className="inline-flex items-center justify-center px-7 py-[14px] rounded-[12px] font-ui text-base font-medium cursor-pointer transition-all duration-150 bg-surface text-near-black border border-border-gray hover:bg-gray-50 shadow-card">
+                      Sign In
+                    </button>
+                  </SignInButton>
+                </SignedOut>
+                <SignedIn>
+                  <button
+                    onClick={() => navigate("/dashboard")}
+                    className="inline-flex items-center justify-center gap-2 px-7 py-[14px] rounded-[12px] font-ui text-base font-medium cursor-pointer transition-all duration-150 bg-kraken-purple text-white hover:bg-kraken-purple-deep shadow-sm"
+                  >
+                    Go to Dashboard
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </button>
-                </SignUpButton>
-                <SignInButton mode="modal">
-                  <button className="inline-flex items-center justify-center px-7 py-[14px] rounded-[12px] font-ui text-base font-medium cursor-pointer transition-all duration-150 bg-surface text-near-black border border-border-gray hover:bg-gray-50 shadow-card">
-                    Sign In
-                  </button>
-                </SignInButton>
+                </SignedIn>
               </div>
             </div>
           </div>

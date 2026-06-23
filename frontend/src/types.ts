@@ -50,6 +50,12 @@ export interface PollCreatedEvent {
 
 export type BackendEvent =
   | { type: "Vote"; data: VoteEvent }
-  | { type: "PollCreated"; data: PollCreatedEvent };
+  | { type: "PollCreated"; data: PollCreatedEvent }
+  | { type: "Ping" };
 
 export type SseStatus = "connected" | "disconnected" | "reconnecting";
+
+export interface BackendHealth {
+  status: string;
+  service: string;
+}
