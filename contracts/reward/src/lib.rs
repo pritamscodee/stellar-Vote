@@ -97,7 +97,7 @@ mod tests {
         vec, Address, Env, String,
     };
 
-    fn deploy_poll(env: &Env) -> (Address, crate::poll_import::Client) {
+    fn deploy_poll(env: &Env) -> (Address, crate::poll_import::Client<'_>) {
         let owner = Address::generate(env);
         #[allow(deprecated)]
         let poll_id = env.register_contract_wasm(None::<&Address>, crate::poll_import::WASM);
@@ -114,7 +114,7 @@ mod tests {
         (poll_id, poll_client)
     }
 
-    fn deploy_reward(env: &Env) -> (Address, crate::RewardContractClient) {
+    fn deploy_reward(env: &Env) -> (Address, crate::RewardContractClient<'_>) {
         let reward_id = crate::RewardContract.register(env, None, ());
         let reward_client = crate::RewardContractClient::new(env, &reward_id);
         reward_client.initialize();
