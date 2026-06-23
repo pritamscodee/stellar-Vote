@@ -76,24 +76,20 @@ Runs on `http://localhost:3001`. Provides:
 - `GET /api/events` — SSE stream for real-time events
 - `GET /api/publish` — Publish events (used by frontend)
 
-### Deploy to Shuttle
+### Deploy to Render
 
-1. Install the Shuttle CLI:
-   ```bash
-   cargo install cargo-shuttle --locked
-   ```
-2. Login:
-   ```bash
-   cd backend
-   cargo shuttle login
-   ```
-3. Deploy:
-   ```bash
-   cargo shuttle deploy
-   ```
+1. Push the repo to GitHub
+2. In [Render Dashboard](https://dashboard.render.com), create a **New Web Service**
+3. Connect your GitHub repo
+4. Set:
+   - **Root Directory**: `backend`
+   - **Build Command**: `cargo build --release`
+   - **Start Command**: `./target/release/stellerpay-backend`
+5. Add env var: `PORT = 10000`
+6. Deploy
 
-After deployment, Shuttle will give you a URL like `https://stellerpay-backend.shuttle.app`.
-Copy it and set as `VITE_BACKEND_URL` in your Netlify environment variables, then redeploy.
+After deployment, copy the Render URL (e.g. `https://stellerpay-backend.onrender.com`)
+and set it as `VITE_BACKEND_URL` in your Netlify environment variables, then redeploy.
 
 ## Project Structure
 
