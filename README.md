@@ -20,6 +20,7 @@ Multi-wallet Stellar application with Clerk authentication.
 **Level 2 — Multi-Wallet + Soroban + Real-Time Events:**
 
 ![level2](frontend/screenshots/leev2.jpg)
+![pay2level2](frontend/screenshots/pay2level2.jpg)
 
 ---
 
