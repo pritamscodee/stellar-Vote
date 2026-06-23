@@ -11,9 +11,15 @@ Multi-wallet Stellar application with Clerk authentication.
 - **Transaction Status Tracking**: Pending → Success/Fail with explorer links
 - **Error Handling**: 3 error types — wallet not found, connection rejected, insufficient balance
 
-### Screenshot (Level 1)
+### Screenshots
+
+**Level 1:**
 
 ![dapp-success2](frontend/screenshots/dapp-success2.jpg)
+
+**Level 2 — Multi-Wallet + Soroban + Real-Time Events:**
+
+![level2](frontend/screenshots/leev2.jpg)
 
 ---
 
