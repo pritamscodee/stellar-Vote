@@ -94,6 +94,7 @@ Three error types handled:
 - **Live Demo**: https://stellerpay.netlify.app
 - **Contract Address**: `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID`
 - **Init TX Hash**: `1cc3507973ab0f7a5b2aa1e8f0bc772f1efa9a3697eb600d170f927129fd7a70`
+- **Deployer Account**: `GCZVEJZJNMPHXP3GKCHI33YUSN7BJTU3OWNDLSDEUQOO4UGRIQWHBEHK`
 - **Screenshot**: See `screenshots/` folder
 
 ## Tech Stack
