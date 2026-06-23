@@ -50,6 +50,8 @@ npm run build
 | **Landing Page** — Sign-in/sign-up with blockchain visuals | ![Landing Page](screenshots/landing-page.jpg) |
 | **Balance Displayed** — XLM balance with auto-refresh | ![Balance](screenshots/balance-displayed.jpg) |
 | **Wallet Connected** — Address, network badge, disconnect | ![Wallet Connected](screenshots/wallet-connected.jpg) |
+| **Transaction Success** — Successful send with hash and explorer link | ![Transaction Success](screenshots/transaction-success.jpg) |
+| **Transaction Result** — Feedback shown to the user | ![Transaction Result](screenshots/transaction-result.jpg) |
 
 ## Tech Stack
 
