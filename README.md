@@ -57,6 +57,21 @@ Runs on `http://localhost:3001`. Provides:
 - `GET /api/events` — SSE stream for real-time events
 - `GET /api/publish` — Publish events (used by frontend)
 
+### Deploy to Render
+
+1. Push the repo to GitHub
+2. In the [Render Dashboard](https://dashboard.render.com), create a **New Web Service**
+3. Connect your GitHub repo
+4. Set:
+   - **Root Directory**: `backend`
+   - **Build Command**: `cargo build --release`
+   - **Start Command**: `./target/release/stellerpay-backend`
+5. Add environment variable: `PORT = 10000`
+6. Deploy
+
+After deployment, copy the Render URL (e.g. `https://stellerpay-backend.onrender.com`)
+and set it as `VITE_BACKEND_URL` in your Netlify environment variables.
+
 ## Project Structure
 
 ```
