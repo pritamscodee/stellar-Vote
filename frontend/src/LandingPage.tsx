@@ -23,14 +23,14 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white flex flex-col">
       <header className="border-b border-border-gray bg-white/80 backdrop-blur-sm sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2.5 font-display text-[22px] font-bold tracking-[-0.5px] text-near-black">
+          <a href="/" className="flex items-center gap-2.5 font-display text-[22px] font-bold tracking-[-0.5px] text-near-black no-underline">
             <div className="w-8 h-8 bg-kraken-purple rounded-lg flex items-center justify-center text-white text-base shrink-0">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </div>
             StellarPay
-          </div>
+          </a>
           <div className="flex items-center gap-3">
             <SignInButton mode="modal">
               <button className="inline-flex items-center justify-center px-5 py-[9px] rounded-[12px] font-ui text-sm font-medium cursor-pointer transition-all duration-150 bg-white text-kraken-purple-dark border border-kraken-purple-dark hover:bg-kraken-purple-subtle">

@@ -136,6 +136,21 @@ Three error types handled:
 - **Deployer Account**: `GCZVEJZJNMPHXP3GKCHI33YUSN7BJTU3OWNDLSDEUQOO4UGRIQWHBEHK`
 - **Screenshots**: See `frontend/screenshots/` folder
 
+## On-Chain Transactions
+
+All contract interactions are verifiable on Stellar Expert:
+
+| # | Type | Tx Hash | Explorer | Date |
+|---|------|---------|----------|------|
+| 1 | **Contract Deploy** | `d36f72ac…` | [View ↗](https://stellar.expert/explorer/testnet/tx/d36f72acf0b6a347c2ad68fc5d95f0b3196b95faf4ff2ff84f47ebaeee6ba2a8) | 2026-06-23 09:15 UTC |
+| 2 | **Init Poll** | `1cc35079…` | [View ↗](https://stellar.expert/explorer/testnet/tx/1cc3507973ab0f7a5b2aa1e8f0bc772f1efa9a3697eb600d170f927129fd7a70) | 2026-06-23 09:17 UTC |
+| 3 | **Cast Vote** | `60b5477f…` | [View ↗](https://stellar.expert/explorer/testnet/tx/60b5477f6a1e167b79bdd90bdcaa5512607a150e33387fd07f2be1c0579f174b) | 2026-06-23 10:33 UTC |
+
+**Details:**
+1. **Contract Deploy** — Created contract `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID` from WASM
+2. **Init Poll** — Initialized poll with question *"What is the best blockchain?"* and 4 options (Stellar, Ethereum, Solana, Bitcoin)
+3. **Cast Vote** — Voted for option 0 (Stellar) on the deployed poll contract
+
 ## Tech Stack
 
 - React + TypeScript + Vite

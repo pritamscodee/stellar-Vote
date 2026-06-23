@@ -311,14 +311,14 @@ export default function Dashboard() {
       <div className="min-h-screen bg-[#f8f9fc] flex flex-col">
         <header className="bg-white border-b border-border-gray">
           <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-2.5 font-display text-[22px] font-bold tracking-[-0.5px] text-near-black">
+            <a href="/" className="flex items-center gap-2.5 font-display text-[22px] font-bold tracking-[-0.5px] text-near-black no-underline">
               <div className="w-8 h-8 bg-kraken-purple rounded-lg flex items-center justify-center text-white text-base shrink-0">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </div>
               StellarPay
-            </div>
+            </a>
             <div className="flex items-center gap-3">
               <span className="text-sm text-silver-blue hidden md:inline">
                 {user?.primaryEmailAddress?.emailAddress}
