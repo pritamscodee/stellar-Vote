@@ -83,6 +83,11 @@
 ## 🖼️ Screenshots
 
 <div align="center">
+  <img src="frontend/screenshots/inteli5.jpg" alt="Intel i5" width="45%" />
+  <img src="frontend/screenshots/asli-landing.jpg" alt="Asli Landing" width="45%" />
+</div>
+
+<div align="center">
   <img src="frontend/screenshots/landing-page.jpg" alt="Landing Page" width="45%" />
   <img src="frontend/screenshots/wallet-connected.jpg" alt="Wallet Connected" width="45%" />
 </div>
