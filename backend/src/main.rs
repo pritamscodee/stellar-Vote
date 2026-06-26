@@ -65,7 +65,7 @@ async fn main() {
 }
 
 async fn health() -> impl IntoResponse {
-    Json(serde_json::json!({ "status": "ok", "service": "stellerpay-backend" }))
+    Json(serde_json::json!({ "status": "ok", "service": "stellervote-backend" }))
 }
 
 async fn sse_handler(

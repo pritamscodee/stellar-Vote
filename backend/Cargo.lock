@@ -546,7 +546,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "stellerpay-backend"
+name = "stellervote-backend"
 version = "0.1.0"
 dependencies = [
  "async-stream",

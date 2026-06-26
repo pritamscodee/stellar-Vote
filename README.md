@@ -342,7 +342,7 @@ Both components are imported in `Dashboard.tsx` to improve production UX during 
 # 3. Set:
 #    Root Directory: backend
 #    Build: cargo build --release
-#    Start: ./target/release/stellerpay-backend
+#    Start: ./target/release/stellervote-backend
 #    Env: PORT = 10000
 # 4. Set VITE_BACKEND_URL in frontend env vars
 ```
