@@ -1,0 +1,34 @@
+frontend/src/Dashboard.tsx
+  s_15900ec82fa2dd::t_0dc9a86f8feba6 412
+  s_15900ec82fa2dd::t_beac574e18e85f 494
+  s_15900ec82fa2dd::t_49da099f453e2b 806
+  s_15900ec82fa2dd::t_3dbf2a6ed5849d 955
+  s_15900ec82fa2dd::t_a8fd58d49ca553 991
+  s_15900ec82fa2dd::t_9f105d35252d32 573
+  s_15900ec82fa2dd::t_c40bf455320963 560,567
+  s_15900ec82fa2dd::t_68eae75f424ffb 708
+  s_15900ec82fa2dd::t_7aea94beaeabf7 368,381
+  s_15900ec82fa2dd::t_a7aefb968ac5e2 817
+  s_15900ec82fa2dd::t_c7bf3c89ede7f4 586
+  s_15900ec82fa2dd::t_11aa1fa1e68dcb 997
+  s_15900ec82fa2dd::t_5ee253f4d57527 1061,1067
+frontend/src/components/MistralChat.tsx
+  s_15900ec82fa2dd::t_4d6690d31501fa 139,146
+  s_15900ec82fa2dd::t_739ba561d1c394 133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "6897fcc5124dc1ab76784fcb4c8dac763fe0b211",
+  "prompts": {},
+  "sessions": {
+    "s_15900ec82fa2dd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f64c88daffeDjTBuMzcadbVdq",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
