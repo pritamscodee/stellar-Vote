@@ -769,7 +769,7 @@ export default function Dashboard() {
 
           <AnimatedItem>
             <Tabs defaultValue="poll" className="w-full">
-              <TabsList className="mb-6">
+              <TabsList className="mb-6 w-full flex-row flex-nowrap overflow-x-auto">
                 <TabsTrigger value="poll">
                   <Vote className="w-3.5 h-3.5 mr-1.5" />
                   Live Poll
