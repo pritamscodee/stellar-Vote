@@ -1,0 +1,31 @@
+frontend/src/Dashboard.tsx
+  s_15900ec82fa2dd::t_2e368b8a1a46f2 1036
+  s_15900ec82fa2dd::t_2d2cf437c5ecbf 934
+  s_15900ec82fa2dd::t_82c333c62e3f48 458,1095,1115,1144
+  s_15900ec82fa2dd::t_e43bfb293c88dd 881
+  s_15900ec82fa2dd::t_9eb3adfa757392 825
+  s_15900ec82fa2dd::t_28ecd984fe8cfe 906
+  s_15900ec82fa2dd::t_72db047f3b8078 1028
+frontend/src/components/ui/tabs.tsx
+  s_15900ec82fa2dd::t_5b34ae1f2133da 59
+frontend/src/LandingPage.tsx
+  s_15900ec82fa2dd::t_330b3474a28a64 142
+  s_15900ec82fa2dd::t_aef1c90f41f081 108
+  s_15900ec82fa2dd::t_f192fd7c0d2a18 375
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "252b17b1d6328a11f3505ceec9658e0d8304eca6",
+  "prompts": {},
+  "sessions": {
+    "s_15900ec82fa2dd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f64c88daffeDjTBuMzcadbVdq",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
