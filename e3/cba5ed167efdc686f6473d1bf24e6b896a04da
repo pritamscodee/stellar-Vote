@@ -1,0 +1,22 @@
+.github/workflows/ci.yml
+  s_5b4181b6b5253c::t_1f7e8b51c6abe7 47,65
+  s_5b4181b6b5253c::t_3a053c697e411a 50,70-71
+.gitlab-ci.yml
+  s_5b4181b6b5253c::t_5678721a1f4c2f 64,67,76,78-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "e3cba5ed167efdc686f6473d1bf24e6b896a04da",
+  "prompts": {},
+  "sessions": {
+    "s_5b4181b6b5253c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f5a580e8ffeJr9oB4h6OfErHp",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
