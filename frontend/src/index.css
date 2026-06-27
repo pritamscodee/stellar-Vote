@@ -16,6 +16,26 @@
   --color-surface: #ffffff;
   --color-app-bg: #f8f9fc;
 
+  --color-background: var(--color-app-bg);
+  --color-foreground: var(--color-near-black);
+  --color-card: var(--color-surface);
+  --color-card-foreground: var(--color-near-black);
+  --color-popover: var(--color-surface);
+  --color-popover-foreground: var(--color-near-black);
+  --color-primary: var(--color-kraken-purple);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f1f1f4;
+  --color-secondary-foreground: var(--color-near-black);
+  --color-muted: #f1f1f4;
+  --color-muted-foreground: var(--color-silver-blue);
+  --color-accent: var(--color-kraken-purple-subtle);
+  --color-accent-foreground: var(--color-kraken-purple-dark);
+  --color-destructive: var(--color-error);
+  --color-destructive-foreground: #ffffff;
+  --color-border: var(--color-border-gray);
+  --color-input: var(--color-border-gray);
+  --color-ring: var(--color-kraken-purple);
+
   --font-display: "Kraken-Brand", "IBM Plex Sans", Helvetica, Arial, sans-serif;
   --font-ui: "Kraken-Product", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: "SF Mono", "Fira Code", monospace;
@@ -44,6 +64,26 @@
   --color-error-bg: rgba(239, 68, 68, 0.1);
   --color-surface: #13131e;
   --color-app-bg: #0a0a12;
+
+  --color-background: var(--color-app-bg);
+  --color-foreground: var(--color-near-black);
+  --color-card: var(--color-surface);
+  --color-card-foreground: var(--color-near-black);
+  --color-popover: var(--color-surface);
+  --color-popover-foreground: var(--color-near-black);
+  --color-primary: var(--color-kraken-purple);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #1c1c2e;
+  --color-secondary-foreground: var(--color-near-black);
+  --color-muted: #1c1c2e;
+  --color-muted-foreground: var(--color-silver-blue);
+  --color-accent: var(--color-kraken-purple-subtle);
+  --color-accent-foreground: var(--color-kraken-purple);
+  --color-destructive: var(--color-error);
+  --color-destructive-foreground: #ffffff;
+  --color-border: var(--color-border-gray);
+  --color-input: var(--color-border-gray);
+  --color-ring: var(--color-kraken-purple);
 
   --shadow-card: rgba(0, 0, 0, 0.4) 0px 4px 24px;
   --shadow-micro: rgba(0, 0, 0, 0.3) 0px 1px 4px;
