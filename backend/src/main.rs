@@ -7,7 +7,11 @@ use axum::{
 };
 use futures::stream::Stream;
 use serde::{Deserialize, Serialize};
-use std::{sync::Arc, time::Duration};
+use std::{
+    collections::VecDeque,
+    sync::{Arc, Mutex},
+    time::Duration,
+};
 use tokio::sync::broadcast;
 use tower_http::cors::CorsLayer;
 use tracing_subscriber;
@@ -38,12 +42,6 @@ pub enum EventPayload {
     Ping,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
-pub struct ChatMessage {
-    pub role: String,
-    pub content: String,
-}
-
 #[derive(Clone, Debug, Deserialize)]
 pub struct ChatRequest {
     pub message: String,
@@ -54,17 +52,32 @@ pub struct ChatResponse {
     pub reply: String,
 }
 
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct FeedbackEntry {
+    pub rating: String,
+    pub message: String,
+    pub email: Option<String>,
+    pub url: Option<String>,
+    pub timestamp: String,
+}
+
 #[derive(Clone)]
 pub struct AppState {
     pub tx: broadcast::Sender<EventPayload>,
     pub http_client: reqwest::Client,
+    pub feedback: Arc<Mutex<VecDeque<FeedbackEntry>>>,
 }
 
 const SYSTEM_PROMPT: &str = "You are StellarVote AI, a helpful assistant for the StellarVote dApp. \
 Your role is to help users with questions about Stellar, Web3, Soroban smart contracts, \
 and the StellarVote platform. Be concise, friendly, and informative. \
-If users provide feedback about the app, thank them and acknowledge it. \
-Keep responses brief (2-4 sentences).";
+Keep responses brief (2-4 sentences). \
+\
+When a user provides feedback (bug report, feature idea, or general feedback), \
+thank them and tell them their feedback has been recorded. Then output a single line \
+starting with `[FEEDBACK_SAVED]` containing a JSON object with keys: rating (\"bug\"|\"idea\"|\"general\"), \
+message (their feedback text). Only include this line if they explicitly gave feedback \
+about the app. Example: [FEEDBACK_SAVED]{\"rating\":\"bug\",\"message\":\"The wallet disconnect button is hard to find.\"}";
 
 #[tokio::main]
 async fn main() {
@@ -72,13 +85,15 @@ async fn main() {
 
     let (tx, _) = broadcast::channel::<EventPayload>(100);
     let http_client = reqwest::Client::new();
-    let state = Arc::new(AppState { tx, http_client });
+    let feedback = Arc::new(Mutex::new(VecDeque::with_capacity(100)));
+    let state = Arc::new(AppState { tx, http_client, feedback });
 
     let app = Router::new()
         .route("/health", get(health))
         .route("/api/events", get(sse_handler))
         .route("/api/publish", get(publish_handler))
         .route("/api/chat", post(chat_handler))
+        .route("/api/feedback", post(submit_feedback).get(get_feedback))
         .layer(CorsLayer::permissive())
         .with_state(state);
 
@@ -158,6 +173,40 @@ async fn publish_handler(
     (StatusCode::OK, "published").into_response()
 }
 
+#[derive(Deserialize)]
+pub struct FeedbackInput {
+    rating: String,
+    message: String,
+    email: Option<String>,
+}
+
+async fn submit_feedback(
+    State(state): State<Arc<AppState>>,
+    Json(input): Json<FeedbackInput>,
+) -> impl IntoResponse {
+    let entry = FeedbackEntry {
+        rating: input.rating,
+        message: input.message,
+        email: input.email,
+        url: None,
+        timestamp: chrono::Utc::now().to_rfc3339(),
+    };
+    let mut store = state.feedback.lock().unwrap();
+    if store.len() >= 100 {
+        store.pop_front();
+    }
+    store.push_back(entry.clone());
+    (StatusCode::CREATED, Json(serde_json::json!({ "saved": true })))
+}
+
+async fn get_feedback(
+    State(state): State<Arc<AppState>>,
+) -> impl IntoResponse {
+    let store = state.feedback.lock().unwrap();
+    let items: Vec<FeedbackEntry> = store.iter().rev().cloned().collect();
+    (StatusCode::OK, Json(items))
+}
+
 async fn chat_handler(
     State(state): State<Arc<AppState>>,
     Json(req): Json<ChatRequest>,
@@ -196,10 +245,30 @@ async fn chat_handler(
     {
         Ok(resp) => {
             if let Ok(json) = resp.json::<serde_json::Value>().await {
-                let reply = json["choices"][0]["message"]["content"]
+                let mut reply = json["choices"][0]["message"]["content"]
                     .as_str()
                     .unwrap_or("Sorry, I couldn't process that.")
                     .to_string();
+
+                if let Some(fb_line) = reply.lines().find(|l| l.starts_with("[FEEDBACK_SAVED]")) {
+                    let json_str = fb_line.trim_start_matches("[FEEDBACK_SAVED]");
+                    if let Ok(fb) = serde_json::from_str::<serde_json::Value>(json_str) {
+                        let entry = FeedbackEntry {
+                            rating: fb["rating"].as_str().unwrap_or("general").to_string(),
+                            message: fb["message"].as_str().unwrap_or_default().to_string(),
+                            email: fb["email"].as_str().map(|s| s.to_string()),
+                            url: None,
+                            timestamp: chrono::Utc::now().to_rfc3339(),
+                        };
+                        if !entry.message.is_empty() {
+                            let mut store = state.feedback.lock().unwrap();
+                            if store.len() >= 100 { store.pop_front(); }
+                            store.push_back(entry);
+                        }
+                    }
+                    reply = reply.lines().filter(|l| !l.starts_with("[FEEDBACK_SAVED]")).collect::<Vec<_>>().join("\n");
+                }
+
                 (StatusCode::OK, Json(ChatResponse { reply })).into_response()
             } else {
                 (

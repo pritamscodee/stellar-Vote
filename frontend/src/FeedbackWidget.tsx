@@ -8,6 +8,8 @@ const RATINGS: { value: FeedbackRating; label: string; icon: string }[] = [
   { value: "general", label: "General", icon: "💬" },
 ];
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
+
 export default function FeedbackWidget() {
   const [open, setOpen] = useState(false);
   const [rating, setRating] = useState<FeedbackRating>("general");
@@ -19,26 +21,41 @@ export default function FeedbackWidget() {
   const handleSubmit = useCallback(async () => {
     if (!message.trim()) return;
     setSending(true);
-    const payload = {
-      rating,
-      message: message.trim(),
-      email: email.trim() || undefined,
-      url: window.location.href,
-      timestamp: new Date().toISOString(),
-    };
     try {
-      const saved = JSON.parse(localStorage.getItem("stellar_vote_feedback") || "[]");
-      saved.push(payload);
-      localStorage.setItem("stellar_vote_feedback", JSON.stringify(saved));
-      setSubmitted(true);
-      setTimeout(() => {
-        setOpen(false);
-        setSubmitted(false);
-        setMessage("");
-        setEmail("");
-      }, 2000);
+      const res = await fetch(`${BACKEND_URL}/api/feedback`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          rating,
+          message: message.trim(),
+          email: email.trim() || undefined,
+        }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setOpen(false);
+          setSubmitted(false);
+          setMessage("");
+          setEmail("");
+        }, 2000);
+      }
     } catch {
-      // fail silently
+      // fallback to localStorage
+      try {
+        const saved = JSON.parse(localStorage.getItem("stellar_vote_feedback") || "[]");
+        saved.push({ rating, message: message.trim(), email: email.trim() || undefined, timestamp: new Date().toISOString() });
+        localStorage.setItem("stellar_vote_feedback", JSON.stringify(saved));
+        setSubmitted(true);
+        setTimeout(() => {
+          setOpen(false);
+          setSubmitted(false);
+          setMessage("");
+          setEmail("");
+        }, 2000);
+      } catch {
+        // fail silently
+      }
     } finally {
       setSending(false);
     }
@@ -48,7 +65,7 @@ export default function FeedbackWidget() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-kraken-purple text-white shadow-lg hover:bg-kraken-purple-deep transition-all duration-200 cursor-pointer flex items-center justify-center border-none"
+        className="fixed bottom-24 right-6 z-50 w-12 h-12 rounded-full bg-kraken-purple text-white shadow-lg hover:bg-kraken-purple-deep transition-all duration-200 cursor-pointer flex items-center justify-center border-none"
         aria-label="Send feedback"
       >
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -59,7 +76,7 @@ export default function FeedbackWidget() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-80 bg-surface border border-border-gray rounded-[16px] shadow-xl overflow-hidden">
+    <div className="fixed bottom-24 right-6 z-50 w-80 bg-surface border border-border-gray rounded-[16px] shadow-xl overflow-hidden">
       <div className="flex items-center justify-between px-4 py-3 border-b border-border-gray">
         <span className="font-ui text-sm font-bold text-near-black">Send Feedback</span>
         <button
