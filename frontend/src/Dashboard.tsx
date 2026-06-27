@@ -41,7 +41,6 @@ import {
 } from "@/components/animations";
 
 const CONTRACT_ID = import.meta.env.VITE_CONTRACT_ID || "CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID";
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "https://stellar-pay-eia0.onrender.com";
 
 function unixNow(): number {
   return Math.floor(Date.now() / 1000);
