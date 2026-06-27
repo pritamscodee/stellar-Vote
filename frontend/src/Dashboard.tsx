@@ -652,9 +652,9 @@ export default function Dashboard() {
           </AnimatedItem>
 
           <AnimatedItem>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               <div className="md:col-span-1">
-                  <GlassCard className="p-5">
+                  <GlassCard className="p-5 h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <Wallet className="h-5 w-5" />
@@ -715,8 +715,8 @@ export default function Dashboard() {
                 </GlassCard>
               </div>
 
-              <div className="md:col-span-3">
-                <GlassCard className="p-5">
+              <div className="md:col-span-2">
+                <GlassCard className="p-5 h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-teal/10 text-accent-teal">
                       <Award className="h-5 w-5" />
@@ -796,10 +796,10 @@ export default function Dashboard() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.25 }}
-                    className="grid grid-cols-1 lg:grid-cols-5 gap-6"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-6"
                   >
-                    <div className="lg:col-span-3">
-                      <GlassCard className="p-6">
+                    <div>
+                      <GlassCard className="p-6 h-full">
                         <div className="flex items-start justify-between mb-5">
                           <div>
                             <div className="flex items-center gap-2.5 mb-1">
@@ -930,8 +930,8 @@ export default function Dashboard() {
                       </GlassCard>
                     </div>
 
-                    <div className="lg:col-span-2 flex flex-col gap-4">
-                      <GlassCard className="p-5">
+                    <div className="flex flex-col gap-4 h-full">
+                      <GlassCard className="p-5 flex-1">
                         <div className="flex items-center gap-2.5 mb-4">
                           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-teal/10">
                             <Activity className="h-4 w-4 text-accent-teal" />
@@ -990,7 +990,7 @@ export default function Dashboard() {
                         )}
                       </GlassCard>
 
-                      <GlassCard className="p-5">
+                      <GlassCard className="p-5 flex-1">
                         <div className="flex items-center gap-2.5 mb-4">
                           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
                             <BarChart3 className="h-4 w-4 text-primary" />
