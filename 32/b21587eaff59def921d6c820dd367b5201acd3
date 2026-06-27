@@ -1,0 +1,19 @@
+frontend/src/Dashboard.tsx
+  s_15900ec82fa2dd::t_aab41605abe2c3 799,801,803,805-808,812,820,845-847,855,869,879-881,890,933-996,1000,1002,1005-1008,1010-1012,1014-1016,1018-1020,1022-1024,1026-1028,1030-1032,1034-1036
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "32b21587eaff59def921d6c820dd367b5201acd3",
+  "prompts": {},
+  "sessions": {
+    "s_15900ec82fa2dd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f64c88daffeDjTBuMzcadbVdq",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
