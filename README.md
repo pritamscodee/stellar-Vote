@@ -1,8 +1,9 @@
+
 <div align="center">
 
 # ⚡ StellarVote
 
-<img width="1905" height="872" alt="asli landign" src="https://github.com/user-attachments/assets/cf0901f4-d87e-4821-9709-1fa856f3c37d" />
+<img width="1901" height="868" alt="lanidng page1" src="https://github.com/user-attachments/assets/a5d7ff3e-ff4e-4a31-8d40-d64b9f310b48" />
 
 
 
