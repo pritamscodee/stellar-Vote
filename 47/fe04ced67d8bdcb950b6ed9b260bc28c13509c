@@ -1,0 +1,29 @@
+backend/src/main.rs
+  s_15900ec82fa2dd::t_de09e1a1fe0d86 176-205,207-209
+  s_15900ec82fa2dd::t_df484b880c192a 248,252-271
+  s_15900ec82fa2dd::t_265f4f971e6a47 206
+  s_15900ec82fa2dd::t_f64dac14983446 55-63,68
+  s_15900ec82fa2dd::t_5b6c9c76a40b04 74-80
+  s_15900ec82fa2dd::t_9a95799e2f21ec 88-89,96
+  s_15900ec82fa2dd::t_72fe028fdb4502 10-14
+frontend/src/FeedbackWidget.tsx
+  s_15900ec82fa2dd::t_55b5f57faa53a9 11-12,25-42,44-58,68,79
+backend/Cargo.lock
+  s_15900ec82fa2dd::t_0a143ed4a256fa 5-13,42-47,140-153,516-539,770-778,1186,1580-1614
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "47fe04ced67d8bdcb950b6ed9b260bc28c13509c",
+  "prompts": {},
+  "sessions": {
+    "s_15900ec82fa2dd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f64c88daffeDjTBuMzcadbVdq",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
