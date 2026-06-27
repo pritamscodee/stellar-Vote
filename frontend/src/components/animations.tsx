@@ -113,7 +113,7 @@ export function MetricCard({
       whileHover={{ y: -3 }}
       transition={{ duration: 0.2 }}
       className={cn(
-        "group relative overflow-hidden rounded-2xl border border-hairline/50 bg-surface-card/60 p-5 backdrop-blur transition-all hover:border-hairline hover:shadow-elevated",
+        "group relative overflow-hidden rounded-2xl border border-hairline/50 bg-surface-card/85 p-5 backdrop-blur-sm transition-all hover:border-hairline hover:shadow-elevated",
         className
       )}
     >
@@ -139,7 +139,7 @@ export function MetricCard({
           )}
         </div>
         <div className="space-y-0.5">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-body/80">
             {label}
           </p>
           <p className="text-2xl font-semibold tracking-tight text-ink">
@@ -162,7 +162,7 @@ export function GlassCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
       className={cn(
-        "group relative overflow-hidden rounded-2xl border border-hairline/50 bg-surface-card/60 p-6 backdrop-blur transition-all duration-300 hover:border-hairline hover:shadow-elevated",
+        "group relative overflow-hidden rounded-2xl border border-hairline/50 bg-surface-card/85 p-6 backdrop-blur-sm transition-all duration-300 hover:border-hairline hover:shadow-elevated",
         className
       )}
       {...props}

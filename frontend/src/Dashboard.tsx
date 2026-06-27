@@ -607,7 +607,7 @@ export default function Dashboard() {
             <div className="flex items-center gap-2 mb-1">
               <Badge
                 variant="outline"
-                className="inline-flex items-center gap-2 rounded-full border-hairline/50 bg-surface-card/55 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-muted backdrop-blur"
+                className="inline-flex items-center gap-2 rounded-full border-hairline/50 bg-surface-card/85 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-body/80 backdrop-blur-sm"
               >
                 <motion.span
                   animate={{ scale: [1, 1.3, 1] }}
@@ -620,7 +620,7 @@ export default function Dashboard() {
             <h1 className="font-display text-[28px] md:text-[34px] font-normal tracking-[-0.5px] text-ink">
               Polling Overview
             </h1>
-            <p className="text-muted text-[15px] font-ui max-w-2xl">
+            <p className="text-body text-[15px] font-ui max-w-2xl">
               Monitor on-chain polls, cast votes, and track real-time activity from the Soroban smart contract.
             </p>
           </AnimatedItem>
@@ -664,21 +664,21 @@ export default function Dashboard() {
           <AnimatedItem>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
               <div className="md:col-span-1">
-                <GlassCard className="p-5">
+                  <GlassCard className="p-5">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <Wallet className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-body/80">
                         Wallet
                       </p>
-                      <p className="text-xs text-muted-soft">Connected account</p>
+                      <p className="text-xs text-body/70">Connected account</p>
                     </div>
                   </div>
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted font-ui">Address</span>
+                      <span className="text-xs text-body/80 font-ui">Address</span>
                       <div className="flex items-center gap-1.5">
                         <motion.span
                           animate={{ scale: [1, 1.3, 1] }}
@@ -691,13 +691,13 @@ export default function Dashboard() {
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted font-ui">Balance</span>
+                      <span className="text-xs text-body/80 font-ui">Balance</span>
                       <span className="text-sm font-mono font-semibold text-ink font-mono">
                         {balance !== null ? `${balance} XLM` : "—"}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted font-ui">Network</span>
+                      <span className="text-xs text-body/80 font-ui">Network</span>
                       <Badge variant="outline" className="text-[11px] font-mono">
                         <motion.span
                           animate={backendOnline ? { scale: [1, 1.3, 1] } : {}}
@@ -712,7 +712,7 @@ export default function Dashboard() {
                       <a href={buildExplorerUrl("account", publicKey)} target="_blank" rel="noopener noreferrer" className="text-[11px] text-primary underline font-medium font-ui flex items-center gap-1">
                         Explorer <ExternalLink className="h-3 w-3" />
                       </a>
-                      <span className="text-hairline">·</span>
+                      <span className="text-muted-soft">·</span>
                       <motion.button
                         whileHover={{ x: 2 }}
                         className="text-[11px] text-muted hover:text-error transition-colors cursor-pointer bg-transparent border-none font-medium font-ui flex items-center gap-1"
@@ -732,10 +732,10 @@ export default function Dashboard() {
                       <Award className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-body/80">
                         Poll Contract
                       </p>
-                      <p className="text-xs text-muted-soft">Deployed on Stellar testnet</p>
+                      <p className="text-xs text-body/70">Deployed on Stellar testnet</p>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
@@ -951,7 +951,7 @@ export default function Dashboard() {
                             title={sseLabel}
                           />
                         </div>
-                        <p className="text-xs text-muted-soft mb-5">Real-time SSE feed</p>
+                        <p className="text-xs text-body/70 mb-5">Real-time SSE feed</p>
 
                         {liveEvents.length === 0 ? (
                           <motion.div
@@ -963,7 +963,7 @@ export default function Dashboard() {
                               <Clock className="w-5 h-5 text-muted-soft" />
                             </div>
                             <p className="text-xs text-muted font-ui">No recent activity</p>
-                            <p className="text-xs text-muted-soft mt-0.5 font-ui">Be the first to vote!</p>
+                            <p className="text-xs text-body/70 mt-0.5 font-ui">Be the first to vote!</p>
                           </motion.div>
                         ) : (
                           <div className="relative">
@@ -1038,7 +1038,7 @@ export default function Dashboard() {
                           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted">
                             All Activity
                           </p>
-                          <p className="text-xs text-muted-soft">Complete event history from the SSE stream</p>
+                          <p className="text-xs text-body/70">Complete event history from the SSE stream</p>
                         </div>
                       </div>
 
