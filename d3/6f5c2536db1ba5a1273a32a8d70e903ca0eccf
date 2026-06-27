@@ -1,0 +1,31 @@
+backend/src/main.rs
+  s_5b4181b6b5253c::t_d63835593c0817 178
+  s_5b4181b6b5253c::t_7371d1610060bf 447
+  s_5b4181b6b5253c::t_043d6a87d4b287 471,473-474
+  s_5b4181b6b5253c::t_cd7be228ef6afb 106
+  s_5b4181b6b5253c::t_b3e2c14d5203f0 273
+  s_5b4181b6b5253c::t_c3c6311bf71646 22
+  s_5b4181b6b5253c::t_4119d49d3bb90a 161-164
+  s_5b4181b6b5253c::t_c5f395f680d0fe 182
+  s_5b4181b6b5253c::t_2dafe427ffe657 2-3
+backend/Cargo.lock
+  s_5b4181b6b5253c::t_a594ed2b81ea59 1375,1377,1381,1383,1492-1502
+frontend/package-lock.json
+  s_5b4181b6b5253c::t_0c0f77a820f29a 935-977,1582-1596,1749-1763,1919-1941,6113-6127,7349-7363,8996-9010,9368-9382,9504-9518,12635-12649
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "d36f5c2536db1ba5a1273a32a8d70e903ca0eccf",
+  "prompts": {},
+  "sessions": {
+    "s_5b4181b6b5253c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f5a580e8ffeJr9oB4h6OfErHp",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
