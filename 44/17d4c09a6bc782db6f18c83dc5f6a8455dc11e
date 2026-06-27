@@ -1,0 +1,27 @@
+frontend/src/index.css
+  s_15900ec82fa2dd::t_d20edb98ae8e31 19-38,68-75,77,79-80,82-86
+  s_15900ec82fa2dd::t_fae07426ceb955 76
+  s_15900ec82fa2dd::t_1727c308c5b4e9 78
+  s_15900ec82fa2dd::t_7f7563c6e31663 81
+  s_15900ec82fa2dd::t_807b994a726503 87
+frontend/vite.config.ts
+  s_15900ec82fa2dd::t_19eeff535aaff4 4
+frontend/src/lib/utils.ts
+  s_15900ec82fa2dd::t_3185e5e1eba34b 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "4417d4c09a6bc782db6f18c83dc5f6a8455dc11e",
+  "prompts": {},
+  "sessions": {
+    "s_15900ec82fa2dd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f64c88daffeDjTBuMzcadbVdq",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
