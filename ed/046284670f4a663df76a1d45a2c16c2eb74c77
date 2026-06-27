@@ -1,0 +1,33 @@
+.github/workflows/ci.yml
+  s_5b4181b6b5253c::t_2b0ff744d4cce8 50,70-71
+  s_5b4181b6b5253c::t_23a96ce232e5e1 67
+  s_5b4181b6b5253c::t_c919315cb90c4f 86
+  s_5b4181b6b5253c::t_66647b05fd189a 49
+  s_5b4181b6b5253c::t_5ae787da80f3bf 31
+  s_5b4181b6b5253c::t_f0e8ddd5b360f9 9-12
+  s_5b4181b6b5253c::t_d4a130bc25cf87 47,65
+backend/src/main.rs
+  s_5b4181b6b5253c::t_54a5dadae74587 196
+  s_5b4181b6b5253c::t_3321618c2e10a1 178,180,182-188
+  s_5b4181b6b5253c::t_19906c6187b2c2 3
+  s_5b4181b6b5253c::t_7a08eb262a8353 268
+  s_5b4181b6b5253c::t_a31220146ae946 4-5,12,14,17-24,55,59-69,86-155,161-164,179,181,189-191,197-199,201-204,207-248,251,254,258-267,269-274,311,313-349,353,363,371,386,390-392,432-434,441,449-452,457-459,462-497,499-500
+.gitlab-ci.yml
+  s_5b4181b6b5253c::t_592b6c4bb9c990 64,67,76,78-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "ed046284670f4a663df76a1d45a2c16c2eb74c77",
+  "prompts": {},
+  "sessions": {
+    "s_5b4181b6b5253c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f5a580e8ffeJr9oB4h6OfErHp",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
