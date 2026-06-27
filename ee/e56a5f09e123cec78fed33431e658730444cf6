@@ -1,0 +1,19 @@
+frontend/src/Dashboard.tsx
+  s_15900ec82fa2dd::t_ebc8cc424ee5ef 772
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "eee56a5f09e123cec78fed33431e658730444cf6",
+  "prompts": {},
+  "sessions": {
+    "s_15900ec82fa2dd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f64c88daffeDjTBuMzcadbVdq",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
