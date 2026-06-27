@@ -1,0 +1,22 @@
+frontend/src/App.tsx
+  s_15900ec82fa2dd::t_f693010a3bd4b7 1-2,7-14
+  s_15900ec82fa2dd::t_8521c3e29bd78f 15-16
+frontend/src/services/analytics.ts
+  s_15900ec82fa2dd::t_ebe93a35cd3a24 1-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "4f9fdced003965cc43e3acf59a2275c8b7540739",
+  "prompts": {},
+  "sessions": {
+    "s_15900ec82fa2dd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f64c88daffeDjTBuMzcadbVdq",
+        "model": "unknown"
+      },
+      "human_author": "pritamscodee <codewithpritam29@gmail.com>"
+    }
+  }
+}
