@@ -31,6 +31,7 @@ import {
 } from "./services/backend";
 import { STELLAR_NETWORK } from "./services/contract";
 import { useTheme } from "./ThemeProvider";
+import { captureWalletConnected, captureVote, capturePollCreated, identifyUser } from "./services/analytics";
 import type { WalletInfo, PollInfo, Feedback, TxStatus, SseStatus } from "./types";
 
 const CONTRACT_ID = import.meta.env.VITE_CONTRACT_ID || "CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID";
@@ -220,6 +221,7 @@ export default function Dashboard() {
       const address = await getAddress();
       if (!address) throw new WalletError("WALLET_NOT_FOUND", "No address returned");
       setPublicKey(address);
+      captureWalletConnected(address, "StellarWalletsKit");
     } catch (e) {
       if (e instanceof WalletError) {
         setFeedback({ type: "error", message: getWalletErrorLabel(e.code) });
@@ -264,6 +266,7 @@ export default function Dashboard() {
         setFeedback({ type: "success", message: "Vote submitted (awaiting confirmation)", txHash: result.txHash });
       }
       setAlreadyVoted(true);
+      captureVote(publicKey, optionIndex);
 
       publishVoteEvent(CONTRACT_ID, publicKey, optionIndex, unixNow(), result.txHash);
 
@@ -307,6 +310,7 @@ export default function Dashboard() {
         setFeedback({ type: "success", message: "Poll created (awaiting confirmation)", txHash: result.txHash });
       }
 
+      capturePollCreated(publicKey, newQuestion);
       publishPollCreatedEvent(CONTRACT_ID, newQuestion, publicKey, deadline, result.txHash);
 
       setPoll({ question: newQuestion, options: filteredOptions, deadline, owner: publicKey, totalVotes: 0 });
