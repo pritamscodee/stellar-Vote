@@ -13,7 +13,7 @@ interface ChatMessage {
 const WELCOME: ChatMessage = {
   role: "assistant",
   content:
-    "Hi! I'm StellarVote AI. Ask me anything about Web3, Stellar, Soroban, or share your feedback about the app!",
+    "Hi! I'm StellarVote AI. Ask me anything about Web3, Stellar, or Soroban — or share feedback about the app (bugs, ideas, general thoughts) and I'll record it!",
 };
 
 const STORAGE_KEY = "stellar_vote_chat_history";
@@ -175,6 +175,35 @@ export default function MistralChat() {
             </div>
           </motion.div>
         ))}
+
+        {/* Suggestion chips — shown only on fresh/welcome-only chat */}
+        {messages.length === 1 && !sending && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col gap-1.5 pt-1"
+          >
+            <p className="text-[10px] text-muted-soft font-ui px-0.5">Quick suggestions:</p>
+            {[
+              { label: "🐛  Report a bug", text: "I found a bug: " },
+              { label: "💡  Share an idea", text: "I have a feature idea: " },
+              { label: "💬  General feedback", text: "My general feedback: " },
+              { label: "❓  How does voting work?", text: "How does on-chain voting work?" },
+            ].map((chip) => (
+              <button
+                key={chip.label}
+                onClick={() => {
+                  setInput(chip.text);
+                  inputRef.current?.focus();
+                }}
+                className="text-left w-full px-3 py-2 rounded-xl border border-hairline bg-surface-soft hover:border-primary hover:bg-surface-card text-xs text-body font-ui transition-all cursor-pointer"
+              >
+                {chip.label}
+              </button>
+            ))}
+          </motion.div>
+        )}
         {sending && (
           <motion.div
             initial={{ opacity: 0 }}

@@ -618,7 +618,7 @@ export default function Dashboard() {
           <AnimatedItem>
             <motion.div
               variants={itemVariants}
-              className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+              className="grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
             >
               <MetricCard
                 label="Total Polls"
@@ -652,97 +652,114 @@ export default function Dashboard() {
           </AnimatedItem>
 
           <AnimatedItem>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div className="md:col-span-1">
-                  <GlassCard className="p-5 h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <Wallet className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-body">
-                        Wallet
-                      </p>
-                      <p className="text-xs text-body">Connected account</p>
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <GlassCard className="p-5">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary shrink-0">
+                    <Wallet className="h-5 w-5" />
                   </div>
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-body font-ui">Address</span>
-                      <div className="flex items-center gap-1.5">
-                        <motion.span
-                          animate={{ scale: [1, 1.3, 1] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                          className="w-1.5 h-1.5 rounded-full bg-success shrink-0"
-                        />
-                        <span className="text-sm font-mono font-semibold text-ink">
-                          {truncateKey(publicKey)}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-body font-ui">Balance</span>
-                      <span className="text-sm font-mono font-semibold text-ink font-mono">
-                        {balance !== null ? `${balance} XLM` : "—"}
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-body">
+                      Wallet
+                    </p>
+                    <p className="text-xs text-body">Connected account</p>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-xs text-body font-ui shrink-0">Address</span>
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <motion.span
+                        animate={{ scale: [1, 1.3, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="w-1.5 h-1.5 rounded-full bg-success shrink-0"
+                      />
+                      <span className="text-sm font-mono font-semibold text-ink truncate">
+                        {truncateKey(publicKey)}
                       </span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-body font-ui">Network</span>
-                      <Badge variant="outline" className="text-[11px] font-mono">
-                        <motion.span
-                          animate={backendOnline ? { scale: [1, 1.3, 1] } : {}}
-                          transition={{ duration: 2, repeat: Infinity }}
-                          className={`w-1.5 h-1.5 rounded-full ${backendOnline ? "bg-success" : "bg-error"} mr-1.5 shrink-0`}
-                        />
-                        {STELLAR_NETWORK === "PUBLIC" ? "Mainnet" : "Testnet"}
-                      </Badge>
-                    </div>
-                    <Separator className="my-0.5" />
-                    <div className="flex items-center gap-3">
-                      <a href={buildExplorerUrl("account", publicKey)} target="_blank" rel="noopener noreferrer" className="text-[11px] text-primary underline font-medium font-ui flex items-center gap-1">
-                        Explorer <ExternalLink className="h-3 w-3" />
-                      </a>
-                      <span className="text-muted-soft">·</span>
-                      <motion.button
-                        whileHover={{ x: 2 }}
-                        className="text-[11px] text-body hover:text-error transition-colors cursor-pointer bg-transparent border-none font-medium font-ui flex items-center gap-1"
-                        onClick={handleDisconnect}
-                      >
-                        <LogOut className="h-3 w-3" /> Disconnect
-                      </motion.button>
-                    </div>
                   </div>
-                </GlassCard>
-              </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-xs text-body font-ui shrink-0">Balance</span>
+                    <span className="text-sm font-mono font-semibold text-ink">
+                      {balance !== null ? `${balance} XLM` : "—"}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-xs text-body font-ui shrink-0">Network</span>
+                    <Badge variant="outline" className="text-[11px] font-mono">
+                      <motion.span
+                        animate={backendOnline ? { scale: [1, 1.3, 1] } : {}}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className={`w-1.5 h-1.5 rounded-full ${backendOnline ? "bg-success" : "bg-error"} mr-1.5 shrink-0`}
+                      />
+                      {STELLAR_NETWORK === "PUBLIC" ? "Mainnet" : "Testnet"}
+                    </Badge>
+                  </div>
+                  <Separator className="my-0.5" />
+                  <div className="flex items-center gap-3">
+                    <a href={buildExplorerUrl("account", publicKey)} target="_blank" rel="noopener noreferrer" className="text-[11px] text-primary underline font-medium font-ui flex items-center gap-1">
+                      Explorer <ExternalLink className="h-3 w-3" />
+                    </a>
+                    <span className="text-muted-soft">·</span>
+                    <motion.button
+                      whileHover={{ x: 2 }}
+                      className="text-[11px] text-body hover:text-error transition-colors cursor-pointer bg-transparent border-none font-medium font-ui flex items-center gap-1"
+                      onClick={handleDisconnect}
+                    >
+                      <LogOut className="h-3 w-3" /> Disconnect
+                    </motion.button>
+                  </div>
+                </div>
+              </GlassCard>
 
-              <div className="md:col-span-2">
-                <GlassCard className="p-5 h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-teal/10 text-accent-teal">
-                      <Award className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-body">
-                        Poll Contract
-                      </p>
-                      <p className="text-xs text-body">Deployed on Stellar testnet</p>
-                    </div>
+              <GlassCard className="p-5">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-teal/10 text-accent-teal shrink-0">
+                    <Award className="h-5 w-5" />
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-body">
+                      Poll Contract
+                    </p>
+                    <p className="text-xs text-body">Deployed on Stellar testnet</p>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-xs text-body font-ui shrink-0">Contract ID</span>
+                    <div className="flex items-center gap-2 min-w-0">
                       <motion.span
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 3, repeat: Infinity }}
                         className="w-2 h-2 rounded-full bg-primary shrink-0"
                       />
-                      <span className="text-sm font-mono font-semibold text-ink">{truncateKey(CONTRACT_ID)}</span>
+                      <span className="text-sm font-mono font-semibold text-ink truncate">{truncateKey(CONTRACT_ID)}</span>
                     </div>
+                  </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-xs text-body font-ui shrink-0">Status</span>
+                    <Badge variant="outline" className="text-[11px]">
+                      <motion.span
+                        animate={{ scale: [1, 1.3, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="w-1.5 h-1.5 rounded-full bg-success mr-1.5 shrink-0"
+                      />
+                      Active
+                    </Badge>
+                  </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-xs text-body font-ui shrink-0">SDK</span>
+                    <span className="text-sm font-mono font-semibold text-ink">Soroban v27</span>
+                  </div>
+                  <Separator className="my-0.5" />
+                  <div className="flex items-center gap-3">
                     <a href={buildExplorerUrl("contract", CONTRACT_ID)} target="_blank" rel="noopener noreferrer" className="text-[11px] text-primary underline font-medium font-ui flex items-center gap-1">
                       View on Explorer <ExternalLink className="h-3 w-3" />
                     </a>
                   </div>
-                </GlassCard>
-              </div>
+                </div>
+              </GlassCard>
             </div>
           </AnimatedItem>
 
@@ -769,7 +786,7 @@ export default function Dashboard() {
 
           <AnimatedItem>
             <Tabs defaultValue="poll" className="w-full">
-              <TabsList className="mb-6 w-full flex-row flex-nowrap overflow-x-auto">
+              <TabsList className="mb-6 inline-flex w-auto">
                 <TabsTrigger value="poll">
                   <Vote className="w-3.5 h-3.5 mr-1.5" />
                   Live Poll
@@ -796,7 +813,7 @@ export default function Dashboard() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.25 }}
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start"
                   >
                     <div>
                       <GlassCard className="p-6 h-full">
@@ -930,8 +947,8 @@ export default function Dashboard() {
                       </GlassCard>
                     </div>
 
-                    <div className="flex flex-col gap-4 h-full">
-                      <GlassCard className="p-5 flex-1">
+                    <div className="flex flex-col gap-4">
+                      <GlassCard className="p-5">
                         <div className="flex items-center gap-2.5 mb-4">
                           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-teal/10">
                             <Activity className="h-4 w-4 text-accent-teal" />
@@ -990,7 +1007,7 @@ export default function Dashboard() {
                         )}
                       </GlassCard>
 
-                      <GlassCard className="p-5 flex-1">
+                      <GlassCard className="p-5">
                         <div className="flex items-center gap-2.5 mb-4">
                           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
                             <BarChart3 className="h-4 w-4 text-primary" />
@@ -1016,7 +1033,7 @@ export default function Dashboard() {
                             <p className="text-[9px] text-body font-ui mt-0.5">Your Votes</p>
                           </div>
                           <div className="bg-surface-soft rounded-lg p-2.5 text-center">
-                            <p className="text-lg font-bold font-mono text-ink">{balance !== null ? `${balance}` : "—"}</p>
+                            <p className="text-lg font-bold font-mono text-ink truncate">{balance !== null ? `${balance}` : "—"}</p>
                             <p className="text-[9px] text-body font-ui mt-0.5">XLM</p>
                           </div>
                           <div className="bg-surface-soft rounded-lg p-2.5 text-center">
@@ -1024,15 +1041,15 @@ export default function Dashboard() {
                             <p className="text-[9px] text-body font-ui mt-0.5">Events</p>
                           </div>
                           <div className="bg-surface-soft rounded-lg p-2.5 text-center">
-                            <p className="text-lg font-bold font-mono text-ink">{backendOnline ? "Online" : "Offline"}</p>
+                            <p className="text-[13px] font-bold font-mono text-ink leading-tight">{backendOnline ? "Online" : "Offline"}</p>
                             <p className="text-[9px] text-body font-ui mt-0.5">Backend</p>
                           </div>
                           <div className="bg-surface-soft rounded-lg p-2.5 text-center">
-                            <p className="text-lg font-bold font-mono text-ink">{sseStatus === "connected" ? "Live" : sseStatus}</p>
+                            <p className="text-[13px] font-bold font-mono text-ink leading-tight">{sseStatus === "connected" ? "Live" : sseStatus === "reconnecting" ? "Reconnect" : "Offline"}</p>
                             <p className="text-[9px] text-body font-ui mt-0.5">SSE</p>
                           </div>
                           <div className="bg-surface-soft rounded-lg p-2.5 text-center">
-                            <p className="text-lg font-bold font-mono text-ink">{STELLAR_NETWORK === "PUBLIC" ? "Mainnet" : "Testnet"}</p>
+                            <p className="text-[13px] font-bold font-mono text-ink leading-tight">{STELLAR_NETWORK === "PUBLIC" ? "Mainnet" : "Testnet"}</p>
                             <p className="text-[9px] text-body font-ui mt-0.5">Network</p>
                           </div>
                         </div>

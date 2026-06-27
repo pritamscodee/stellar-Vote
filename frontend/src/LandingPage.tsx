@@ -85,6 +85,45 @@ const stacks: { title: string; desc: string; lines: CodeLine[] }[] = [
   },
 ];
 
+// How the fetch works:
+// Render free tier sleeps after inactivity — first request can take 15–45s to wake up.
+// Strategy:
+//   1. Try immediately with a 50s timeout (covers the cold-start window).
+//   2. If it fails or returns empty, retry once after 8s (backend may now be awake).
+//   3. After 2 failures, give up and show the error state.
+// This means real user feedback always shows once the backend is up, with no fake data.
+
+function mapFeedbackToTestimonials(data: unknown): Testimonial[] {
+  const items = Array.isArray(data) ? data : (data as { value?: unknown[] }).value || [];
+  return (items as { rating: string; message: string; email: string | null; timestamp: string }[])
+    .filter((item) => item.message && item.message.trim().length > 0)
+    .map((item) => {
+      const name = item.email
+        ? item.email.split("@")[0].replace(/[._]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+        : "Anonymous";
+      return {
+        quote: item.message,
+        name,
+        designation:
+          item.rating === "bug" ? "Bug Report" : item.rating === "idea" ? "Feature Idea" : "User Feedback",
+        src: `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=cc785c&color=fff&bold=true&size=256`,
+      };
+    });
+}
+
+async function fetchFeedbackWithTimeout(timeoutMs: number): Promise<Testimonial[]> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const r = await fetch(`${BACKEND_URL}/api/feedback`, { signal: controller.signal });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const data = await r.json();
+    return mapFeedbackToTestimonials(data);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export default function LandingPage() {
   const { theme, toggle } = useTheme();
   const navigate = useNavigate();
@@ -92,32 +131,64 @@ export default function LandingPage() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [testimonialsLoading, setTestimonialsLoading] = useState(true);
   const [testimonialsError, setTestimonialsError] = useState(false);
+  // Tracks whether we're in the retry wait (shows a specific message in the skeleton)
+  const [testimonialsRetrying, setTestimonialsRetrying] = useState(false);
 
   useEffect(() => {
-    setTestimonialsLoading(true);
-    setTestimonialsError(false);
-    fetch(`${BACKEND_URL}/api/feedback`)
-      .then((r) => {
-        if (!r.ok) throw new Error("Failed to fetch");
-        return r.json();
-      })
-      .then((data) => {
-        const items = Array.isArray(data) ? data : data.value || [];
+    let cancelled = false;
+
+    async function loadTestimonials() {
+      setTestimonialsLoading(true);
+      setTestimonialsError(false);
+      setTestimonialsRetrying(false);
+
+      try {
+        // Attempt 1 — 50s timeout to survive Render cold start
+        const items = await fetchFeedbackWithTimeout(50_000);
+        if (cancelled) return;
+
         if (items.length > 0) {
-          const mapped: Testimonial[] = items.map((item: { rating: string; message: string; email: string | null; timestamp: string }) => {
-            const name = item.email ? item.email.split("@")[0].replace(/[._]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()) : "Anonymous";
-            return {
-              quote: item.message,
-              name,
-              designation: item.rating === "bug" ? "Bug Report" : item.rating === "idea" ? "Feature Idea" : "User Feedback",
-              src: `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=cc785c&color=fff&bold=true&size=256`,
-            };
-          });
-          setTestimonials(mapped);
+          setTestimonials(items);
+          setTestimonialsLoading(false);
+          return;
         }
-      })
-      .catch(() => setTestimonialsError(true))
-      .finally(() => setTestimonialsLoading(false));
+
+        // Backend responded but returned empty — wait 8s then retry once
+        // (backend may have just woken up and the in-memory store is empty on first boot)
+        setTestimonialsRetrying(true);
+        await new Promise((res) => setTimeout(res, 8_000));
+        if (cancelled) return;
+
+        const retryItems = await fetchFeedbackWithTimeout(20_000);
+        if (cancelled) return;
+
+        setTestimonials(retryItems); // may still be empty — that's fine, we show "no feedback yet"
+        setTestimonialsLoading(false);
+        setTestimonialsRetrying(false);
+      } catch {
+        if (cancelled) return;
+        // Attempt 1 timed out or network error — wait 8s and retry once
+        setTestimonialsRetrying(true);
+        await new Promise((res) => setTimeout(res, 8_000));
+        if (cancelled) return;
+
+        try {
+          const retryItems = await fetchFeedbackWithTimeout(20_000);
+          if (cancelled) return;
+          setTestimonials(retryItems);
+          setTestimonialsLoading(false);
+          setTestimonialsRetrying(false);
+        } catch {
+          if (cancelled) return;
+          setTestimonialsError(true);
+          setTestimonialsLoading(false);
+          setTestimonialsRetrying(false);
+        }
+      }
+    }
+
+    loadTestimonials();
+    return () => { cancelled = true; };
   }, []);
 
   return (
@@ -453,6 +524,11 @@ export default function LandingPage() {
                 <div className="h-8 w-32 bg-surface-soft rounded-lg animate-pulse mx-auto mb-5" />
                 <div className="h-10 w-64 bg-surface-soft rounded-lg animate-pulse mx-auto mb-4" />
                 <div className="h-5 w-80 bg-surface-soft rounded-lg animate-pulse mx-auto" />
+                {testimonialsRetrying && (
+                  <p className="mt-4 text-xs text-body font-ui opacity-70">
+                    Waking up backend, this may take a few seconds…
+                  </p>
+                )}
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-4xl mx-auto">
                 <div className="h-80 bg-surface-soft rounded-3xl animate-pulse" />
@@ -504,7 +580,24 @@ export default function LandingPage() {
               <AnimatedTestimonials testimonials={testimonials} autoplay />
             </div>
           </section>
-        ) : null}
+        ) : (
+          <section className="py-20 md:py-28 bg-surface-soft/50">
+            <div className="max-w-6xl mx-auto px-6 text-center">
+              <Badge variant="outline" className="mb-5 text-[11px] tracking-[1.5px]">
+                <svg className="w-3.5 h-3.5 mr-1.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                </svg>
+                Testimonials
+              </Badge>
+              <h2 className="font-display text-[30px] md:text-[36px] font-normal tracking-[-0.8px] leading-[1.15] text-ink mb-4">
+                What users are saying
+              </h2>
+              <p className="text-body text-sm max-w-[500px] mx-auto font-ui">
+                No feedback submitted yet. Be the first to try StellarVote and share your experience!
+              </p>
+            </div>
+          </section>
+        )}
 
         <section className="py-20 md:py-24">
           <div className="max-w-6xl mx-auto px-6">
