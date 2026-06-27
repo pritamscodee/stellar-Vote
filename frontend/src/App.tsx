@@ -4,7 +4,7 @@ import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import LandingPage from "./LandingPage";
 import Dashboard from "./Dashboard";
 import ErrorBoundary from "./ErrorBoundary";
-import FeedbackWidget from "./FeedbackWidget";
+import MistralChat from "./components/MistralChat";
 import { capturePageView } from "./services/analytics";
 
 function PageTracker() {
@@ -35,7 +35,7 @@ function App() {
         } />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      <FeedbackWidget />
+      <MistralChat />
     </BrowserRouter>
   );
 }
