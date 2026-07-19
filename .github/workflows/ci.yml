@@ -32,6 +32,9 @@ jobs:
       - run: npm run build
       - run: npm run lint
       - run: npm test
+      - name: Security audit
+        run: npm audit --omit=dev || true
+        continue-on-error: true
 
   contract-poll:
     name: Contract (Poll) — Build & Test
@@ -84,4 +87,6 @@ jobs:
         with:
           toolchain: stable
       - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: backend -> target
       - run: cargo build --release

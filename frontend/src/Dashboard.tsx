@@ -33,11 +33,15 @@ import {
 import { STELLAR_NETWORK } from "./services/contract";
 import { useTheme } from "./ThemeProvider";
 import { captureWalletConnected, captureVote, capturePollCreated } from "./services/analytics";
+import { addVoteToHistory } from "./services/voteHistory";
 import type { WalletInfo, PollInfo, Feedback, TxStatus, SseStatus } from "./types";
 import {
   AnimatedContainer, AnimatedItem, MetricCard, GlassCard,
   AnimatedFeedback, AnimatedTxBanner, containerVariants, itemVariants,
 } from "@/components/animations";
+import PollShareButton from "./PollShareButton";
+import CountdownTimer from "./CountdownTimer";
+import VoteHistory from "./VoteHistory";
 
 const CONTRACT_ID = import.meta.env.VITE_CONTRACT_ID || "CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID";
 
@@ -246,6 +250,13 @@ export default function Dashboard() {
       }
       setAlreadyVoted(true);
       captureVote(publicKey, optionIndex);
+      addVoteToHistory({
+        txHash: result.txHash,
+        optionIndex,
+        optionLabel: poll.options[optionIndex] || `Option ${optionIndex}`,
+        question: poll.question,
+        timestamp: unixNow() * 1000,
+      });
       publishVoteEvent(CONTRACT_ID, publicKey, optionIndex, unixNow(), result.txHash);
       setPollResults((prev) => {
         const copy = [...prev];
@@ -866,6 +877,7 @@ export default function Dashboard() {
                             </p>
                           </div>
                           <div className="flex items-center gap-3 shrink-0">
+                            <PollShareButton contractId={CONTRACT_ID} />
                             <Badge variant={pollActive ? "default" : "outline"} className="text-[11px]">
                               {pollActive ? "Active" : "Ended"}
                             </Badge>
@@ -888,10 +900,21 @@ export default function Dashboard() {
                             <motion.h2
                               initial={{ opacity: 0, y: -4 }}
                               animate={{ opacity: 1, y: 0 }}
-                              className="font-display text-[22px] md:text-[24px] font-normal tracking-[-0.4px] leading-[1.2] text-ink mb-5"
+                              className="font-display text-[22px] md:text-[24px] font-normal tracking-[-0.4px] leading-[1.2] text-ink mb-2"
                             >
                               {poll.question}
                             </motion.h2>
+                            {!pollLoading && pollActive && (
+                              <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                className="flex items-center gap-2 mb-5"
+                              >
+                                <CountdownTimer deadline={poll.deadline} />
+                                <span className="text-[10px] text-muted-soft font-ui">remaining</span>
+                              </motion.div>
+                            )}
+                            {pollLoading && <div className="mb-5" />}
                             <motion.div
                               variants={containerVariants}
                               initial="hidden"
@@ -1152,6 +1175,10 @@ export default function Dashboard() {
 
               </AnimatePresence>
             </Tabs>
+          </AnimatedItem>
+
+          <AnimatedItem>
+            <VoteHistory />
           </AnimatedItem>
         </AnimatedContainer>
       </main>

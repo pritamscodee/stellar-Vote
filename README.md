@@ -84,6 +84,26 @@ https://github.com/user-attachments/assets/4ea6d165-8156-48cd-b9f8-92d5e1347905
 - Set deadline (hours/days)
 - Real-time vote updates via SSE
 
+### 🚀 User Onboarding
+- First-time welcome modal with step-by-step guide
+- 4-step interactive walkthrough
+- Persists completion in localStorage
+
+### 🔗 Poll Sharing
+- Share poll links via native Web Share API
+- Copy-to-clipboard support
+- Shareable URL with contract reference
+
+### ⏱️ Live Countdown Timer
+- Real-time countdown to poll deadline
+- Animated digit transitions
+- Auto-detects expired polls
+
+### 📜 Vote History
+- Local voting history with tx hash links
+- Expandable history panel
+- Clear history option
+
 </td>
 <td width="50%">
 
@@ -217,15 +237,24 @@ stellar-vote/
 │   │   ├── App.tsx             # Auth router + ErrorBoundary
 │   │   ├── Dashboard.tsx       # Main dashboard
 │   │   ├── LandingPage.tsx     # Marketing page
+│   │   ├── OnboardingModal.tsx # NEW — First-time user onboarding
+│   │   ├── PollShareButton.tsx # NEW — Share poll via URL/clipboard
+│   │   ├── CountdownTimer.tsx  # NEW — Live poll deadline countdown
+│   │   ├── VoteHistory.tsx     # NEW — Persistent vote history panel
 │   │   ├── ErrorBoundary.tsx   # React error boundary
 │   │   ├── LoadingSkeleton.tsx # Loading skeletons
+│   │   ├── FeedbackWidget.tsx  # Floating feedback button
+│   │   ├── FeedbackView.tsx    # Admin feedback viewer
+│   │   ├── ThemeProvider.tsx   # Dark/light theme
 │   │   ├── types.ts            # Shared types
 │   │   ├── index.css           # Tailwind + theme
 │   │   ├── test/               # Frontend tests
 │   │   └── services/
 │   │       ├── wallets.ts      # Multi-wallet kit
 │   │       ├── contract.ts     # Soroban interactions
-│   │       └── backend.ts      # SSE client
+│   │       ├── backend.ts      # SSE client
+│   │       ├── analytics.ts    # PostHog analytics
+│   │       └── voteHistory.ts  # NEW — Vote history persistence
 │   ├── screenshots/            # App screenshots
 │   └── vercel.json             # Vercel SPA config
 ├── contracts/
@@ -283,6 +312,13 @@ cd contracts/poll && cargo test
 | Poll contract | 4 | ✅ |
 | Reward contract | 3 | ✅ |
 | **Total** | **21** | ✅ |
+
+### CI/CD Fixes (Level 4)
+
+- Added `actions-rust-lang/setup-rust-toolchain` to backend job for proper Rust toolchain setup
+- Added Rust cache with explicit workspaces config for backend
+- Added `npm audit` security check (non-blocking) to frontend job
+- All jobs now use proper caching for faster builds
 
 ---
 
@@ -434,6 +470,16 @@ All interactions are verifiable on Stellar Expert:
 | **User Feedback Widget** | ✅ Floating feedback button |
 | **Wallet Interactions (10+)** | ✅ See proof below |
 | **User Feedback Summary** | ✅ Visible in Dashboard Feedback tab |
+
+### 🆕 Level 4 — New Features
+
+| Feature | Component | Description |
+|---------|-----------|-------------|
+| **User Onboarding** | `OnboardingModal.tsx` | 4-step interactive welcome flow for first-time users with skip/dismiss |
+| **Poll Sharing** | `PollShareButton.tsx` | Share poll via native Web Share API or copy-to-clipboard |
+| **Countdown Timer** | `CountdownTimer.tsx` | Real-time countdown showing remaining time with animated digits |
+| **Vote History** | `VoteHistory.tsx` + `services/voteHistory.ts` | Persistent local voting history with tx hash explorer links |
+| **CI/CD Fixes** | `.github/workflows/ci.yml` | Added Rust toolchain setup for backend, security audit step |
 
 ### 📊 Analytics & Monitoring
 
