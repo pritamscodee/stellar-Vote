@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StellarVote — User Onboarding Data</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      padding: 24px 32px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      border-bottom: 1px solid #333;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    header p {
+      font-size: 0.85rem;
+      color: #999;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    .badge-live { background: #22c55e22; color: #22c55e; border: 1px solid #22c55e44; }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+    }
+    .info-bar {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .info-card {
+      background: #1a1a2e;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 16px 20px;
+      flex: 1;
+      min-width: 180px;
+    }
+    .info-card .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .info-card .value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .spreadsheet-frame {
+      width: 100%;
+      flex: 1;
+      min-height: 600px;
+      border: 1px solid #333;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .spreadsheet-frame iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 600px;
+      border: none;
+    }
+    footer {
+      width: 100%;
+      padding: 16px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #666;
+      border-top: 1px solid #222;
+    }
+    footer a { color: #7c5cfc; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>StellarVote — User Onboarding Data</h1>
+    <p>Level 5 Blue Belt Submission · Proof of 50+ Testnet Users</p>
+    <span class="badge badge-live">Live Data</span>
+  </header>
+  <div class="container">
+    <div class="info-bar">
+      <div class="info-card">
+        <div class="label">Project</div>
+        <div class="value">StellarVote</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Network</div>
+        <div class="value">Stellar Testnet</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Target</div>
+        <div class="value">50+ Users</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Status</div>
+        <div class="value" style="color:#22c55e">Active</div>
+      </div>
+    </div>
+    <div class="spreadsheet-frame">
+      <iframe
+        src="https://app.quadratichq.com/embed?embedId=9ddf2d54-ae85-4345-ab35-9613fe6dca48"
+        loading="lazy"
+        title="StellarVote User Onboarding Data"
+      ></iframe>
+    </div>
+  </div>
+  <footer>
+    Built with &#10084; on <a href="https://stellar.org" target="_blank">Stellar</a> ·
+    <a href="https://github.com/pritamscodee/stellar-Vote" target="_blank">GitHub</a> ·
+    <a href="https://steller-vote.vercel.app" target="_blank">Live App</a>
+  </footer>
+</body>
+</html>

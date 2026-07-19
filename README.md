@@ -602,7 +602,13 @@ A Google Form collects user details for onboarding tracking:
 
 📋 **Google Form**: `<!-- PASTE GOOGLE FORM LINK HERE → https://docs.google.com/forms/d/e/... -->`
 
-📊 **Exported Responses (Excel)**: [User Onboarding Data](https://app.quadratichq.com/file/ed83746c-030e-457c-96b3-5f42649c3b78)
+📊 **Exported Responses (Excel)**: [View User Data](https://pritamscodee.github.io/stellar-Vote/) · [Direct Spreadsheet](https://app.quadratichq.com/file/ed83746c-030e-457c-96b3-5f42649c3b78)
+
+<div align="center">
+  <a href="https://pritamscodee.github.io/stellar-Vote/">
+    <img src="https://img.shields.io/badge/VIEW_USER_DATA-22c55e?style=for-the-badge&logo=tableau&logoColor=fff" alt="View User Data" />
+  </a>
+</div>
 
 ### 🔄 User Feedback Iteration
 
