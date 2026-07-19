@@ -661,7 +661,7 @@ Based on user feedback collected through the in-app feedback widget and Google F
 | **Pitch Deck** | [StellarVote Pitch Deck](https://gamma.app/docs/StellarVote-Decentralized-Voting-on-Stellar-66033mltatar1wi?mode=doc) |
 | **Google Form** | `<!-- PASTE GOOGLE FORM LINK HERE -->` |
 | **User Data (Excel)** | `<!-- PASTE EXCEL/GOOGLE SHEETS LINK HERE -->` |
-| **PostHog Analytics** | `<!-- PASTE POSTHOG PUBLIC DASHBOARD LINK HERE -->` |
+| **PostHog Analytics** | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
 
 <!-- 
 === 50+ USER ONBOARDING PROOF ===
@@ -685,7 +685,7 @@ TODO: Add your proof screenshots/links below once you hit 50+ users
 
 | Proof Source | Status | Link |
 |-------------|--------|------|
-| **PostHog Unique Visitors** | <!-- PASTE COUNT → e.g. "55 unique visitors" --> | `<!-- PASTE POSTHOG DASHBOARD LINK -->` |
+| **PostHog Unique Visitors** | <!-- PASTE COUNT → e.g. "55 unique visitors" --> | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
 | **Google Form Responses** | <!-- PASTE COUNT → e.g. "52 responses" --> | `<!-- PASTE EXCEL/SHEETS LINK -->` |
 | **On-Chain Transactions** | <!-- PASTE COUNT → e.g. "60+ votes cast" --> | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
 | **Total Users Onboarded** | <!-- PASTE FINAL COUNT → "50+" minimum required --> | — |
@@ -774,7 +774,7 @@ How to prove 20+ mainnet users:
 | Proof Source | Status | Link |
 |-------------|--------|------|
 | **Google Form Responses** | 🔄 | `<!-- PASTE EXCEL/SHEETS LINK → count ≥ 20 -->` |
-| **PostHog Mainnet Visitors** | 🔄 | `<!-- PASTE POSTHOG DASHBOARD LINK -->` |
+| **PostHog Mainnet Visitors** | 🔄 | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
 | **On-Chain Mainnet Txns** | 🔄 | `<!-- PASTE STELLAR EXPERT MAINNET LINK -->` |
 | **Total Mainnet Users** | 🔄 | `<!-- PASTE FINAL COUNT → "20+" minimum required -->` |
 
