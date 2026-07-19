@@ -503,6 +503,38 @@ The **Analytics tab** in the Dashboard displays on-chain stats visible to all us
 - Total polls created, total votes cast, your votes, XLM balance
 - Live events count, backend status, SSE stream status, network
 
+
+### 📈 PostHog Analytics — Real User Data
+
+[PostHog](https://posthog.com) web analytics for `steller-vote.vercel.app`:
+
+<div align="center">
+
+  
+ <img width="1643" height="862" alt="web analytics pritamscodee" src="https://github.com/user-attachments/assets/45336206-e14c-4773-90e0-333c6a25b586" />
+
+<img width="1637" height="788" alt="pritamscodee nalaytics 2" src="https://github.com/user-attachments/assets/aaa640b8-8c3a-4967-a50d-8540d1d89388" />
+
+  
+  <p><em>Unique visitors, page views, sessions, and engagement metrics</em></p>
+</div>
+
+<div align="center">
+  <img src="frontend/screenshots/posthog-geography.jpg" alt="PostHog Geography & Sources" width="90%" />
+  <p><em>User geography, traffic sources, and device breakdown</em></p>
+</div>
+
+| Metric | Value |
+|--------|-------|
+| **Unique Visitors** | 23+ |
+| **Page Views** | 53+ |
+| **Sessions** | 28+ |
+| **Avg. Session Duration** | 2m 57s |
+| **Bounce Rate** | 14% |
+| **Desktop Users** | 12 |
+| **Mobile Users** | 12 |
+| **Top Path** | `/` (landing) → `/dashboard` |
+
 ### 📱 Mobile Screenshots
 
 <div align="center">
@@ -555,50 +587,8 @@ Feedback is stored in the backend API and displayed in the **Feedback tab** on t
 | **Updated README & Docs** | ✅ | This document |
 | **User Feedback Iteration** | ✅ | See below |
 
-### 📈 PostHog Analytics — Real User Data
-
-[PostHog](https://posthog.com) web analytics for `steller-vote.vercel.app`:
-
-<div align="center">
-
-  
- <img width="1643" height="862" alt="web analytics pritamscodee" src="https://github.com/user-attachments/assets/45336206-e14c-4773-90e0-333c6a25b586" />
-
-<img width="1637" height="788" alt="pritamscodee nalaytics 2" src="https://github.com/user-attachments/assets/aaa640b8-8c3a-4967-a50d-8540d1d89388" />
-
-  
-  <p><em>Unique visitors, page views, sessions, and engagement metrics</em></p>
-</div>
-
-<div align="center">
-  <img src="frontend/screenshots/posthog-geography.jpg" alt="PostHog Geography & Sources" width="90%" />
-  <p><em>User geography, traffic sources, and device breakdown</em></p>
-</div>
-
-| Metric | Value |
-|--------|-------|
-| **Unique Visitors** | 23+ |
-| **Page Views** | 53+ |
-| **Sessions** | 28+ |
-| **Avg. Session Duration** | 2m 57s |
-| **Bounce Rate** | 14% |
-| **Desktop Users** | 12 |
-| **Mobile Users** | 12 |
-| **Top Path** | `/` (landing) → `/dashboard` |
 
 ### 📝 User Onboarding — Google Form
-
-A Google Form collects user details for onboarding tracking:
-
-| Field | Description |
-|-------|-------------|
-| Name | User's full name |
-| Email | Contact email |
-| Wallet Address | Stellar testnet wallet address |
-| Product Rating | Rate StellarVote (1–5) |
-| Feedback | Open-ended suggestions |
-
-📋 **Google Form**: `<!-- PASTE GOOGLE FORM LINK HERE → https://docs.google.com/forms/d/e/... -->`
 
 📊 **Exported Responses (Excel)**: [View User Data](https://pritamscodee.github.io/stellar-Vote/) · [Direct Spreadsheet](https://app.quadratichq.com/file/ed83746c-030e-457c-96b3-5f42649c3b78)
 
