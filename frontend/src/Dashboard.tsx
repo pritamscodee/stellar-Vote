@@ -134,8 +134,6 @@ export default function Dashboard() {
         setAlreadyVoted(false);
         setTxStatus({ status: "idle" });
         setFeedback({ type: "success", message: "Wallet switched. Refreshing data..." });
-      } else {
-        setPublicKey(null);
       }
     });
     return () => unsubWallet?.();
