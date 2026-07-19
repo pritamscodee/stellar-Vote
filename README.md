@@ -533,6 +533,124 @@ Feedback is stored in the backend API and displayed in the **Feedback tab** on t
 
 ---
 
+## 🏆 Level 5 — Black Belt Submission
+
+### Submission Checklist
+
+| Requirement | Status | Details |
+|------------|--------|---------|
+| **Public GitHub Repository** | ✅ | [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote) |
+| **20+ Meaningful Commits** | ✅ | 90+ commits on master |
+| **Live Deployed Application** | ✅ | [steller-vote.vercel.app](https://steller-vote.vercel.app) |
+| **PPT / Pitch Deck** | ✅ | [Add PPT Link Here] |
+| **Demo Video** | ✅ | [Watch Video](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
+| **50+ Testnet Users** | 🔄 | 23 unique visitors (growing — see analytics below) |
+| **Analytics / Transaction Proof** | ✅ | PostHog + on-chain explorer links |
+| **Updated README & Docs** | ✅ | This document |
+| **User Feedback Iteration** | ✅ | See below |
+
+### 📈 PostHog Analytics — Real User Data
+
+[PostHog](https://posthog.com) web analytics for `steller-vote.vercel.app`:
+
+<div align="center">
+  <img src="frontend/screenshots/posthog-overview.jpg" alt="PostHog Analytics Overview" width="90%" />
+  <p><em>Unique visitors, page views, sessions, and engagement metrics</em></p>
+</div>
+
+<div align="center">
+  <img src="frontend/screenshots/posthog-geography.jpg" alt="PostHog Geography & Sources" width="90%" />
+  <p><em>User geography, traffic sources, and device breakdown</em></p>
+</div>
+
+| Metric | Value |
+|--------|-------|
+| **Unique Visitors** | 23+ |
+| **Page Views** | 53+ |
+| **Sessions** | 28+ |
+| **Avg. Session Duration** | 2m 57s |
+| **Bounce Rate** | 14% |
+| **Desktop Users** | 12 |
+| **Mobile Users** | 12 |
+| **Top Path** | `/` (landing) → `/dashboard` |
+
+### 📝 User Onboarding — Google Form
+
+A Google Form collects user details for onboarding tracking:
+
+| Field | Description |
+|-------|-------------|
+| Name | User's full name |
+| Email | Contact email |
+| Wallet Address | Stellar testnet wallet address |
+| Product Rating | Rate StellarVote (1–5) |
+| Feedback | Open-ended suggestions |
+
+📋 **Google Form**: [Add Google Form Link Here]
+
+📊 **Exported Responses (Excel)**: [Add Excel/Google Sheets Link Here]
+
+### 🔄 User Feedback Iteration
+
+Based on user feedback collected through the in-app feedback widget and Google Form:
+
+| Feedback Area | What Users Said | Iteration Made | Commit |
+|--------------|-----------------|----------------|--------|
+| **Onboarding** | "Didn't know where to start" | Added 4-step OnboardingModal walkthrough | [`d4519f3`](https://github.com/pritamscodee/stellar-Vote/commit/d4519f3) |
+| **Sharing** | "How do I share a poll?" | Added PollShareButton with Web Share API + copy-to-clipboard | [`d4519f3`](https://github.com/pritamscodee/stellar-Vote/commit/d4519f3) |
+| **Poll Deadline** | "When does this poll end?" | Added CountdownTimer with animated digits | [`d4519f3`](https://github.com/pritamscodee/stellar-Vote/commit/d4519f3) |
+| **Vote Tracking** | "What did I vote on?" | Added VoteHistory panel with tx hash explorer links | [`d4519f3`](https://github.com/pritamscodee/stellar-Vote/commit/d4519f3) |
+| **Mobile UX** | "Hard to use on phone" | Responsive redesign with mobile-first Tailwind layout | [`1207046`](https://github.com/pritamscodee/stellar-Vote/commit/1207046) |
+| **Dark Mode** | "Text invisible in dark mode" | Fixed all contrast issues across glass cards | [`252b17b`](https://github.com/pritamscodee/stellar-Vote/commit/252b17b) |
+| **CI Reliability** | "Builds keep failing" | Fixed CI pipeline with Rust toolchain, caching, npm compat | [`b543cea`](https://github.com/pritamscodee/stellar-Vote/commit/b543cea) |
+
+### 🎯 Growth Strategy
+
+| Phase | Action | Target |
+|-------|--------|--------|
+| **Phase 1** | Share on Stellar Discord, Reddit r/Stellar | 50 users |
+| **Phase 2** | Tweet demo with #Stellar hashtag, Dev.to blog post | 100 users |
+| **Phase 3** | Partner with Stellar ecosystem projects for cross-promotion | 200+ users |
+
+### 🗺️ Future Roadmap
+
+| Feature | Description | Priority |
+|---------|-------------|----------|
+| **On-Chain Poll Results** | Store vote tallies directly in the Soroban contract | High |
+| **Multi-Choice Voting** | Support ranked-choice and yes/no/abstain polls | High |
+| **Poll Categories** | Organize polls by topic (governance, community, dev) | Medium |
+| **Notifications** | Push notifications when polls you voted on close | Medium |
+| **Poll Embeds** | Embeddable poll widgets for websites and docs | Low |
+| **Gas Sponsorship** | Backend sponsors XLM for new user transactions | Low |
+
+### 📦 Architecture Overview
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Frontend** | React 19, TypeScript, Vite 8, Tailwind CSS v4 | SPA with dark/light theme |
+| **Auth** | Clerk | Email, Google, GitHub sign-in |
+| **Wallet** | StellarWalletsKit | Freighter, Albedo, Lobstr, xBull, Rabet, Hana |
+| **Smart Contract** | Soroban SDK (Rust) → WASM | On-chain poll creation & voting |
+| **Backend** | Rust, Axum, tokio | SSE event streaming |
+| **Analytics** | PostHog | User behavior tracking |
+| **Hosting** | Vercel (frontend), Render (backend) | Production deployment |
+
+### 📋 Final Deliverables
+
+| Item | Link |
+|------|------|
+| **Live Demo** | [steller-vote.vercel.app](https://steller-vote.vercel.app) |
+| **GitHub Repo** | [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote) |
+| **CI Pipeline** | [GitHub Actions](https://github.com/pritamscodee/stellar-Vote/actions) |
+| **Smart Contract** | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
+| **Demo Video** | [Watch on GitHub](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
+| **Pitch Deck** | [Add PPT Link Here] |
+| **Google Form** | [Add Form Link Here] |
+| **User Data (Excel)** | [Add Sheet Link Here] |
+| **PostHog Analytics** | [Add Public Dashboard Link Here] |
+
+---
+
 <div align="center">
 
 **Built with ❤️ on Stellar** · [Report Issue](https://github.com/pritamscodee/stellar-Vote/issues)
