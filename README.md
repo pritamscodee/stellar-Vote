@@ -13,11 +13,19 @@ Demo video  - - >
 
 
 
+https://github.com/user-attachments/assets/3c9f250d-1a12-460a-8aae-c5cd90028861
 
 
 
 
-https://github.com/user-attachments/assets/4ea6d165-8156-48cd-b9f8-92d5e1347905
+
+
+
+
+
+
+
+
 
 
 
@@ -511,9 +519,9 @@ The **Analytics tab** in the Dashboard displays on-chain stats visible to all us
 <div align="center">
 
   
- <img width="1643" height="862" alt="web analytics pritamscodee" src="https://github.com/user-attachments/assets/45336206-e14c-4773-90e0-333c6a25b586" />
+<img width="1645" height="752" alt="analytics1" src="https://github.com/user-attachments/assets/1d351c4c-09fa-41c5-bac4-56ef7a4785bd" />
 
-<img width="1637" height="788" alt="pritamscodee nalaytics 2" src="https://github.com/user-attachments/assets/aaa640b8-8c3a-4967-a50d-8540d1d89388" />
+<img width="1637" height="847" alt="analytics 2" src="https://github.com/user-attachments/assets/82db2ed3-cdd2-4846-9417-ed2418283887" />
 
   
   <p><em>Unique visitors, page views, sessions, and engagement metrics</em></p>
