@@ -171,8 +171,14 @@ https://github.com/user-attachments/assets/4ea6d165-8156-48cd-b9f8-92d5e1347905
 The dashboard and landing page are fully responsive across all device sizes:
 
 <div align="center">
-  <img src="frontend/screenshots/mobile-responsive.jpeg" alt="Mobile Dashboard" width="30%" />
-  <img src="frontend/screenshots/mobile-responsive-2.jpeg" alt="Mobile Landing" width="30%" />
+<img width="602" height="1000" alt="mb4" src="https://github.com/user-attachments/assets/b1d07006-cbc8-4415-bed3-e712c89b2e19" />
+
+<div>
+<img width="602" height="1000" alt="mb3" src="https://github.com/user-attachments/assets/bcf41c8b-7793-42e9-94b7-654913250a9f" />
+
+</div>
+
+  
 </div>
 
 ---
@@ -554,7 +560,13 @@ Feedback is stored in the backend API and displayed in the **Feedback tab** on t
 [PostHog](https://posthog.com) web analytics for `steller-vote.vercel.app`:
 
 <div align="center">
-  <img src="frontend/screenshots/posthog-overview.jpg" alt="PostHog Analytics Overview" width="90%" />
+
+  
+ <img width="1643" height="862" alt="web analytics pritamscodee" src="https://github.com/user-attachments/assets/45336206-e14c-4773-90e0-333c6a25b586" />
+
+<img width="1637" height="788" alt="pritamscodee nalaytics 2" src="https://github.com/user-attachments/assets/aaa640b8-8c3a-4967-a50d-8540d1d89388" />
+
+  
   <p><em>Unique visitors, page views, sessions, and engagement metrics</em></p>
 </div>
 
