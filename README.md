@@ -598,7 +598,9 @@ Feedback is stored in the backend API and displayed in the **Feedback tab** on t
 
 ### 📝 User Onboarding — Google Form
 
-📊 **Exported Responses (Excel)**: [View User Data](https://pritamscodee.github.io/stellar-Vote/) · [Direct Spreadsheet](https://app.quadratichq.com/file/ed83746c-030e-457c-96b3-5f42649c3b78)
+📋 **Google Form**: [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7)
+
+📊 **Exported Responses (Excel)**: [View User Data](https://pritamscodee.github.io/stellar-Vote/) · [Direct Spreadsheet](https://docs.google.com/spreadsheets/d/1mKsiBzWjnCzrdzQ5QXeF96TjoleYPkWrJaA9Mw7Phww/edit?usp=sharing)
 
 <div align="center">
   <a href="https://pritamscodee.github.io/stellar-Vote/">
@@ -693,8 +695,8 @@ Based on user feedback collected through the in-app feedback widget and Google F
 | **Smart Contract** | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
 | **Demo Video** | [Watch on GitHub](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
 | **Pitch Deck** | [StellarVote Pitch Deck](https://gamma.app/docs/StellarVote-Decentralized-Voting-on-Stellar-66033mltatar1wi?mode=doc) |
-| **Google Form** | `<!-- PASTE GOOGLE FORM LINK HERE -->` |
-| **User Data (Excel)** | [User Onboarding Data](https://app.quadratichq.com/file/ed83746c-030e-457c-96b3-5f42649c3b78) |
+| **Google Form** | ✅ | [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7) |
+| **User Data (Excel)** | [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1mKsiBzWjnCzrdzQ5QXeF96TjoleYPkWrJaA9Mw7Phww/edit?usp=sharing) |
 | **PostHog Analytics** | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
 
 <!-- 
@@ -758,7 +760,7 @@ Example:
 | **Technical Documentation** | 🔄 | <!-- PASTE DOCS LINK HERE → e.g. GitHub Wiki or docs site --> |
 | **User Guide** | 🔄 | <!-- PASTE USER GUIDE LINK HERE --> |
 | **Community Contribution** | 🔄 | <!-- PASTE LINK → blog post / workshop / tutorial / OSS contribution --> |
-| **Google Form (Mainnet Users)** | 🔄 | <!-- PASTE GOOGLE FORM LINK HERE --> |
+| **Google Form (Mainnet Users)** | 🔄 | [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7) |
 | **Excel Export (Mainnet)** | 🔄 | <!-- PASTE EXCEL/GOOGLE SHEETS LINK HERE --> |
 
 ---
@@ -938,7 +940,7 @@ A Google Form collects mainnet user details:
 
 <!-- TODO: Create new Google Form for mainnet users, then paste links below -->
 
-📋 **Google Form (Mainnet)**: `<!-- PASTE GOOGLE FORM LINK HERE → https://docs.google.com/forms/d/e/... -->`
+📋 **Google Form (Mainnet)**: [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7)
 
 📊 **Exported Responses (Excel)**: `<!-- PASTE EXCEL/GOOGLE SHEETS LINK HERE → https://docs.google.com/spreadsheets/d/... -->`
 
