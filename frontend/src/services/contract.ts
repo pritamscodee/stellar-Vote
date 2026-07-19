@@ -261,5 +261,6 @@ export function buildExplorerUrl(
   type: "tx" | "account" | "contract",
   id: string
 ): string {
-  return `https://stellar.expert/explorer/testnet/${type}/${id}`;
+  const network = STELLAR_NETWORK === "PUBLIC" ? "mainnet" : "testnet";
+  return `https://stellar.expert/explorer/${network}/${type}/${id}`;
 }

@@ -17,8 +17,10 @@ import { dirname, join } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const RPC_URL = "https://soroban-testnet.stellar.org";
-const HORIZON_URL = "https://horizon-testnet.stellar.org";
+const NETWORK = process.env.STELLAR_NETWORK || "testnet";
+const RPC_URL = `https://soroban-${NETWORK === "mainnet" ? "mainnet" : "testnet"}.stellar.org`;
+const HORIZON_URL = `https://horizon-${NETWORK === "mainnet" ? "mainnet" : "testnet"}.stellar.org`;
+const networkPassphrase = NETWORK === "mainnet" ? Networks.PUBLIC : Networks.TESTNET;
 
 const server = new Horizon.Server(HORIZON_URL);
 const sorobanServer = new rpc.Server(RPC_URL);
@@ -65,7 +67,7 @@ async function main() {
   const account = await server.loadAccount(publicKey);
   const installTx = new TransactionBuilder(account, {
     fee: BASE_FEE,
-    networkPassphrase: Networks.TESTNET,
+    networkPassphrase: networkPassphrase,
   })
     .addOperation(Operation.uploadContractWasm({ wasm: Buffer.from(wasmBytes) }))
     .setTimeout(30)
@@ -102,7 +104,7 @@ async function main() {
   const account2 = await server.loadAccount(publicKey);
   const createTx = new TransactionBuilder(account2, {
     fee: BASE_FEE,
-    networkPassphrase: Networks.TESTNET,
+    networkPassphrase: networkPassphrase,
   })
     .addOperation(
       Operation.createCustomContract({

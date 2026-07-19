@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useTheme } from "./ThemeProvider";
 import { Button } from "@/components/ui/button";
 import { openAuthModal, getAddress, initKit } from "./services/wallets";
+import { Networks } from "@creit.tech/stellar-wallets-kit/types";
+import { STELLAR_NETWORK } from "./services/contract";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedTestimonials, { type Testimonial } from "./components/AnimatedTestimonials";
@@ -135,7 +137,7 @@ export default function LandingPage() {
   const [testimonialsRetrying, setTestimonialsRetrying] = useState(false);
 
   async function connectWallet() {
-    initKit();
+    initKit(STELLAR_NETWORK === "PUBLIC" ? Networks.PUBLIC : Networks.TESTNET);
     await openAuthModal();
     const address = await getAddress();
     if (address) {

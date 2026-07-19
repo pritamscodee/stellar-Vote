@@ -11,13 +11,15 @@ import {
   Address,
 } from "@stellar/stellar-sdk";
 
-const RPC_URL = "https://soroban-testnet.stellar.org";
-const HORIZON_URL = "https://horizon-testnet.stellar.org";
+const NETWORK = process.env.STELLAR_NETWORK || "testnet";
+const RPC_URL = `https://soroban-${NETWORK === "mainnet" ? "mainnet" : "testnet"}.stellar.org`;
+const HORIZON_URL = `https://horizon-${NETWORK === "mainnet" ? "mainnet" : "testnet"}.stellar.org`;
+const networkPassphrase = NETWORK === "mainnet" ? Networks.PUBLIC : Networks.TESTNET;
 
 const server = new Horizon.Server(HORIZON_URL);
 const sorobanServer = new rpc.Server(RPC_URL);
 
-const CONTRACT_ID = "CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID";
+const CONTRACT_ID = process.env.CONTRACT_ID || "CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID";
 const SECRET = process.env.STELLAR_SECRET_KEY || "SCRGIVMDR23LTZ7F7JQCD3EFO5NQJHPRDOOHNU7RFKXDJAXZ2S6W2UBG";
 
 async function waitForTx(hash) {
@@ -44,7 +46,7 @@ async function main() {
   const account = await server.loadAccount(publicKey);
   const tx = new TransactionBuilder(account, {
     fee: BASE_FEE,
-    networkPassphrase: Networks.TESTNET,
+    networkPassphrase: networkPassphrase,
   })
     .addOperation(
       Operation.invokeContractFunction({

@@ -116,7 +116,7 @@ export default function Dashboard() {
   }, []);
 
   useEffect(() => {
-    initKit(Networks.TESTNET);
+    initKit(STELLAR_NETWORK === "PUBLIC" ? Networks.PUBLIC : Networks.TESTNET);
     getSupportedWallets().then((results) => {
       setWallets(
         results.map((w) => ({
