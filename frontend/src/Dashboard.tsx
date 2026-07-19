@@ -136,6 +136,11 @@ export default function Dashboard() {
         setFeedback({ type: "success", message: "Wallet switched. Refreshing data..." });
       }
     });
+    getAddress()
+      .then((address) => {
+        if (address) setPublicKey(address);
+      })
+      .catch(() => {});
     return () => unsubWallet?.();
   }, []);
 
