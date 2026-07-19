@@ -588,7 +588,7 @@ Feedback is stored in the backend API and displayed in the **Feedback tab** on t
 | **Public GitHub Repository** | ✅ | [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote) |
 | **20+ Meaningful Commits** | ✅ | 90+ commits on master |
 | **Live Deployed Application** | ✅ | [steller-vote.vercel.app](https://steller-vote.vercel.app) |
-| **PPT / Pitch Deck** | ✅ | [Gamma](https://gamma.app/docs/StellarVote-Decentralized-Voting-on-Stellar-66033mltatar1wi?mode=doc) · [PPT (OneDrive)](https://1drv.ms/p/c/8eda55c121781703/IQBCLbmqwhTCQZnnniaE4t4IAVqJofMURvQS_lyGxigabU4?e=eonsXe) |
+| **PPT / Pitch Deck** | ✅ | [StellarVote Pitch Deck (PPT)](https://1drv.ms/p/c/8eda55c121781703/IQBCLbmqwhTCQZnnniaE4t4IAVqJofMURvQS_lyGxigabU4?e=eonsXe) |
 | **Demo Video** | ✅ | [Watch Video](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
 | **50+ Testnet Users** | 🔄 | 10+ verified users onboarded (growing) · [See Proof Below](#-user-onboarding-data) |
 | **Analytics / Transaction Proof** | ✅ | PostHog + on-chain explorer links |
@@ -694,7 +694,7 @@ Based on user feedback collected through the in-app feedback widget and Google F
 | **CI Pipeline** | [GitHub Actions](https://github.com/pritamscodee/stellar-Vote/actions) |
 | **Smart Contract** | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
 | **Demo Video** | [Watch on GitHub](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
-| **Pitch Deck** | [Gamma](https://gamma.app/docs/StellarVote-Decentralized-Voting-on-Stellar-66033mltatar1wi?mode=doc) · [PPT (OneDrive)](https://1drv.ms/p/c/8eda55c121781703/IQBCLbmqwhTCQZnnniaE4t4IAVqJofMURvQS_lyGxigabU4?e=eonsXe) |
+| **Pitch Deck** | [StellarVote Pitch Deck (PPT)](https://1drv.ms/p/c/8eda55c121781703/IQBCLbmqwhTCQZnnniaE4t4IAVqJofMURvQS_lyGxigabU4?e=eonsXe) |
 | **Google Form** | ✅ | [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7) |
 | **User Data (Excel)** | [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1mKsiBzWjnCzrdzQ5QXeF96TjoleYPkWrJaA9Mw7Phww/edit?usp=sharing) |
 | **PostHog Analytics** | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
@@ -982,7 +982,7 @@ TODO: Set up PostHog for mainnet URL and paste stats below
 | **CI Pipeline** | [GitHub Actions](https://github.com/pritamscodee/stellar-Vote/actions) |
 | **Mainnet Contract** | `<!-- PASTE MAINNET CONTRACT EXPLORER LINK -->` |
 | **Demo Video** | `<!-- PASTE MAINNET DEMO VIDEO -->` |
-| **Pitch Deck** | [Gamma](https://gamma.app/docs/StellarVote-Decentralized-Voting-on-Stellar-66033mltatar1wi?mode=doc) · [PPT (OneDrive)](https://1drv.ms/p/c/8eda55c121781703/IQBCLbmqwhTCQZnnniaE4t4IAVqJofMURvQS_lyGxigabU4?e=eonsXe) |
+| **Pitch Deck** | [StellarVote Pitch Deck (PPT)](https://1drv.ms/p/c/8eda55c121781703/IQBCLbmqwhTCQZnnniaE4t4IAVqJofMURvQS_lyGxigabU4?e=eonsXe) |
 | **Audit Report** | `<!-- PASTE AUDIT LINK -->` |
 | **Twitter/X Launch** | `<!-- PASTE TWEET URL -->` |
 | **Community Contribution** | `<!-- PASTE BLOG/WORKSHOP/TUTORIAL LINK -->` |
