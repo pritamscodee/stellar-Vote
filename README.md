@@ -608,12 +608,6 @@ Feedback is stored in the backend API and displayed in the **Feedback tab** on t
   </a>
 </div>
 
-#### 📋 User Responses Spreadsheet (Embedded)
-
-<div align="center">
-  <iframe src="https://docs.google.com/spreadsheets/d/1mKsiBzWjnCzrdzQ5QXeF96TjoleYPkWrJaA9Mw7Phww/edit?usp=sharing?widget=true&headers=false" width="100%" height="500" style="border:1px solid #ccc; border-radius:8px;"></iframe>
-</div>
-
 ### 📊 User Onboarding Data
 
 <div align="center">
