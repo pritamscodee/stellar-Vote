@@ -10,9 +10,6 @@ export function initKit(network: Networks = Networks.TESTNET) {
   StellarWalletsKit.init({
     modules: defaultModules(),
     network,
-    onSessionCleared: () => {
-      initialized = false;
-    },
   });
   initialized = true;
 }
