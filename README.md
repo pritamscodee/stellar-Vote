@@ -533,7 +533,7 @@ Feedback is stored in the backend API and displayed in the **Feedback tab** on t
 
 ---
 
-## 🏆 Level 5 — Black Belt Submission
+## 🔵 Level 5 — Blue Belt Submission
 
 ### Submission Checklist
 
@@ -542,9 +542,9 @@ Feedback is stored in the backend API and displayed in the **Feedback tab** on t
 | **Public GitHub Repository** | ✅ | [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote) |
 | **20+ Meaningful Commits** | ✅ | 90+ commits on master |
 | **Live Deployed Application** | ✅ | [steller-vote.vercel.app](https://steller-vote.vercel.app) |
-| **PPT / Pitch Deck** | ✅ | [Add PPT Link Here] |
+| **PPT / Pitch Deck** | ✅ | [StellarVote Pitch Deck](https://gamma.app/docs/StellarVote-Decentralized-Voting-on-Stellar-66033mltatar1wi?mode=doc) |
 | **Demo Video** | ✅ | [Watch Video](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
-| **50+ Testnet Users** | 🔄 | 23 unique visitors (growing — see analytics below) |
+| **50+ Testnet Users** | 🔄 | <!-- PASTE FINAL COUNT HERE → e.g. "55 users onboarded" --> [See Proof Below](#-50-user-onboarding-proof) |
 | **Analytics / Transaction Proof** | ✅ | PostHog + on-chain explorer links |
 | **Updated README & Docs** | ✅ | This document |
 | **User Feedback Iteration** | ✅ | See below |
@@ -586,9 +586,11 @@ A Google Form collects user details for onboarding tracking:
 | Product Rating | Rate StellarVote (1–5) |
 | Feedback | Open-ended suggestions |
 
-📋 **Google Form**: [Add Google Form Link Here]
+<!-- TODO: Create Google Form with above fields, then paste links below -->
 
-📊 **Exported Responses (Excel)**: [Add Excel/Google Sheets Link Here]
+📋 **Google Form**: `<!-- PASTE GOOGLE FORM LINK HERE → https://docs.google.com/forms/d/e/... -->`
+
+📊 **Exported Responses (Excel)**: `<!-- PASTE EXCEL/GOOGLE SHEETS LINK HERE → https://docs.google.com/spreadsheets/d/... -->`
 
 ### 🔄 User Feedback Iteration
 
@@ -644,10 +646,301 @@ Based on user feedback collected through the in-app feedback widget and Google F
 | **CI Pipeline** | [GitHub Actions](https://github.com/pritamscodee/stellar-Vote/actions) |
 | **Smart Contract** | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
 | **Demo Video** | [Watch on GitHub](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
-| **Pitch Deck** | [Add PPT Link Here] |
-| **Google Form** | [Add Form Link Here] |
-| **User Data (Excel)** | [Add Sheet Link Here] |
-| **PostHog Analytics** | [Add Public Dashboard Link Here] |
+| **Pitch Deck** | [StellarVote Pitch Deck](https://gamma.app/docs/StellarVote-Decentralized-Voting-on-Stellar-66033mltatar1wi?mode=doc) |
+| **Google Form** | `<!-- PASTE GOOGLE FORM LINK HERE -->` |
+| **User Data (Excel)** | `<!-- PASTE EXCEL/GOOGLE SHEETS LINK HERE -->` |
+| **PostHog Analytics** | `<!-- PASTE POSTHOG PUBLIC DASHBOARD LINK HERE -->` |
+
+<!-- 
+=== 50+ USER ONBOARDING PROOF ===
+
+What counts as a "user onboarded":
+  1. User visited steller-vote.vercel.app
+  2. User connected their Stellar testnet wallet
+  3. User created a poll OR cast a vote on-chain
+  4. User filled out the Google Form (wallet + email + rating)
+
+How to prove 50+ users:
+  1. PostHog dashboard → export unique visitors screenshot
+  2. Google Form responses → export to Excel → count rows
+  3. On-chain tx count on Stellar Expert → screenshot
+  4. All 3 proofs attached below
+
+TODO: Add your proof screenshots/links below once you hit 50+ users
+-->
+
+### 👥 50+ User Onboarding Proof
+
+| Proof Source | Status | Link |
+|-------------|--------|------|
+| **PostHog Unique Visitors** | <!-- PASTE COUNT → e.g. "55 unique visitors" --> | `<!-- PASTE POSTHOG DASHBOARD LINK -->` |
+| **Google Form Responses** | <!-- PASTE COUNT → e.g. "52 responses" --> | `<!-- PASTE EXCEL/SHEETS LINK -->` |
+| **On-Chain Transactions** | <!-- PASTE COUNT → e.g. "60+ votes cast" --> | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
+| **Total Users Onboarded** | <!-- PASTE FINAL COUNT → "50+" minimum required --> | — |
+
+<!-- 
+TODO: Add screenshots below once you have proof
+Example:
+<div align="center">
+  <img src="frontend/screenshots/posthog-50-users.jpg" alt="PostHog 50+ Users" width="90%" />
+  <p><em>PostHog dashboard showing 50+ unique visitors</em></p>
+</div>
+
+<div align="center">
+  <img src="frontend/screenshots/google-form-responses.jpg" alt="Google Form Responses" width="90%" />
+  <p><em>Google Form exported to Excel — 50+ responses</em></p>
+</div>
+-->
+
+---
+
+## ⚫ Level 6 — Black Belt Submission
+
+### Submission Checklist
+
+| Requirement | Status | Details |
+|------------|--------|---------|
+| **Public GitHub Repository** | ✅ | [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote) |
+| **30+ Meaningful Commits** | ✅ | 90+ commits on master |
+| **Live Mainnet Application** | 🔄 | <!-- PASTE MAINNET APP URL HERE → e.g. https://stellervote.app --> |
+| **Mainnet Contract Addresses** | 🔄 | <!-- PASTE MAINNET CONTRACT ID HERE → e.g. CABC... --> |
+| **20+ Mainnet Users** | 🔄 | <!-- PASTE COUNT HERE → e.g. "22 verified mainnet users" --> [See Proof Below](#-mainnet-user-onboarding-proof) |
+| **Transaction Activity Proof** | 🔄 | <!-- PASTE STELLAR EXPERT MAINNET LINK --> |
+| **Audit / Security Review** | 🔄 | <!-- PASTE AUDIT REPORT LINK OR SECURITY REVIEW DOC --> |
+| **Twitter/X Launch Post** | 🔄 | <!-- PASTE TWEET URL HERE --> |
+| **Demo Video** | ✅ | [Watch on GitHub](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
+| **Technical Documentation** | 🔄 | <!-- PASTE DOCS LINK HERE → e.g. GitHub Wiki or docs site --> |
+| **User Guide** | 🔄 | <!-- PASTE USER GUIDE LINK HERE --> |
+| **Community Contribution** | 🔄 | <!-- PASTE LINK → blog post / workshop / tutorial / OSS contribution --> |
+| **Google Form (Mainnet Users)** | 🔄 | <!-- PASTE GOOGLE FORM LINK HERE --> |
+| **Excel Export (Mainnet)** | 🔄 | <!-- PASTE EXCEL/GOOGLE SHEETS LINK HERE --> |
+
+---
+
+### 🚀 Mainnet Deployment
+
+<!-- 
+TODO: Deploy to Stellar mainnet and fill in below
+
+Steps to deploy:
+  1. Update contracts to use mainnet network passphrase
+  2. Build WASM: cargo build --target wasm32v1-none --release
+  3. Install: soroban contract install --network mainnet --wasm target/.../stellar_poll.wasm
+  4. Deploy: soroban contract deploy --network mainnet --wasm ... --source <deployer>
+  5. Initialize: soroban contract invoke --network mainnet --id <contract_id> -- initialize ...
+  6. Update frontend .env with mainnet contract ID and network passphrase
+  7. Deploy frontend to production URL
+-->
+
+| Item | Status | Details |
+|------|--------|---------|
+| **Poll Contract (Mainnet)** | 🔄 | <!-- PASTE MAINNET CONTRACT ID --> |
+| **Reward Contract (Mainnet)** | 🔄 | <!-- PASTE MAINNET CONTRACT ID (if deployed) --> |
+| **Network Passphrase** | — | `Stellar Global Ledger ; v1` |
+| **Frontend URL (Mainnet)** | 🔄 | <!-- PASTE PRODUCTION URL --> |
+| **Backend URL (Mainnet)** | 🔄 | <!-- PASTE PRODUCTION BACKEND URL --> |
+| **Stellar Expert (Mainnet)** | 🔄 | `<!-- PASTE MAINNET EXPLORER LINK -->` |
+
+---
+
+### 👥 Mainnet User Onboarding Proof
+
+<!-- 
+What counts as a "mainnet user":
+  1. User visited the mainnet production app
+  2. User connected a Stellar MAINNET wallet (not testnet)
+  3. User created a poll OR cast a vote on mainnet
+  4. User filled out the Google Form
+
+How to prove 20+ mainnet users:
+  1. Google Form responses → export to Excel → count rows ≥ 20
+  2. PostHog dashboard → unique visitors on mainnet URL
+  3. Stellar Expert → on-chain mainnet transaction count
+  4. All 3 proofs attached below
+-->
+
+| Proof Source | Status | Link |
+|-------------|--------|------|
+| **Google Form Responses** | 🔄 | `<!-- PASTE EXCEL/SHEETS LINK → count ≥ 20 -->` |
+| **PostHog Mainnet Visitors** | 🔄 | `<!-- PASTE POSTHOG DASHBOARD LINK -->` |
+| **On-Chain Mainnet Txns** | 🔄 | `<!-- PASTE STELLAR EXPERT MAINNET LINK -->` |
+| **Total Mainnet Users** | 🔄 | `<!-- PASTE FINAL COUNT → "20+" minimum required -->` |
+
+<!-- 
+TODO: Add screenshots once you have proof
+<div align="center">
+  <img src="frontend/screenshots/mainnet-users-proof.jpg" alt="Mainnet User Proof" width="90%" />
+  <p><em>Proof of 20+ verified mainnet users</em></p>
+</div>
+-->
+
+---
+
+### 🔒 Security
+
+<!-- 
+Choose ONE of the following:
+
+OPTION A: Smart Contract Audit
+  - Use Soroban audit tools or hire an auditor
+  - Document findings and fixes
+  - Link audit report below
+
+OPTION B: Security Review by Mentor/Team
+  - Request review from Stellar community mentors
+  - Document review checklist
+  - Link review document below
+-->
+
+| Security Item | Status | Details |
+|--------------|--------|---------|
+| **Audit Type** | 🔄 | <!-- "Soroban Audit" or "Mentor Security Review" --> |
+| **Audit Report** | 🔄 | `<!-- PASTE AUDIT REPORT LINK -->` |
+| **Findings** | 🔄 | <!-- PASTE SUMMARY → e.g. "0 critical, 2 medium, 3 low" --> |
+| **Fixes Applied** | 🔄 | <!-- PASTE COMMIT LINKS for fixes --> |
+| **Re-audit Status** | 🔄 | <!-- "Passed" or "Pending" --> |
+
+---
+
+### 🐦 Product Marketing
+
+<!-- 
+Required social media promotion:
+  1. Twitter/X launch post or thread
+  2. Demo or showcase content
+  3. Tag @StellarOrg, #Stellar, #Soroban
+
+Example thread structure:
+  - Tweet 1: "We just launched StellarVote on mainnet! 🚀" + demo video
+  - Tweet 2: Problem statement
+  - Tweet 3: Solution + features
+  - Tweet 4: Architecture / tech stack
+  - Tweet 5: Call to action + links
+-->
+
+| Marketing Item | Status | Link |
+|---------------|--------|------|
+| **Twitter/X Launch Post** | 🔄 | `<!-- PASTE TWEET URL -->` |
+| **Thread (if applicable)** | 🔄 | `<!-- PASTE THREAD URL -->` |
+| **Demo Video (Mainnet)** | 🔄 | `<!-- PASTE VIDEO LINK → YouTube / Loom / GitHub -->` |
+| **Ecosystem Tags** | — | `@StellarOrg #Stellar #Soroban #Web3 #BuildInPublic` |
+
+---
+
+### 🤝 Ecosystem Contribution
+
+<!-- 
+Complete at least ONE:
+  - Technical blog post (Dev.to, Hashnode, Mirror)
+  - Workshop or live session
+  - Tutorial (written or video)
+  - Open-source contribution to Stellar ecosystem
+  - Community call presentation
+-->
+
+| Contribution Type | Status | Link |
+|-------------------|--------|------|
+| **Type** | 🔄 | <!-- "Blog Post" / "Workshop" / "Tutorial" / "OSS Contribution" / "Community Session" --> |
+| **Title** | 🔄 | `<!-- PASTE TITLE -->` |
+| **Link** | 🔄 | `<!-- PASTE URL -->` |
+| **Published Date** | 🔄 | `<!-- PASTE DATE -->` |
+
+---
+
+### ⚡ Advanced Features (Black Belt)
+
+<!-- 
+Implement at least ONE:
+
+1. Fee Sponsorship — Gasless transactions using fee bump
+   - Backend signs and submits fee-bump transactions
+   - Users don't need XLM for gas
+
+2. Cross-border Flows — SEP-24/SEP-31 anchor integration
+   - Integrate with an anchor for fiat on/off ramp
+   - Enable cross-border payments
+
+3. Multi-signature Logic — Multi-party approval
+   - Require multiple signers for poll creation or admin actions
+   - Use Stellar's native multi-sig
+
+4. Account Abstraction — Smart wallet
+   - Custom auth flow without seed phrases
+   - Social login or session keys
+-->
+
+| Feature | Status | Details |
+|---------|--------|---------|
+| **Chosen Feature** | 🔄 | <!-- "Fee Sponsorship" / "SEP-24" / "Multi-sig" / "Account Abstraction" --> |
+| **Implementation** | 🔄 | `<!-- PASTE COMMIT LINKS -->` |
+| **Documentation** | 🔄 | `<!-- PASTE DOCS LINK -->` |
+| **Demo/Proof** | 🔄 | `<!-- PASTE SCREENSHOT OR VIDEO LINK -->` |
+
+---
+
+### 📝 User Onboarding (Mainnet)
+
+A Google Form collects mainnet user details:
+
+| Field | Description |
+|-------|-------------|
+| Name | User's full name |
+| Email | Contact email |
+| Wallet Address | Stellar **mainnet** wallet address |
+| Product Rating | Rate StellarVote (1–5) |
+| Feedback | Open-ended suggestions |
+
+<!-- TODO: Create new Google Form for mainnet users, then paste links below -->
+
+📋 **Google Form (Mainnet)**: `<!-- PASTE GOOGLE FORM LINK HERE → https://docs.google.com/forms/d/e/... -->`
+
+📊 **Exported Responses (Excel)**: `<!-- PASTE EXCEL/GOOGLE SHEETS LINK HERE → https://docs.google.com/spreadsheets/d/... -->`
+
+### 🔄 User Feedback Iteration (Mainnet)
+
+Based on mainnet user feedback:
+
+| Feedback Area | What Users Said | Iteration Made | Commit |
+|--------------|-----------------|----------------|--------|
+| <!-- PASTE FEEDBACK 1 --> | <!-- PASTE USER QUOTE --> | <!-- PASTE WHAT YOU BUILT --> | `<!-- PASTE COMMIT HASH -->` |
+| <!-- PASTE FEEDBACK 2 --> | <!-- PASTE USER QUOTE --> | <!-- PASTE WHAT YOU BUILT --> | `<!-- PASTE COMMIT HASH -->` |
+| <!-- PASTE FEEDBACK 3 --> | <!-- PASTE USER QUOTE --> | <!-- PASTE WHAT YOU BUILT --> | `<!-- PASTE COMMIT HASH -->` |
+
+---
+
+### 📊 Mainnet Analytics
+
+<!-- 
+TODO: Set up PostHog for mainnet URL and paste stats below
+-->
+
+| Metric | Value |
+|--------|-------|
+| **Unique Visitors (Mainnet)** | `<!-- PASTE COUNT -->` |
+| **Page Views** | `<!-- PASTE COUNT -->` |
+| **Sessions** | `<!-- PASTE COUNT -->` |
+| **Avg. Session Duration** | `<!-- PASTE DURATION -->` |
+| **On-Chain Transactions** | `<!-- PASTE COUNT -->` |
+| **Top User Action** | `<!-- e.g. "Cast Vote" / "Create Poll" -->` |
+
+---
+
+### 📋 Final Deliverables (Level 6)
+
+| Item | Link |
+|------|------|
+| **Live Mainnet App** | `<!-- PASTE MAINNET URL -->` |
+| **GitHub Repo** | [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote) |
+| **CI Pipeline** | [GitHub Actions](https://github.com/pritamscodee/stellar-Vote/actions) |
+| **Mainnet Contract** | `<!-- PASTE MAINNET CONTRACT EXPLORER LINK -->` |
+| **Demo Video** | `<!-- PASTE MAINNET DEMO VIDEO -->` |
+| **Pitch Deck** | [StellarVote Pitch Deck](https://gamma.app/docs/StellarVote-Decentralized-Voting-on-Stellar-66033mltatar1wi?mode=doc) |
+| **Audit Report** | `<!-- PASTE AUDIT LINK -->` |
+| **Twitter/X Launch** | `<!-- PASTE TWEET URL -->` |
+| **Community Contribution** | `<!-- PASTE BLOG/WORKSHOP/TUTORIAL LINK -->` |
+| **Google Form (Mainnet)** | `<!-- PASTE FORM LINK -->` |
+| **Excel Export (Mainnet)** | `<!-- PASTE SHEETS LINK -->` |
+| **PostHog Analytics** | `<!-- PASTE DASHBOARD LINK -->` |
 
 ---
 
