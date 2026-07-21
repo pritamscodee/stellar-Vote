@@ -9,6 +9,9 @@
 <img width="1892" height="881" alt="testimonisal animted" src="https://github.com/user-attachments/assets/b2898ff7-9e19-41a0-8731-ddb5ae16f12f" />
 
 
+
+
+
 Demo video  - - > 
 
 
@@ -58,6 +61,18 @@ https://github.com/user-attachments/assets/3c9f250d-1a12-460a-8aae-c5cd90028861
 ---
 
 </div>
+
+
+
+
+
+
+
+<img width="1712" height="870" alt="S3" src="https://github.com/user-attachments/assets/1ae8ad62-473d-4ac7-9cbe-b1c947defcb0" />
+
+
+
+<img width="1880" height="900" alt="S1" src="https://github.com/user-attachments/assets/a6e83df7-3b7c-4da1-bda9-e6c2719ce029" />
 
 ## 🌐 Overview
 
@@ -138,41 +153,14 @@ https://github.com/user-attachments/assets/3c9f250d-1a12-460a-8aae-c5cd90028861
 
 ## 🖼️ Screenshots ( +Leve2 included because that  still in review )
 
-<div align="center">
-  <img src="frontend/screenshots/inteli5.jpg" alt="Intel i5" width="45%" />
-  <img src="frontend/screenshots/asli-landing.jpg" alt="Asli Landing" width="45%" />
-</div>
-
-<div align="center">
-  <img src="frontend/screenshots/landing-page.jpg" alt="Landing Page" width="45%" />
-  <img src="frontend/screenshots/wallet-connected.jpg" alt="Wallet Connected" width="45%" />
-</div>
-
-<div align="center">
-  <img src="frontend/screenshots/dapp-success2.jpg" alt="Dashboard" width="45%" />
-  <img src="frontend/screenshots/balance-displayed.jpg" alt="Balance Displayed" width="45%" />
-</div>
-
-<div align="center">
-  <img src="frontend/screenshots/leev2.jpg" alt="Level 2" width="45%" />
-  <img src="frontend/screenshots/pay2level2.jpg" alt="Level 2 Payments" width="45%" />
-</div>
-
-<div align="center">
-  <img src="frontend/screenshots/transaction-success.jpg" alt="Transaction Success" width="45%" />
-  <img src="frontend/screenshots/transaction-result.jpg" alt="Transaction Result" width="45%" />
-</div>
-
-<div align="center">
-  <img src="frontend/screenshots/ci-pipeline.jpg" alt="CI/CD Pipeline" width="90%" />
-</div>
-
-<div align="center">
-  <img src="frontend/screenshots/mobile-responsive.jpeg" alt="Mobile Responsive UI" width="30%" />
-  <img src="frontend/screenshots/mobile-responsive-2.jpeg" alt="Mobile Responsive UI 2" width="30%" />
-</div>
+<img width="1910" height="901" alt="image" src="https://github.com/user-attachments/assets/84a634d4-126f-4224-b90b-f612e934e3e1" />
 
 ---
+<img width="1887" height="887" alt="image" src="https://github.com/user-attachments/assets/091e0529-f4f0-4208-a9c0-c62854683c6d" />
+
+<img width="1857" height="795" alt="image" src="https://github.com/user-attachments/assets/221cf3f8-b796-4749-b9df-01e1d92dcfe0" />
+
+
 
 ## 📱 Mobile Responsive Design
 
