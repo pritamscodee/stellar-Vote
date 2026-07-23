@@ -381,8 +381,6 @@ contractimport!("../poll/target/wasm32v1-none/release/stellar_poll.wasm");
 
 <div align="center">
 
-| # | User | Email | Wallet Address | Tx Hash | Rating | Feedback |
-|---|------|-------|---------------|---------|--------|----------|
 | 1 | **Aditya Jha** | jha073803@gmail.com | `GDFKLTB5WKKDDJ2NRU2V5OG476HYEGWT4UFV7BID7BNGWZGRZYL3LL6Z` | [View Tx](https://stellar.expert/explorer/testnet/tx/1aa3a9c4dc115f1d6e6e4d520621c6685a0fe1a8b22dc9bf3f36004c9fde5559) | ⭐⭐⭐⭐⭐ 5/5 | Great Product! Liked the UI |
 | 2 | **Souvik Mandal** | souvikmandals10@gmail.com | `GAG3SUKHIF7VAWGTDRH52XETMLZXXNXBAZLLXHSLXAQPOBBCN43YLKR4` | [View Tx](https://stellar.expert/explorer/testnet/tx/cce1e122b157105e820d48a8f8bd3a303167832e8a0252f1796af71ff8e30145) | ⭐⭐⭐⭐ 4/5 | Polling on blockchain that's nice idea!!! |
 | 3 | **Ankita Barman** | poulumidui@gmail.com | `GCV5X5CKYUAPQLE3OYQS3PDXKX4TRV767YUCJ66PWWGZD2BXE744T276` | [View Tx](https://stellar.expert/explorer/testnet/tx/0d6532879d8b30c2ac2188a3ee1db35f281545c152c4a994b079f66de25fc944) | ⭐⭐⭐⭐⭐ 5/5 | Great product, helpful for polling in medical schools |
@@ -390,10 +388,9 @@ contractimport!("../poll/target/wasm32v1-none/release/stellar_poll.wasm");
 | 5 | **Priyasha Debnath** | popololo229099@gmail.com | `GCKMODNZEAI4X6AL6SL77PNJLUUJAQAWECXDTXJZGXBOSSSF7THC3XH6` | [View Tx](https://stellar.expert/explorer/testnet/tx/0abd550962b9b495868dbb9a3cc3f6c8d34bd8d162db5b8ba647cfed63cb341a) | ⭐⭐⭐ 3/5 | Overall good, keep improving, add realtime microservices |
 | 6 | **Papita Kumari** | poppritu@gmail.com | `GACMLTEWZ23NGJ5WZ2THYGLODFYTEKECB7J2U33H3DCSW2PEAQUEIZED` | [View Tx](https://stellar.expert/explorer/testnet/tx/7e5250798af445a729d711e2732be1584c3c0dc5bea58369c1a6ec8f9e8e0afc) | ⭐⭐⭐⭐⭐ 5/5 | Best design and well application |
 | 7 | **Probir Sha** | proumg2@gmail.com | `GAEAB4UWRUODGUKBYGDXBZULSOI3HJ6HQKJNNLTY66IF3ATXMRYUCSNX` | [View Tx](https://stellar.expert/explorer/testnet/tx/13d07f5cb35bfb1f83340af3c3d9789e34e34af61765608c86918ec9ad13f51d) | ⭐⭐⭐⭐ 4/5 | Dashboard and analytics is awesome, really better than any other |
-| 8 | **Amitabh Dey** | amitabh101dey@gmail.com | `GBKYHWSL2MNUO73HWY6KWNOA64AKSUENCOBTR56M66HNLMMKMZHK5OAS` | `GBKYHWSL2MNUO73HWY6KWNOA64AKSUENCOBTR56M66HNLMMKMZHK5OAS` | ⭐⭐⭐⭐⭐ 5/5 | Awesome, really nice UI and beautiful use of Stellar |
-| 9 | **Abhishek Kumar** | ak0001736@gmail.com | `GBENUMINONHMCBALY7UMD4JQV7XXOQHAO4KNVV4UJC5ZTGHNE7PWQ7HR` | [View Tx](https://stellar.expert/explorer/testnet/tx/104f599bfdaeeffee79f44d4941cb8f08879defc1a76045fbe9a84187e2b3f2e) | ⭐⭐⭐⭐⭐ 5/5 | Good |
-| 10 | **Pritam Dev** | pritamsdev2@gmail.com | `GATJMD6BGNK4FQYNFWB354N7RP4XHA2R74GNSYM472ALNLJFX7NXBS3X` | [View Tx](https://stellar.expert/explorer/testnet/tx/039fd6abf1303e7208e11daf02abab5e71fb890530d15a221bd5a3beaf8b6b49) | ⭐⭐⭐⭐ 4/5 | Good UI/UX, perfect suitable and clean design |
-
+| 8 | **Abhishek Kumar** | ak0001736@gmail.com | `GBENUMINONHMCBALY7UMD4JQV7XXOQHAO4KNVV4UJC5ZTGHNE7PWQ7HR` | [View Tx](https://stellar.expert/explorer/testnet/tx/104f599bfdaeeffee79f44d4941cb8f08879defc1a76045fbe9a84187e2b3f2e) | ⭐⭐⭐⭐⭐ 5/5 | Good |
+| 9 | **Pritam Dev** | pritamsdev2@gmail.com | `GATJMD6BGNK4FQYNFWB354N7RP4XHA2R74GNSYM472ALNLJFX7NXBS3X` | [View Tx](https://stellar.expert/explorer/testnet/tx/039fd6abf1303e7208e11daf02abab5e71fb890530d15a221bd5a3beaf8b6b49) | ⭐⭐⭐⭐ 4/5 | Good UI/UX, perfect suitable and clean design |
+| 10 | **Sayan Sadhukhan** | sayansadhukhan544@gmail.com | `GCVT3KDQT3Z2JPWODBMHLX4ODSIKDZ7CTZYZTKHXIQLTWLF5TBRNXJHC` | [View Tx](https://stellar.expert/explorer/testnet/tx/95cade7d376b8247bf373f3f0ca41a810e698684cc090942c05e3887851592ab) | ⭐⭐⭐⭐⭐ 5/5 | StellarVote makes on-chain voting simple and transparent |
 </div>
 
 <div align="center">
