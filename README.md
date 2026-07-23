@@ -381,6 +381,8 @@ contractimport!("../poll/target/wasm32v1-none/release/stellar_poll.wasm");
 
 <div align="center">
 
+| # | Name | Email | Public Key (Stellar) | Transaction Link | Rating | Feedback |
+|---|------|-------|----------------------|------------------|--------|----------|
 | 1 | **Aditya Jha** | jha073803@gmail.com | `GDFKLTB5WKKDDJ2NRU2V5OG476HYEGWT4UFV7BID7BNGWZGRZYL3LL6Z` | [View Tx](https://stellar.expert/explorer/testnet/tx/1aa3a9c4dc115f1d6e6e4d520621c6685a0fe1a8b22dc9bf3f36004c9fde5559) | ⭐⭐⭐⭐⭐ 5/5 | Great Product! Liked the UI |
 | 2 | **Souvik Mandal** | souvikmandals10@gmail.com | `GAG3SUKHIF7VAWGTDRH52XETMLZXXNXBAZLLXHSLXAQPOBBCN43YLKR4` | [View Tx](https://stellar.expert/explorer/testnet/tx/cce1e122b157105e820d48a8f8bd3a303167832e8a0252f1796af71ff8e30145) | ⭐⭐⭐⭐ 4/5 | Polling on blockchain that's nice idea!!! |
 | 3 | **Ankita Barman** | poulumidui@gmail.com | `GCV5X5CKYUAPQLE3OYQS3PDXKX4TRV767YUCJ66PWWGZD2BXE744T276` | [View Tx](https://stellar.expert/explorer/testnet/tx/0d6532879d8b30c2ac2188a3ee1db35f281545c152c4a994b079f66de25fc944) | ⭐⭐⭐⭐⭐ 5/5 | Great product, helpful for polling in medical schools |
@@ -391,10 +393,8 @@ contractimport!("../poll/target/wasm32v1-none/release/stellar_poll.wasm");
 | 8 | **Abhishek Kumar** | ak0001736@gmail.com | `GBENUMINONHMCBALY7UMD4JQV7XXOQHAO4KNVV4UJC5ZTGHNE7PWQ7HR` | [View Tx](https://stellar.expert/explorer/testnet/tx/104f599bfdaeeffee79f44d4941cb8f08879defc1a76045fbe9a84187e2b3f2e) | ⭐⭐⭐⭐⭐ 5/5 | Good |
 | 9 | **Pritam Dev** | pritamsdev2@gmail.com | `GATJMD6BGNK4FQYNFWB354N7RP4XHA2R74GNSYM472ALNLJFX7NXBS3X` | [View Tx](https://stellar.expert/explorer/testnet/tx/039fd6abf1303e7208e11daf02abab5e71fb890530d15a221bd5a3beaf8b6b49) | ⭐⭐⭐⭐ 4/5 | Good UI/UX, perfect suitable and clean design |
 | 10 | **Sayan Sadhukhan** | sayansadhukhan544@gmail.com | `GCVT3KDQT3Z2JPWODBMHLX4ODSIKDZ7CTZYZTKHXIQLTWLF5TBRNXJHC` | [View Tx](https://stellar.expert/explorer/testnet/tx/95cade7d376b8247bf373f3f0ca41a810e698684cc090942c05e3887851592ab) | ⭐⭐⭐⭐⭐ 5/5 | StellarVote makes on-chain voting simple and transparent |
+
 </div>
-
-<div align="center">
-
 | Metric | Value |
 |--------|-------|
 | **Total Users** | 10+ |
