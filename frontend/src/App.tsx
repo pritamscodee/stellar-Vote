@@ -7,6 +7,7 @@ import MistralChat from "./components/MistralChat";
 import FeedbackView from "./FeedbackView";
 import OnboardingModal from "./OnboardingModal";
 import { capturePageView } from "./services/analytics";
+import { initAnalytics } from "./services/analytics";
 
 function PageTracker() {
   const location = useLocation();
@@ -17,6 +18,10 @@ function PageTracker() {
 }
 
 function App() {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
   return (
     <BrowserRouter>
       <PageTracker />

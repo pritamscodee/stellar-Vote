@@ -8,6 +8,9 @@ import { STELLAR_NETWORK } from "./services/contract";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedTestimonials, { type Testimonial } from "./components/AnimatedTestimonials";
+import StatsCounter from "./StatsCounter";
+import HowItWorks from "./HowItWorks";
+import CommunitySection from "./CommunitySection";
 
 const BACKEND_URL = "https://stellar-pay-eia0.onrender.com";
 
@@ -336,6 +339,8 @@ export default function LandingPage() {
           </div>
         </section>
 
+        <StatsCounter />
+
         <section className="bg-surface-soft py-24 md:py-32 border-t border-hairline">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
@@ -365,6 +370,8 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
+        <HowItWorks />
 
         <section className="bg-surface-dark py-24 md:py-32">
           <div className="max-w-6xl mx-auto px-6">
@@ -564,6 +571,8 @@ export default function LandingPage() {
             </div>
           </section>
         )}
+
+        <CommunitySection />
 
         <section className="py-20 md:py-24">
           <div className="max-w-6xl mx-auto px-6">

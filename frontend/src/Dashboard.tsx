@@ -42,6 +42,9 @@ import {
 import PollShareButton from "./PollShareButton";
 import CountdownTimer from "./CountdownTimer";
 import VoteHistory from "./VoteHistory";
+import Leaderboard from "./Leaderboard";
+import PollCategories from "./PollCategories";
+import PollTemplates from "./PollTemplates";
 
 const CONTRACT_ID = import.meta.env.VITE_CONTRACT_ID || "CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID";
 
@@ -845,6 +848,10 @@ export default function Dashboard() {
                     </motion.span>
                   )}
                 </TabsTrigger>
+                <TabsTrigger value="leaderboard">
+                  <Award className="w-3.5 h-3.5 mr-1.5" />
+                  Leaderboard
+                </TabsTrigger>
               </TabsList>
 
               <AnimatePresence mode="wait">
@@ -854,8 +861,11 @@ export default function Dashboard() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.25 }}
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start"
                   >
+                    <div className="mb-5">
+                      <PollCategories selected="all" onSelect={() => {}} />
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
                     <div>
                       <GlassCard className="p-6 h-full">
                         <div className="flex items-start justify-between mb-5">
@@ -1108,6 +1118,7 @@ export default function Dashboard() {
                         </div>
                       </GlassCard>
                     </div>
+                    </div>
                   </motion.div>
                 </TabsContent>
 
@@ -1175,6 +1186,58 @@ export default function Dashboard() {
                   </motion.div>
                 </TabsContent>
 
+                <TabsContent value="leaderboard" key="leaderboard-tab">
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.25 }}
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start"
+                  >
+                    <Leaderboard currentWallet={publicKey} />
+                    <GlassCard className="p-5">
+                      <div className="flex items-center gap-2.5 mb-4">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                          <BarChart3 className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ink">
+                            Your Stats
+                          </p>
+                          <p className="text-[10px] text-body">Performance overview</p>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-surface-soft rounded-lg p-3 text-center">
+                          <p className="text-xl font-bold font-mono text-ink">{alreadyVoted ? "1" : "0"}</p>
+                          <p className="text-[10px] text-body font-ui mt-1">Votes Cast</p>
+                        </div>
+                        <div className="bg-surface-soft rounded-lg p-3 text-center">
+                          <p className="text-xl font-bold font-mono text-ink">{totalVotes}</p>
+                          <p className="text-[10px] text-body font-ui mt-1">Total Votes</p>
+                        </div>
+                        <div className="bg-surface-soft rounded-lg p-3 text-center">
+                          <p className="text-xl font-bold font-mono text-ink truncate">{balance !== null ? balance : "—"}</p>
+                          <p className="text-[10px] text-body font-ui mt-1">XLM Balance</p>
+                        </div>
+                        <div className="bg-surface-soft rounded-lg p-3 text-center">
+                          <p className="text-xl font-bold font-mono text-ink">
+                            {totalVotes > 0 ? `${((alreadyVoted ? 1 : 0) / totalVotes * 100).toFixed(0)}%` : "0%"}
+                          </p>
+                          <p className="text-[10px] text-body font-ui mt-1">Participation</p>
+                        </div>
+                      </div>
+                      <Separator className="my-4" />
+                      <PollTemplates onSelect={(t) => {
+                        setNewQuestion(t.question || "");
+                        setNewOptions(t.options);
+                        setNewDeadline(t.deadlineHours <= 24 ? t.deadlineHours : Math.ceil(t.deadlineHours / 24));
+                        setDeadlineUnit(t.deadlineHours <= 24 ? "hours" : "days");
+                        setShowCreatePoll(true);
+                      }} />
+                    </GlassCard>
+                  </motion.div>
+                </TabsContent>
 
               </AnimatePresence>
             </Tabs>

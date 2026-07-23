@@ -5,39 +5,9 @@
 
 <img width="1901" height="868" alt="lanidng page1" src="https://github.com/user-attachments/assets/a5d7ff3e-ff4e-4a31-8d40-d64b9f310b48" />
 
--------------------------------------------------------------------------------------------------------------------------------------------
+---
+
 <img width="1892" height="881" alt="testimonisal animted" src="https://github.com/user-attachments/assets/b2898ff7-9e19-41a0-8731-ddb5ae16f12f" />
-
-
-
-
-
-Demo video  - - > 
-
-
-
-https://github.com/user-attachments/assets/3c9f250d-1a12-460a-8aae-c5cd90028861
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### Multi-Wallet Stellar dApp × Soroban Smart Contract × Real-Time SSE Events
 
@@ -62,15 +32,7 @@ https://github.com/user-attachments/assets/3c9f250d-1a12-460a-8aae-c5cd90028861
 
 </div>
 
-
-
-
-
-
-
 <img width="1712" height="870" alt="S3" src="https://github.com/user-attachments/assets/1ae8ad62-473d-4ac7-9cbe-b1c947defcb0" />
-
-
 
 <img width="1880" height="900" alt="S1" src="https://github.com/user-attachments/assets/a6e83df7-3b7c-4da1-bda9-e6c2719ce029" />
 
@@ -83,6 +45,9 @@ https://github.com/user-attachments/assets/3c9f250d-1a12-460a-8aae-c5cd90028861
 - **Real-Time SSE Events** — Live activity feed powered by a Rust/Axum event server
 - **Clerk Authentication** — Secure sign-up/sign-in with email, Google, GitHub, and more
 - **Dark Mode UI** — Sleek, responsive interface built with Tailwind CSS v4
+- **Leaderboard System** — Track top voters and community engagement
+- **Poll Templates** — Quick-start templates for common poll types
+- **Category Filtering** — Organize polls by governance, community, technical, and fun
 
 ---
 
@@ -106,6 +71,21 @@ https://github.com/user-attachments/assets/3c9f250d-1a12-460a-8aae-c5cd90028861
 - Create polls with custom options
 - Set deadline (hours/days)
 - Real-time vote updates via SSE
+- Quick-start poll templates
+
+### 🏆 Leaderboard
+- Track top voters by vote count
+- Gold/Silver/Bronze badge system
+- Personal performance stats
+- Community engagement metrics
+
+### 🏷️ Poll Categories
+- Governance, Community, Technical, Fun
+- Visual category filtering
+- Category-aware poll creation
+
+</td>
+<td width="50%">
 
 ### 🚀 User Onboarding
 - First-time welcome modal with step-by-step guide
@@ -127,40 +107,21 @@ https://github.com/user-attachments/assets/3c9f250d-1a12-460a-8aae-c5cd90028861
 - Expandable history panel
 - Clear history option
 
-</td>
-<td width="50%">
-
 ### ⚡ Real-Time Events
 - Server-Sent Events (SSE) stream
 - Live vote notifications
 - Instant poll creation alerts
 
-### 🔗 On-Chain Verified
-- All transactions on Stellar testnet
-- Stellar Expert explorer links
-- Full tx hash audit trail
-
-### 🎨 Modern UI
-- Dark/light theme toggle
-- Responsive mobile-first design
-- Tailwind CSS v4 + glassmorphism
+### 🤖 AI Chat Assistant
+- Mistral AI-powered chat widget
+- Web3 & Stellar knowledge base
+- In-chat feedback collection
 
 </td>
 </tr>
 </table>
 
 ---
-
-## 🖼️ Screenshots ( +Leve2 included because that  still in review )
-
-<img width="1910" height="901" alt="image" src="https://github.com/user-attachments/assets/84a634d4-126f-4224-b90b-f612e934e3e1" />
-
----
-<img width="1887" height="887" alt="image" src="https://github.com/user-attachments/assets/091e0529-f4f0-4208-a9c0-c62854683c6d" />
-
-<img width="1857" height="795" alt="image" src="https://github.com/user-attachments/assets/221cf3f8-b796-4749-b9df-01e1d92dcfe0" />
-
-
 
 ## 📱 Mobile Responsive Design
 
@@ -237,26 +198,32 @@ stellar-vote/
 │   ├── src/
 │   │   ├── main.tsx            # Entry point
 │   │   ├── App.tsx             # Auth router + ErrorBoundary
-│   │   ├── Dashboard.tsx       # Main dashboard
-│   │   ├── LandingPage.tsx     # Marketing page
-│   │   ├── OnboardingModal.tsx # NEW — First-time user onboarding
-│   │   ├── PollShareButton.tsx # NEW — Share poll via URL/clipboard
-│   │   ├── CountdownTimer.tsx  # NEW — Live poll deadline countdown
-│   │   ├── VoteHistory.tsx     # NEW — Persistent vote history panel
+│   │   ├── Dashboard.tsx       # Main dashboard with tabs
+│   │   ├── LandingPage.tsx     # Marketing page with stats
+│   │   ├── OnboardingModal.tsx # First-time user onboarding
+│   │   ├── PollShareButton.tsx # Share poll via URL/clipboard
+│   │   ├── CountdownTimer.tsx  # Live poll deadline countdown
+│   │   ├── VoteHistory.tsx     # Persistent vote history panel
+│   │   ├── Leaderboard.tsx     # NEW — Top voters leaderboard
+│   │   ├── PollCategories.tsx  # NEW — Category filter for polls
+│   │   ├── PollTemplates.tsx   # NEW — Quick poll templates
+│   │   ├── StatsCounter.tsx    # NEW — Animated stats counter
+│   │   ├── HowItWorks.tsx      # NEW — Step-by-step guide
+│   │   ├── CommunitySection.tsx # NEW — Open source community
 │   │   ├── ErrorBoundary.tsx   # React error boundary
 │   │   ├── LoadingSkeleton.tsx # Loading skeletons
 │   │   ├── FeedbackWidget.tsx  # Floating feedback button
 │   │   ├── FeedbackView.tsx    # Admin feedback viewer
 │   │   ├── ThemeProvider.tsx   # Dark/light theme
 │   │   ├── types.ts            # Shared types
-│   │   ├── index.css           # Tailwind + theme
+│   │   ├── index.css           # Tailwind + theme + animations
 │   │   ├── test/               # Frontend tests
 │   │   └── services/
 │   │       ├── wallets.ts      # Multi-wallet kit
 │   │       ├── contract.ts     # Soroban interactions
 │   │       ├── backend.ts      # SSE client
 │   │       ├── analytics.ts    # PostHog analytics
-│   │       └── voteHistory.ts  # NEW — Vote history persistence
+│   │       └── voteHistory.ts  # Vote history persistence
 │   ├── screenshots/            # App screenshots
 │   └── vercel.json             # Vercel SPA config
 ├── contracts/
@@ -276,8 +243,6 @@ stellar-vote/
 
 ---
 
----
-
 ## 🤖 CI/CD Pipeline
 
 The project uses **GitHub Actions** for continuous integration. On every push to `main` and every pull request, the pipeline runs:
@@ -287,14 +252,6 @@ The project uses **GitHub Actions** for continuous integration. On every push to
 | **Frontend** | `npm ci`, `npm run lint`, `npm run build`, `npm test` (14 tests) |
 | **Contract** | `cargo build` (poll + reward), `cargo test` (4 tests) |
 | **Backend** | `cargo build` (Rust Axum server) |
-
-### Pipeline Status
-
-[![CI](https://github.com/pritamscodee/stellar-Vote/actions/workflows/ci.yml/badge.svg)](https://github.com/pritamscodee/stellar-Vote/actions/workflows/ci.yml)
-
-<div align="center">
-  <img src="frontend/screenshots/ci-pipeline.jpg" alt="CI/CD Pipeline" width="90%" />
-</div>
 
 ### Run Tests Locally
 
@@ -315,24 +272,11 @@ cd contracts/poll && cargo test
 | Reward contract | 3 | ✅ |
 | **Total** | **21** | ✅ |
 
-### CI/CD Fixes (Level 4)
-
-- Added `actions-rust-lang/setup-rust-toolchain` to backend job for proper Rust toolchain setup
-- Added Rust cache with explicit workspaces config for backend
-- Added `npm audit` security check (non-blocking) to frontend job
-- All jobs now use proper caching for faster builds
-
 ---
 
 ## 🔗 Inter-Contract Communication
 
 The `contracts/reward` contract demonstrates cross-contract calls by importing the compiled poll contract WASM via `contractimport`.
-
-### Reward Contract Features
-
-- **Reward logic** that calls the poll contract to verify votes
-- **Cross-contract import** using Soroban's `contractimport("../poll/target/.../stellar_poll.wasm")`
-- Demonstrates composability of Soroban smart contracts
 
 ```rust
 // contracts/reward/src/lib.rs
@@ -343,29 +287,10 @@ contractimport!("../poll/target/wasm32v1-none/release/stellar_poll.wasm");
 
 ## 🚢 Deployment Scripts
 
-Automated deployment scripts for the Soroban poll contract to Stellar testnet:
-
 | Script | Platform |
 |--------|----------|
 | `scripts/deploy.sh` | Unix (Linux/macOS) |
 | `scripts/deploy.ps1` | Windows PowerShell |
-
-Both scripts:
-1. Build the WASM contract
-2. Install the contract via `soroban contract install`
-3. Deploy via `soroban contract deploy`
-4. Output the deployed contract ID
-
----
-
-## 🧩 Error Boundary & Loading Skeletons
-
-| Component | Purpose |
-|-----------|---------|
-| `ErrorBoundary.tsx` | Catches React rendering errors and shows a friendly fallback UI with a reload button |
-| `LoadingSkeleton.tsx` | `CardSkeleton` and `ListSkeleton` — animated pulse placeholders for async data |
-
-Both components are imported in `Dashboard.tsx` to improve production UX during data fetching.
 
 ---
 
@@ -385,24 +310,9 @@ Both components are imported in `Dashboard.tsx` to improve production UX during 
 | `/api/events` | GET | SSE stream for live events |
 | `/api/publish` | GET | Publish vote/poll events |
 
-### Deploy to Render
-
-```bash
-# 1. Push to GitHub
-# 2. Render Dashboard → New Web Service
-# 3. Set:
-#    Root Directory: backend
-#    Build: cargo build --release
-#    Start: ./target/release/stellervote-backend
-#    Env: PORT = 10000
-# 4. Set VITE_BACKEND_URL in frontend env vars
-```
-
 ---
 
 ## 📜 On-Chain Transactions
-
-All interactions are verifiable on Stellar Expert:
 
 | # | Type | Tx Hash | Explorer | Date |
 |---|------|---------|----------|------|
@@ -411,7 +321,6 @@ All interactions are verifiable on Stellar Expert:
 | 3 | **Cast Vote** | `60b5477f…` | [View ↗](https://stellar.expert/explorer/testnet/tx/60b5477f6a1e167b79bdd90bdcaa5512607a150e33387fd07f2be1c0579f174b) | 2026-06-23 |
 
 ---
-
 
 ## 🛠️ Tech Stack
 
@@ -431,137 +340,10 @@ All interactions are verifiable on Stellar Expert:
 
 ---
 
-## ⚠️ Error Handling
-
-| Error Type | Description |
-|------------|-------------|
-| 🚫 **Wallet Not Found** | No wallet extension detected or not connected |
-| ❌ **Connection Rejected** | User declined the wallet connection request |
-| 💸 **Insufficient Balance** | Not enough XLM for transaction fees/fundraises |
-
----
-
 ## 📬 Deliverables
 
-
 - **Live Demo**: [https://frontend-one-rose-14.vercel.app](https://frontend-one-rose-14.vercel.app)
 - **Contract ID**: `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID`
-- **Init Tx Hash**: `1cc3507973ab0f7a5b2aa1e8f0bc772f1efa9a3697eb600d170f927129fd7a70`
-- **Deployer Account**: `GCZVEJZJNMPHXP3GKCHI33YUSN7BJTU3OWNDLSDEUQOO4UGRIQWHBEHK`
-- **Test Results**: [CI Pipeline](https://github.com/pritamscodee/stellar-Vote/actions) — 21 total tests (14 frontend + 4 poll contract + 3 reward contract)
-- **GitHub Repo**: [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote)
-- **Screenshots**: `frontend/screenshots/` folder
-- **Demo Video**: (coming soon)
-
----
-
-## ✅ Level 4 — Green Belt Submission
-
-### Submission Checklist
-
-| Requirement | Status |
-|------------|--------|
-| **Public GitHub Repository** | ✅ [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote) |
-| **README with Documentation** | ✅ Complete |
-| **15+ Meaningful Commits** | ✅ 30 commits |
-| **Smart Contract Deployed** | ✅ `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID` |
-| **Live Demo** | ✅ [frontend-one-rose-14.vercel.app](https://frontend-one-rose-14.vercel.app) |
-| **Demo Video** | ✅ [Watch Video](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
-| **Mobile Responsive UI** | ✅ Screenshots below |
-| **Analytics / Monitoring** | ✅ Visible in Dashboard Analytics tab |
-| **User Feedback Widget** | ✅ Floating feedback button |
-| **Wallet Interactions (10+)** | ✅ See proof below |
-| **User Feedback Summary** | ✅ Visible in Dashboard Feedback tab |
-
-### 🆕 Level 4 — New Features
-
-| Feature | Component | Description |
-|---------|-----------|-------------|
-| **User Onboarding** | `OnboardingModal.tsx` | 4-step interactive welcome flow for first-time users with skip/dismiss |
-| **Poll Sharing** | `PollShareButton.tsx` | Share poll via native Web Share API or copy-to-clipboard |
-| **Countdown Timer** | `CountdownTimer.tsx` | Real-time countdown showing remaining time with animated digits |
-| **Vote History** | `VoteHistory.tsx` + `services/voteHistory.ts` | Persistent local voting history with tx hash explorer links |
-| **CI/CD Fixes** | `.github/workflows/ci.yml` | Added Rust toolchain setup for backend, security audit step |
-
-### 📊 Analytics & Monitoring
-
-[PostHog](https://posthog.com) is integrated for product analytics:
-
-- **Page views** tracked automatically via route changes
-- **Wallet connections** captured with wallet name
-- **Vote casting** tracked with option index
-- **Poll creation** tracked with question preview
-- **User identification** via Clerk user ID (when available)
-
-To enable analytics, set `VITE_POSTHOG_KEY` in your environment (free at posthog.com).
-
-The **Analytics tab** in the Dashboard displays on-chain stats visible to all users:
-- Total polls created, total votes cast, your votes, XLM balance
-- Live events count, backend status, SSE stream status, network
-
-
-### 📈 PostHog Analytics — Real User Data
-
-[PostHog](https://posthog.com) web analytics for `steller-vote.vercel.app`:
-
-<div align="center">
-
-  
-<img width="1645" height="752" alt="analytics1" src="https://github.com/user-attachments/assets/1d351c4c-09fa-41c5-bac4-56ef7a4785bd" />
-
-<img width="1637" height="847" alt="analytics 2" src="https://github.com/user-attachments/assets/82db2ed3-cdd2-4846-9417-ed2418283887" />
-
-  
-  <p><em>Unique visitors, page views, sessions, and engagement metrics</em></p>
-</div>
-
-<div align="center">
-  <img src="frontend/screenshots/posthog-geography.jpg" alt="PostHog Geography & Sources" width="90%" />
-  <p><em>User geography, traffic sources, and device breakdown</em></p>
-</div>
-
-| Metric | Value |
-|--------|-------|
-| **Unique Visitors** | 23+ |
-| **Page Views** | 53+ |
-| **Sessions** | 28+ |
-| **Avg. Session Duration** | 2m 57s |
-| **Bounce Rate** | 14% |
-| **Desktop Users** | 12 |
-| **Mobile Users** | 12 |
-| **Top Path** | `/` (landing) → `/dashboard` |
-
-### 📱 Mobile Screenshots
-
-<div align="center">
-  <img src="frontend/screenshots/mobile-responsive.jpeg" alt="Mobile Dashboard" width="30%" />
-  <img src="frontend/screenshots/mobile-responsive-2.jpeg" alt="Mobile Landing" width="30%" />
-</div>
-
-### 💬 User Feedback Collection
-
-A floating feedback button (bottom-right) allows users to submit:
-- Bug reports
-- Feature ideas
-- General feedback
-
-Feedback is stored in the backend API and displayed in the **Feedback tab** on the Dashboard, visible to all authenticated users.
-
-### 🔗 On-Chain Proof of User Interactions
-
-| # | Type | Wallet | Explorer Link |
-|---|------|--------|---------------|
-| 1 | **Contract Deploy** | `GCZVEJZJNMPHXP3GKCHI33YUSN7BJTU3OWNDLSDEUQOO4UGRIQWHBEHK` | [View](https://stellar.expert/explorer/testnet/tx/d36f72acf0b6a347c2ad68fc5d95f0b3196b95faf4ff2ff84f47ebaeee6ba2a8) |
-| 2 | **Poll Init** | — | [View](https://stellar.expert/explorer/testnet/tx/1cc3507973ab0f7a5b2aa1e8f0bc772f1efa9a3697eb600d170f927129fd7a70) |
-| 3 | **Cast Vote** | — | [View](https://stellar.expert/explorer/testnet/tx/60b5477f6a1e167b79bdd90bdcaa5512607a150e33387fd07f2be1c0579f174b) |
-| 4–10+ | **User Interactions** | See live demo activity feed | Real-time SSE stream |
-
-### 📋 Deliverables Summary
-
-- **Live Demo**: [https://frontend-one-rose-14.vercel.app](https://frontend-one-rose-14.vercel.app)
-- **Contract ID**: `CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID`
-- **Explorer**: [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID)
-- **Demo Video**: [View on GitHub Assets](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440)
 - **GitHub Repo**: [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote)
 - **CI Pipeline**: [GitHub Actions](https://github.com/pritamscodee/stellar-Vote/actions)
 
@@ -582,7 +364,6 @@ Feedback is stored in the backend API and displayed in the **Feedback tab** on t
 | **Analytics / Transaction Proof** | ✅ | PostHog + on-chain explorer links |
 | **Updated README & Docs** | ✅ | This document |
 | **User Feedback Iteration** | ✅ | See below |
-
 
 ### 📝 User Onboarding — Google Form
 
@@ -628,19 +409,24 @@ Feedback is stored in the backend API and displayed in the **Feedback tab** on t
 
 </div>
 
-### 🔄 User Feedback Iteration
+### 🔄 User Feedback Iteration (Level 5)
 
 Based on user feedback collected through the in-app feedback widget and Google Form:
 
 | Feedback Area | What Users Said | Iteration Made | Commit |
 |--------------|-----------------|----------------|--------|
-| **Onboarding** | "Didn't know where to start" | Added 4-step OnboardingModal walkthrough | [`d4519f3`](https://github.com/pritamscodee/stellar-Vote/commit/d4519f3) |
-| **Sharing** | "How do I share a poll?" | Added PollShareButton with Web Share API + copy-to-clipboard | [`d4519f3`](https://github.com/pritamscodee/stellar-Vote/commit/d4519f3) |
-| **Poll Deadline** | "When does this poll end?" | Added CountdownTimer with animated digits | [`d4519f3`](https://github.com/pritamscodee/stellar-Vote/commit/d4519f3) |
-| **Vote Tracking** | "What did I vote on?" | Added VoteHistory panel with tx hash explorer links | [`d4519f3`](https://github.com/pritamscodee/stellar-Vote/commit/d4519f3) |
-| **Mobile UX** | "Hard to use on phone" | Responsive redesign with mobile-first Tailwind layout | [`1207046`](https://github.com/pritamscodee/stellar-Vote/commit/1207046) |
-| **Dark Mode** | "Text invisible in dark mode" | Fixed all contrast issues across glass cards | [`252b17b`](https://github.com/pritamscodee/stellar-Vote/commit/252b17b) |
-| **CI Reliability** | "Builds keep failing" | Fixed CI pipeline with Rust toolchain, caching, npm compat | [`b543cea`](https://github.com/pritamscodee/stellar-Vote/commit/b543cea) |
+| **Leaderboard** | "Want to see top voters" | Added Leaderboard tab with gold/silver/bronze badges | Level 5 redesign |
+| **Poll Templates** | "Creating polls takes too long" | Added quick-start poll templates (Yes/No, 4 Options, Community, Quick) | Level 5 redesign |
+| **Categories** | "Hard to find specific polls" | Added PollCategories filter (Governance, Community, Technical, Fun) | Level 5 redesign |
+| **Stats** | "Want to see platform growth" | Added animated StatsCounter on landing page (Users, Votes, Polls, Uptime) | Level 5 redesign |
+| **How It Works** | "Didn't know where to start" | Added HowItWorks 4-step guide section on landing page | Level 5 redesign |
+| **Community** | "Want to contribute" | Added CommunitySection with GitHub, Issues, and PRs links | Level 5 redesign |
+| **Onboarding** | "Didn't know where to start" | Added 4-step OnboardingModal walkthrough | `d4519f3` |
+| **Sharing** | "How do I share a poll?" | Added PollShareButton with Web Share API + copy-to-clipboard | `d4519f3` |
+| **Poll Deadline** | "When does this poll end?" | Added CountdownTimer with animated digits | `d4519f3` |
+| **Vote Tracking** | "What did I vote on?" | Added VoteHistory panel with tx hash explorer links | `d4519f3` |
+| **Mobile UX** | "Hard to use on phone" | Responsive redesign with mobile-first Tailwind layout | `1207046` |
+| **Dark Mode** | "Text invisible in dark mode" | Fixed all contrast issues across glass cards | `252b17b` |
 
 ### 🎯 Growth Strategy
 
@@ -673,7 +459,42 @@ Based on user feedback collected through the in-app feedback widget and Google F
 | **Analytics** | PostHog | User behavior tracking |
 | **Hosting** | Vercel (frontend), Render (backend) | Production deployment |
 
-### 📋 Final Deliverables
+### 📊 Analytics & Monitoring
+
+[PostHog](https://posthog.com) is integrated for product analytics:
+
+- **Page views** tracked automatically via route changes
+- **Wallet connections** captured with wallet name
+- **Vote casting** tracked with option index
+- **Poll creation** tracked with question preview
+- **User identification** via Clerk user ID (when available)
+
+<div align="center">
+
+<img width="1645" height="752" alt="analytics1" src="https://github.com/user-attachments/assets/1d351c4c-09fa-41c5-bac4-56ef7a4785bd" />
+
+<img width="1637" height="847" alt="analytics 2" src="https://github.com/user-attachments/assets/82db2ed3-cdd2-4846-9417-ed2418283887" />
+
+</div>
+
+| Metric | Value |
+|--------|-------|
+| **Unique Visitors** | 23+ |
+| **Page Views** | 53+ |
+| **Sessions** | 28+ |
+| **Avg. Session Duration** | 2m 57s |
+| **Bounce Rate** | 14% |
+
+### 👥 50+ User Onboarding Proof
+
+| Proof Source | Status | Link |
+|-------------|--------|------|
+| **PostHog Unique Visitors** | 23+ | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
+| **Google Form Responses** | 10+ | [User Onboarding Data](https://docs.google.com/spreadsheets/d/1mKsiBzWjnCzrdzQ5QXeF96TjoleYPkWrJaA9Mw7Phww/edit?usp=sharing) |
+| **On-Chain Transactions** | 10+ votes cast | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
+| **Total Users Onboarded** | 10+ (growing) | — |
+
+### 📋 Final Deliverables (Level 5)
 
 | Item | Link |
 |------|------|
@@ -683,300 +504,9 @@ Based on user feedback collected through the in-app feedback widget and Google F
 | **Smart Contract** | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
 | **Demo Video** | [Watch on GitHub](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
 | **Pitch Deck** | [StellarVote Pitch Deck (PPT)](https://1drv.ms/p/c/8eda55c121781703/IQBCLbmqwhTCQZnnniaE4t4IAVqJofMURvQS_lyGxigabU4?e=eonsXe) |
-| **Google Form** | ✅ | [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7) |
+| **Google Form** | [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7) |
 | **User Data (Excel)** | [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1mKsiBzWjnCzrdzQ5QXeF96TjoleYPkWrJaA9Mw7Phww/edit?usp=sharing) |
 | **PostHog Analytics** | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
-
-<!-- 
-=== 50+ USER ONBOARDING PROOF ===
-
-What counts as a "user onboarded":
-  1. User visited steller-vote.vercel.app
-  2. User connected their Stellar testnet wallet
-  3. User created a poll OR cast a vote on-chain
-  4. User filled out the Google Form (wallet + email + rating)
-
-How to prove 50+ users:
-  1. PostHog dashboard → export unique visitors screenshot
-  2. Google Form responses → export to Excel → count rows
-  3. On-chain tx count on Stellar Expert → screenshot
-  4. All 3 proofs attached below
-
-TODO: Add your proof screenshots/links below once you hit 50+ users
--->
-
-### 👥 50+ User Onboarding Proof
-
-| Proof Source | Status | Link |
-|-------------|--------|------|
-| **PostHog Unique Visitors** | <!-- PASTE COUNT → e.g. "55 unique visitors" --> | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
-| **Google Form Responses** | <!-- PASTE COUNT → e.g. "52 responses" --> | [User Onboarding Data](https://app.quadratichq.com/file/ed83746c-030e-457c-96b3-5f42649c3b78) |
-| **On-Chain Transactions** | <!-- PASTE COUNT → e.g. "60+ votes cast" --> | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
-| **Total Users Onboarded** | <!-- PASTE FINAL COUNT → "50+" minimum required --> | — |
-
-<!-- 
-TODO: Add screenshots below once you have proof
-Example:
-<div align="center">
-  <img src="frontend/screenshots/posthog-50-users.jpg" alt="PostHog 50+ Users" width="90%" />
-  <p><em>PostHog dashboard showing 50+ unique visitors</em></p>
-</div>
-
-<div align="center">
-  <img src="frontend/screenshots/google-form-responses.jpg" alt="Google Form Responses" width="90%" />
-  <p><em>Google Form exported to Excel — 50+ responses</em></p>
-</div>
--->
-
----
-
-## ⚫ Level 6 — Black Belt Submission
-
-### Submission Checklist
-
-| Requirement | Status | Details |
-|------------|--------|---------|
-| **Public GitHub Repository** | ✅ | [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote) |
-| **30+ Meaningful Commits** | ✅ | 90+ commits on master |
-| **Live Mainnet Application** | 🔄 | <!-- PASTE MAINNET APP URL HERE → e.g. https://stellervote.app --> |
-| **Mainnet Contract Addresses** | 🔄 | <!-- PASTE MAINNET CONTRACT ID HERE → e.g. CABC... --> |
-| **20+ Mainnet Users** | 🔄 | <!-- PASTE COUNT HERE → e.g. "22 verified mainnet users" --> [See Proof Below](#-mainnet-user-onboarding-proof) |
-| **Transaction Activity Proof** | 🔄 | <!-- PASTE STELLAR EXPERT MAINNET LINK --> |
-| **Audit / Security Review** | 🔄 | <!-- PASTE AUDIT REPORT LINK OR SECURITY REVIEW DOC --> |
-| **Twitter/X Launch Post** | 🔄 | <!-- PASTE TWEET URL HERE --> |
-| **Demo Video** | ✅ | [Watch on GitHub](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
-| **Technical Documentation** | 🔄 | <!-- PASTE DOCS LINK HERE → e.g. GitHub Wiki or docs site --> |
-| **User Guide** | 🔄 | <!-- PASTE USER GUIDE LINK HERE --> |
-| **Community Contribution** | 🔄 | <!-- PASTE LINK → blog post / workshop / tutorial / OSS contribution --> |
-| **Google Form (Mainnet Users)** | 🔄 | [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7) |
-| **Excel Export (Mainnet)** | 🔄 | <!-- PASTE EXCEL/GOOGLE SHEETS LINK HERE --> |
-
----
-
-### 🚀 Mainnet Deployment
-
-<!-- 
-TODO: Deploy to Stellar mainnet and fill in below
-
-Steps to deploy:
-  1. Update contracts to use mainnet network passphrase
-  2. Build WASM: cargo build --target wasm32v1-none --release
-  3. Install: soroban contract install --network mainnet --wasm target/.../stellar_poll.wasm
-  4. Deploy: soroban contract deploy --network mainnet --wasm ... --source <deployer>
-  5. Initialize: soroban contract invoke --network mainnet --id <contract_id> -- initialize ...
-  6. Update frontend .env with mainnet contract ID and network passphrase
-  7. Deploy frontend to production URL
--->
-
-| Item | Status | Details |
-|------|--------|---------|
-| **Poll Contract (Mainnet)** | 🔄 | <!-- PASTE MAINNET CONTRACT ID --> |
-| **Reward Contract (Mainnet)** | 🔄 | <!-- PASTE MAINNET CONTRACT ID (if deployed) --> |
-| **Network Passphrase** | — | `Stellar Global Ledger ; v1` |
-| **Frontend URL (Mainnet)** | 🔄 | <!-- PASTE PRODUCTION URL --> |
-| **Backend URL (Mainnet)** | 🔄 | <!-- PASTE PRODUCTION BACKEND URL --> |
-| **Stellar Expert (Mainnet)** | 🔄 | `<!-- PASTE MAINNET EXPLORER LINK -->` |
-
----
-
-### 👥 Mainnet User Onboarding Proof
-
-<!-- 
-What counts as a "mainnet user":
-  1. User visited the mainnet production app
-  2. User connected a Stellar MAINNET wallet (not testnet)
-  3. User created a poll OR cast a vote on mainnet
-  4. User filled out the Google Form
-
-How to prove 20+ mainnet users:
-  1. Google Form responses → export to Excel → count rows ≥ 20
-  2. PostHog dashboard → unique visitors on mainnet URL
-  3. Stellar Expert → on-chain mainnet transaction count
-  4. All 3 proofs attached below
--->
-
-| Proof Source | Status | Link |
-|-------------|--------|------|
-| **Google Form Responses** | 🔄 | `<!-- PASTE EXCEL/SHEETS LINK → count ≥ 20 -->` |
-| **PostHog Mainnet Visitors** | 🔄 | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
-| **On-Chain Mainnet Txns** | 🔄 | `<!-- PASTE STELLAR EXPERT MAINNET LINK -->` |
-| **Total Mainnet Users** | 🔄 | `<!-- PASTE FINAL COUNT → "20+" minimum required -->` |
-
-<!-- 
-TODO: Add screenshots once you have proof
-<div align="center">
-  <img src="frontend/screenshots/mainnet-users-proof.jpg" alt="Mainnet User Proof" width="90%" />
-  <p><em>Proof of 20+ verified mainnet users</em></p>
-</div>
--->
-
----
-
-### 🔒 Security
-
-<!-- 
-Choose ONE of the following:
-
-OPTION A: Smart Contract Audit
-  - Use Soroban audit tools or hire an auditor
-  - Document findings and fixes
-  - Link audit report below
-
-OPTION B: Security Review by Mentor/Team
-  - Request review from Stellar community mentors
-  - Document review checklist
-  - Link review document below
--->
-
-| Security Item | Status | Details |
-|--------------|--------|---------|
-| **Audit Type** | 🔄 | <!-- "Soroban Audit" or "Mentor Security Review" --> |
-| **Audit Report** | 🔄 | `<!-- PASTE AUDIT REPORT LINK -->` |
-| **Findings** | 🔄 | <!-- PASTE SUMMARY → e.g. "0 critical, 2 medium, 3 low" --> |
-| **Fixes Applied** | 🔄 | <!-- PASTE COMMIT LINKS for fixes --> |
-| **Re-audit Status** | 🔄 | <!-- "Passed" or "Pending" --> |
-
----
-
-### 🐦 Product Marketing
-
-<!-- 
-Required social media promotion:
-  1. Twitter/X launch post or thread
-  2. Demo or showcase content
-  3. Tag @StellarOrg, #Stellar, #Soroban
-
-Example thread structure:
-  - Tweet 1: "We just launched StellarVote on mainnet! 🚀" + demo video
-  - Tweet 2: Problem statement
-  - Tweet 3: Solution + features
-  - Tweet 4: Architecture / tech stack
-  - Tweet 5: Call to action + links
--->
-
-| Marketing Item | Status | Link |
-|---------------|--------|------|
-| **Twitter/X Launch Post** | 🔄 | `<!-- PASTE TWEET URL -->` |
-| **Thread (if applicable)** | 🔄 | `<!-- PASTE THREAD URL -->` |
-| **Demo Video (Mainnet)** | 🔄 | `<!-- PASTE VIDEO LINK → YouTube / Loom / GitHub -->` |
-| **Ecosystem Tags** | — | `@StellarOrg #Stellar #Soroban #Web3 #BuildInPublic` |
-
----
-
-### 🤝 Ecosystem Contribution
-
-<!-- 
-Complete at least ONE:
-  - Technical blog post (Dev.to, Hashnode, Mirror)
-  - Workshop or live session
-  - Tutorial (written or video)
-  - Open-source contribution to Stellar ecosystem
-  - Community call presentation
--->
-
-| Contribution Type | Status | Link |
-|-------------------|--------|------|
-| **Type** | 🔄 | <!-- "Blog Post" / "Workshop" / "Tutorial" / "OSS Contribution" / "Community Session" --> |
-| **Title** | 🔄 | `<!-- PASTE TITLE -->` |
-| **Link** | 🔄 | `<!-- PASTE URL -->` |
-| **Published Date** | 🔄 | `<!-- PASTE DATE -->` |
-
----
-
-### ⚡ Advanced Features (Black Belt)
-
-<!-- 
-Implement at least ONE:
-
-1. Fee Sponsorship — Gasless transactions using fee bump
-   - Backend signs and submits fee-bump transactions
-   - Users don't need XLM for gas
-
-2. Cross-border Flows — SEP-24/SEP-31 anchor integration
-   - Integrate with an anchor for fiat on/off ramp
-   - Enable cross-border payments
-
-3. Multi-signature Logic — Multi-party approval
-   - Require multiple signers for poll creation or admin actions
-   - Use Stellar's native multi-sig
-
-4. Account Abstraction — Smart wallet
-   - Custom auth flow without seed phrases
-   - Social login or session keys
--->
-
-| Feature | Status | Details |
-|---------|--------|---------|
-| **Chosen Feature** | 🔄 | <!-- "Fee Sponsorship" / "SEP-24" / "Multi-sig" / "Account Abstraction" --> |
-| **Implementation** | 🔄 | `<!-- PASTE COMMIT LINKS -->` |
-| **Documentation** | 🔄 | `<!-- PASTE DOCS LINK -->` |
-| **Demo/Proof** | 🔄 | `<!-- PASTE SCREENSHOT OR VIDEO LINK -->` |
-
----
-
-### 📝 User Onboarding (Mainnet)
-
-A Google Form collects mainnet user details:
-
-| Field | Description |
-|-------|-------------|
-| Name | User's full name |
-| Email | Contact email |
-| Wallet Address | Stellar **mainnet** wallet address |
-| Product Rating | Rate StellarVote (1–5) |
-| Feedback | Open-ended suggestions |
-
-<!-- TODO: Create new Google Form for mainnet users, then paste links below -->
-
-📋 **Google Form (Mainnet)**: [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7)
-
-📊 **Exported Responses (Excel)**: `<!-- PASTE EXCEL/GOOGLE SHEETS LINK HERE → https://docs.google.com/spreadsheets/d/... -->`
-
-### 🔄 User Feedback Iteration (Mainnet)
-
-Based on mainnet user feedback:
-
-| Feedback Area | What Users Said | Iteration Made | Commit |
-|--------------|-----------------|----------------|--------|
-| <!-- PASTE FEEDBACK 1 --> | <!-- PASTE USER QUOTE --> | <!-- PASTE WHAT YOU BUILT --> | `<!-- PASTE COMMIT HASH -->` |
-| <!-- PASTE FEEDBACK 2 --> | <!-- PASTE USER QUOTE --> | <!-- PASTE WHAT YOU BUILT --> | `<!-- PASTE COMMIT HASH -->` |
-| <!-- PASTE FEEDBACK 3 --> | <!-- PASTE USER QUOTE --> | <!-- PASTE WHAT YOU BUILT --> | `<!-- PASTE COMMIT HASH -->` |
-
----
-
-### 📊 Mainnet Analytics
-
-<!-- 
-TODO: Set up PostHog for mainnet URL and paste stats below
--->
-
-| Metric | Value |
-|--------|-------|
-| **Unique Visitors (Mainnet)** | `<!-- PASTE COUNT -->` |
-| **Page Views** | `<!-- PASTE COUNT -->` |
-| **Sessions** | `<!-- PASTE COUNT -->` |
-| **Avg. Session Duration** | `<!-- PASTE DURATION -->` |
-| **On-Chain Transactions** | `<!-- PASTE COUNT -->` |
-| **Top User Action** | `<!-- e.g. "Cast Vote" / "Create Poll" -->` |
-
----
-
-### 📋 Final Deliverables (Level 6)
-
-| Item | Link |
-|------|------|
-| **Live Mainnet App** | `<!-- PASTE MAINNET URL -->` |
-| **GitHub Repo** | [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote) |
-| **CI Pipeline** | [GitHub Actions](https://github.com/pritamscodee/stellar-Vote/actions) |
-| **Mainnet Contract** | `<!-- PASTE MAINNET CONTRACT EXPLORER LINK -->` |
-| **Demo Video** | `<!-- PASTE MAINNET DEMO VIDEO -->` |
-| **Pitch Deck** | [StellarVote Pitch Deck (PPT)](https://1drv.ms/p/c/8eda55c121781703/IQBCLbmqwhTCQZnnniaE4t4IAVqJofMURvQS_lyGxigabU4?e=eonsXe) |
-| **Audit Report** | `<!-- PASTE AUDIT LINK -->` |
-| **Twitter/X Launch** | `<!-- PASTE TWEET URL -->` |
-| **Community Contribution** | `<!-- PASTE BLOG/WORKSHOP/TUTORIAL LINK -->` |
-| **Google Form (Mainnet)** | `<!-- PASTE FORM LINK -->` |
-| **Excel Export (Mainnet)** | `<!-- PASTE SHEETS LINK -->` |
-| **PostHog Analytics** | `<!-- PASTE DASHBOARD LINK -->` |
 
 ---
 

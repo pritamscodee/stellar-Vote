@@ -59,3 +59,35 @@ export interface BackendHealth {
   status: string;
   service: string;
 }
+
+export interface LeaderboardEntry {
+  address: string;
+  votes: number;
+  rank: number;
+  badge: "gold" | "silver" | "bronze" | "none";
+}
+
+export interface PollCategory {
+  id: string;
+  label: string;
+  icon: string;
+  count: number;
+  color: string;
+}
+
+export interface PollTemplate {
+  id: string;
+  title: string;
+  question: string;
+  options: string[];
+  deadlineHours: number;
+  icon: string;
+  color: string;
+}
+
+export interface PlatformStats {
+  totalUsers: number;
+  totalVotes: number;
+  totalPolls: number;
+  uptime: number;
+}
