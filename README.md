@@ -6,6 +6,7 @@
 <img width="1901" height="868" alt="lanidng page1" src="https://github.com/user-attachments/assets/a5d7ff3e-ff4e-4a31-8d40-d64b9f310b48" />
 
 ---
+<img width="1905" height="861" alt="image" src="https://github.com/user-attachments/assets/472cdb1d-e712-433a-934f-84548b20f667" />
 
 <img width="1892" height="881" alt="testimonisal animted" src="https://github.com/user-attachments/assets/b2898ff7-9e19-41a0-8731-ddb5ae16f12f" />
 
