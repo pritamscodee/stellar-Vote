@@ -150,7 +150,7 @@ The dashboard and landing page are fully responsive across all device sizes:
 | Node.js | 18+ |
 | Rust | latest stable |
 | Stellar Wallet | Freighter / Albedo / Lobstr |
-| Clerk Account | [clerk.com](https://clerk.com) |
+
 
 ### Frontend
 
