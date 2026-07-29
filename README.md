@@ -370,13 +370,7 @@ contractimport!("../poll/target/wasm32v1-none/release/stellar_poll.wasm");
 
 📋 **Google Form**: [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7)
 
-📊 **Exported Responses (Excel)**: [View User Data](https://pritamscodee.github.io/stellar-Vote/) · [Direct Spreadsheet](https://docs.google.com/spreadsheets/d/1mKsiBzWjnCzrdzQ5QXeF96TjoleYPkWrJaA9Mw7Phww/edit?usp=sharing)
 
-<div align="center">
-  <a href="https://docs.google.com/spreadsheets/d/1mKsiBzWjnCzrdzQ5QXeF96TjoleYPkWrJaA9Mw7Phww/edit?usp=sharing">
-    <img src="https://img.shields.io/badge/VIEW_USER_DATA-22c55e?style=for-the-badge&logo=tableau&logoColor=fff" alt="View User Data" />
-  </a>
-</div>
 
 ### 📊 User Onboarding Data
 
