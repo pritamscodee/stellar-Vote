@@ -395,17 +395,18 @@ contractimport!("../poll/target/wasm32v1-none/release/stellar_poll.wasm");
 | 9 | **Pritam Dey** | pritamsdev2@gmail.com | `GATJMD6BGNK4FQYNFWB354N7RP4XHA2R74GNSYM472ALNLJFX7NXBS3X` | [View Tx](https://stellar.expert/explorer/testnet/tx/039fd6abf1303e7208e11daf02abab5e71fb890530d15a221bd5a3beaf8b6b49) | ⭐⭐⭐⭐ 4/5 | Good UI/UX, perfect suitable and clean design |
 | 10 | **Sayan Sadhukhan** | sayansadhukhan544@gmail.com | `GCVT3KDQT3Z2JPWODBMHLX4ODSIKDZ7CTZYZTKHXIQLTWLF5TBRNXJHC` | [View Tx](https://stellar.expert/explorer/testnet/tx/95cade7d376b8247bf373f3f0ca41a810e698684cc090942c05e3887851592ab) | ⭐⭐⭐⭐⭐ 5/5 | StellarVote makes on-chain voting simple and transparent |
 
-</div>
-| Metric | Value |
-|--------|-------|
-| **Total Users** | 10+ |
-| **Average Rating** | 4.5 / 5 |
-| **5-Star Reviews** | 6 (60%) |
-| **4-Star Reviews** | 3 (30%) |
-| **3-Star Reviews** | 1 (10%) |
-| **On-Chain Verified** | ✅ All wallet addresses are real Stellar testnet accounts |
+## 📊 User Feedback & Adoption
 
-</div>
+| 📈 Metric | 🚀 Value |
+|-----------|-----------|
+| **Total Users** | **10+** |
+| **Average Rating** | ⭐ **4.5 / 5** |
+| **5-Star Reviews** | ⭐⭐⭐⭐⭐ **6 (60%)** |
+| **4-Star Reviews** | ⭐⭐⭐⭐ **3 (30%)** |
+| **3-Star Reviews** | ⭐⭐⭐ **1 (10%)** |
+| **Wallet Verification** | ✅ **100% On-Chain Verified (Stellar Testnet)** |
+
+> All wallet addresses used for verification are genuine **Stellar Testnet** accounts, ensuring authentic on-chain interactions.
 
 ### 🔄 User Feedback Iteration (Level 5)
 
