@@ -478,30 +478,6 @@ Based on user feedback collected through the in-app feedback widget and Google F
 | **Avg. Session Duration** | 2m 57s |
 | **Bounce Rate** | 14% |
 
-### 👥 50+ User Onboarding Proof
-
-| Proof Source | Status | Link |
-|-------------|--------|------|
-| **PostHog Unique Visitors** | 23+ | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
-| **Google Form Responses** | 10+ | [User Onboarding Data](https://docs.google.com/spreadsheets/d/1mKsiBzWjnCzrdzQ5QXeF96TjoleYPkWrJaA9Mw7Phww/edit?usp=sharing) |
-| **On-Chain Transactions** | 10+ votes cast | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
-| **Total Users Onboarded** | 10+ (growing) | — |
-
-### 📋 Final Deliverables (Level 5)
-
-| Item | Link |
-|------|------|
-| **Live Demo** | [steller-vote.vercel.app](https://steller-vote.vercel.app) |
-| **GitHub Repo** | [pritamscodee/stellar-Vote](https://github.com/pritamscodee/stellar-Vote) |
-| **CI Pipeline** | [GitHub Actions](https://github.com/pritamscodee/stellar-Vote/actions) |
-| **Smart Contract** | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDROSAGWRIQG5TSRF2FFFFXZD3RGPWDS6I3IWUTC67MELRRLZHNOE6ID) |
-| **Demo Video** | [Watch on GitHub](https://github.com/user-attachments/assets/d522ae39-22ff-4349-8101-aef049919440) |
-| **Pitch Deck** | [StellarVote Pitch Deck (PPT)](https://1drv.ms/p/c/8eda55c121781703/IQBCLbmqwhTCQZnnniaE4t4IAVqJofMURvQS_lyGxigabU4?e=eonsXe) |
-| **Google Form** | [StellarVote User Onboarding Form](https://forms.gle/m8N7faRey2ds9ALe7) |
-| **User Data (Excel)** | [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1mKsiBzWjnCzrdzQ5QXeF96TjoleYPkWrJaA9Mw7Phww/edit?usp=sharing) |
-| **PostHog Analytics** | [Public Dashboard](https://us.posthog.com/shared/HJMsE-sycnJBYDOtng-c5Xs4I4VhMA) |
-
----
 
 <div align="center">
 
